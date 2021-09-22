@@ -18,6 +18,7 @@ public class Glücksspiel {
 		System.out.println("Alter: " + clamp(alter, 0, 120));
 		System.out.println("Geschlecht: " + gender(geschlecht));
 		System.out.println("Hallo " + anrede(geschlecht, alter));
+		System.out.println(luckyGame(r));
 	}
 
 	private static int clamp(int INPUT, int min, int max) {
@@ -71,5 +72,18 @@ public class Glücksspiel {
 			return "ERROR";
 		}
 	}
-
+	
+	private static String luckyGame(Random r) {
+		
+		if(r.nextInt(100) <= 50) {
+			return "WIN!";
+		}else if(r.nextInt(100) > 50) {
+			return "LOOSE!";
+		}else {
+			return "ERROR";
+		}
+		
+		
+		
+	}
 }
