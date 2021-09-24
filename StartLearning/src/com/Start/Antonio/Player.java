@@ -4,72 +4,74 @@ import java.util.Scanner;
 
 public class Player {
 
-	 byte alter = 19; // 0 bis 120 (including)
-	 byte geschlecht = 0; // 0 bis 3 (including)
-	 String firstName = "Max";
-	 String sirName = "Mustermann";
-	 
-	Scanner eingabe = new Scanner(System.in);
+	String firstName = "";
+	String sirName = "";
+	int age = 0;
 	
-	Player(Glücksspiel glücksspiel, int GENDER, int AGE, String sirName, String firstName, byte alter, byte geschlecht) {
-		this.alter = alter;
-		this.geschlecht = geschlecht;
-		this.firstName = firstName;
-		this.sirName = sirName;
+	String nameInput = "";
+	
+	Scanner sc = new Scanner(System.in);
+
+	
+	public Player() {
+		
 	}
-
-	public String anrede(int GENDER, int AGE, String sirName, String firstName, Glücksspiel glücksspiel) {
-
-		if (AGE >= 18) {
-			if (Glücksspiel.clamp(GENDER, 0, 3) == 0) {
-				return "Herr " + sirName;
-			} else if (Glücksspiel.clamp(GENDER, 0, 3) == 1) {
-				return "Frau " + sirName;
-			} else if (Glücksspiel.clamp(GENDER, 0, 3) == 2) {
-				return " " + sirName;
-			} else {
-				return "ERROR";
+	
+	private boolean validateInputStr(String nameInput) {
+		 if (nameInput == null)  return false;// checks if the String is null 
+		
+		int len = nameInput.length();
+		
+		for(int i = 0; i< len; i++) {
+			if((Character.isLetter(nameInput.charAt(i)) == false)) {
+				
+				
+				System.out.println("Analphabetic");
+				System.exit(0);
+				return false;
+				
+				//-----------------------------------------------------fehler ausgeben!!!! System.exit(0);
 			}
-		} else if (AGE < 18) {
-			if (Glücksspiel.clamp(GENDER, 0, 3) == 0) {
-				return " " + firstName;
-			} else if (Glücksspiel.clamp(GENDER, 0, 3) == 1) {
-				return " " + firstName;
-			} else if (Glücksspiel.clamp(GENDER, 0, 3) == 2) {
-				return " " + firstName;
-			} else {
-				return "ERROR";
-			}
-		} else {
-			return "ERROR";
 		}
-
+		
+		return true;
+		//-----------------------------------------------------------continue
 	}
 	
-
-	private static String gender(int GENDER) {
-
-		if (Glücksspiel.clamp(GENDER, 0, 3) == 0) {
-			return "Herr ";
-		} else if (Glücksspiel.clamp(GENDER, 0, 3) == 1) {
-			return "Frau ";
-		} else if (Glücksspiel.clamp(GENDER, 0, 3) == 2) {
-			return " ";
-		} else {
-			return "ERROR";
-		}
+	public void catchData() {
+		
+		
+		System.out.println("What's your First Name? (Please enter letters)");
+		firstName = sc.next();
+		
+		validateInputStr(firstName);
+		
+		System.out.println("What's your Sir Name? (Please enter letters)");
+		sirName = sc.next();
+		
+		validateInputStr(sirName);
+		
+		System.out.println("How old are you? (Please enter integers between 0-120)");
+		
+		age = sc.nextInt();
+		
 	}
 	
-	public void Abfrage() {
-		System.out.println("Wie alt bist du?");
-		alter = eingabe.nextByte();
-		System.out.println("Welches Geschlecht bist du?");
-		System.out.println("0=maennlich, 1=weiblich, 2=divers");
-		geschlecht = eingabe.nextByte();
-		System.out.println("Wie ist dein Vorname?");
-		firstName = eingabe.next();
-		System.out.println("Wie ist dein Nachname?");
-		sirName = eingabe.next();
-
+	public String outputData() {
+		
+		return firstName +" " + sirName + " " + age;
+		
+	}
+	
+	public int age() {
+		return age;
+	}
+	
+	public String firstName() {
+		return firstName;
+	}
+	
+	public String sirName() {
+		return sirName;
 	}
 }
