@@ -1,11 +1,11 @@
 package com.Start.Antonio;
-
+import java.util.Scanner;
 import java.util.Random;
 
 public class Glücksspiel {
 
-	static byte alter = 18;
-	static byte geschlecht = 0;
+	static byte alter = 19; //0 bis 120 (including)
+	static byte geschlecht = 0; // 0 bis 3 (including)
 	static String firstName = "Max";
 	static String sirName = "Mustermann";
 	static int zufall = 0;
@@ -13,7 +13,18 @@ public class Glücksspiel {
 	public static void main(String[] args) {
 		Random r = new Random();
 		
-		alter = (byte) r.nextInt(255);
+		//alter = (byte) r.nextInt(255);
+		Scanner eingabe =new Scanner(System.in) ;
+		System.out.println("Wie alt bist du?");
+		alter = eingabe.nextByte();
+		System.out.println("Welches Geschlecht bist du?");
+		System.out.println("0=maennlich, 1=weiblich, 2=divers");
+		geschlecht = eingabe.nextByte();
+		System.out.println("Wie ist dein Vorname?");
+		firstName = eingabe.next();
+		System.out.println("Wie ist dein Nachname?");
+		sirName = eingabe.next();
+		
 		
 		System.out.println("Alter: " + clamp(alter, 0, 120));
 		System.out.println("Geschlecht: " + gender(geschlecht));
@@ -87,3 +98,4 @@ public class Glücksspiel {
 		
 	}
 }
+
