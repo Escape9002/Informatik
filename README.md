@@ -1,4 +1,5 @@
 # Informatik
 Schularbeit
 
---> StartGame (Hello World und zufall)
+--> StartGame (Hello World und zufallSpiel) <br />
+--> JavaWillSpielen (Full on Game)
