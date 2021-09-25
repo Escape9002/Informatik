@@ -37,13 +37,12 @@ public class Player extends Canvas implements Runnable {
 
 				System.out.println("Analphabetic");
 				new Window(WIDTH, HEIGHT, "TextGame", this);
-				System.exit(0);
 				return false;
 			}
 		}
 
 		return true;
-		// -----------------------------------------------------------continue
+		
 	}
 
 	public void catchData() {
@@ -53,12 +52,7 @@ public class Player extends Canvas implements Runnable {
 		firstName = sc.next();
 
 		validateInputStr(firstName);
-/*
-		System.out.println("What's your Sir Name? (Please enter letters)");
-		sirName = sc.next();
 
-		validateInputStr(sirName);
-*/
 		System.out.println("How old are you? (Please enter integers between 0-120)");
 
 		eingabe = sc.next();
@@ -70,7 +64,7 @@ public class Player extends Canvas implements Runnable {
 
 		} catch (NumberFormatException e) {
 			System.out.println("Analphabetic");
-			System.exit(0);
+			new Window(WIDTH, HEIGHT, "TextGame", this);
 		}
 
 		System.out.println("Enter your lucky number! (Between 1- 100)");
@@ -83,18 +77,17 @@ public class Player extends Canvas implements Runnable {
 			
 			if(luckyNumber < 0) {
 				System.out.println("Analphabetic");
-				System.exit(0);
+				new Window(WIDTH, HEIGHT, "TextGame", this);
 			}else if(luckyNumber >100) {
 				System.out.println("Analphabetic");
-				System.exit(0);
+				new Window(WIDTH, HEIGHT, "TextGame", this);
 			}
 			
 			System.out.println("Your Lucky Number: " + luckyNumber);
-//			age = sc.nextInt(); //why does not work?
 
 		} catch (NumberFormatException e) {
 			System.out.println("Analphabetic");
-			System.exit(0);
+			new Window(WIDTH, HEIGHT, "TextGame", this);
 		}
 
 	}
