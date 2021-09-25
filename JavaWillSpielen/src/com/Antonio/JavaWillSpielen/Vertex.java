@@ -5,7 +5,7 @@ public class Vertex {
 	public double x;
 	public double y;
 
-	public Vertex(double xx, double yy) {
+	public Vertex(double x, double y) {
 		this.x = x;
 		this.y = y;
 	}
