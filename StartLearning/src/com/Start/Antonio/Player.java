@@ -1,77 +1,188 @@
 package com.Start.Antonio;
 
+import java.awt.Canvas;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.image.BufferStrategy;
 import java.util.Scanner;
 
-public class Player {
+public class Player extends Canvas implements Runnable {
 
+	private static final long serialVersionUID = 1L;
+	public static final int WIDTH = 640, HEIGHT = WIDTH / 12 * 9;
+	private Thread thread;
+	private boolean running = false;
+	
+	Scanner sc = new Scanner(System.in);
+	
 	String firstName = "";
 	String sirName = "";
 	int age = 0;
-	
-	String nameInput = "";
-	
-	Scanner sc = new Scanner(System.in);
+	int luckyNumber = 0;
 
-	
+	static int ObjectCounter = 0;
+
 	public Player() {
-		
+		ObjectCounter = ObjectCounter++;
 	}
-	
+
 	private boolean validateInputStr(String nameInput) {
-		 if (nameInput == null)  return false;// checks if the String is null 
-		
+		if (nameInput == null)
+			return false;// checks if the String is null
+
 		int len = nameInput.length();
-		
-		for(int i = 0; i< len; i++) {
-			if((Character.isLetter(nameInput.charAt(i)) == false)) {
-				
-				
+
+		for (int i = 0; i < len; i++) {
+			if ((Character.isLetter(nameInput.charAt(i)) == false)) {
+
 				System.out.println("Analphabetic");
+				new Window(WIDTH, HEIGHT, "TextGame", this);
 				System.exit(0);
 				return false;
-				
-				//-----------------------------------------------------fehler ausgeben!!!! System.exit(0);
 			}
 		}
-		
+
 		return true;
-		//-----------------------------------------------------------continue
+		// -----------------------------------------------------------continue
 	}
-	
+
 	public void catchData() {
-		
-		
+		String eingabe = "";
+
 		System.out.println("What's your First Name? (Please enter letters)");
 		firstName = sc.next();
-		
+
 		validateInputStr(firstName);
-		
+/*
 		System.out.println("What's your Sir Name? (Please enter letters)");
 		sirName = sc.next();
-		
+
 		validateInputStr(sirName);
-		
+*/
 		System.out.println("How old are you? (Please enter integers between 0-120)");
-		
-		age = sc.nextInt();
-		
+
+		eingabe = sc.next();
+
+		try {
+			age = Integer.parseInt(eingabe);
+
+//			age = sc.nextInt(); //why does not work?
+
+		} catch (NumberFormatException e) {
+			System.out.println("Analphabetic");
+			System.exit(0);
+		}
+
+		System.out.println("Enter your lucky number! (Between 1- 100)");
+
+		eingabe = sc.next();
+
+		try {
+			
+			luckyNumber = Integer.parseInt(eingabe);
+			
+			if(luckyNumber < 0) {
+				System.out.println("Analphabetic");
+				System.exit(0);
+			}else if(luckyNumber >100) {
+				System.out.println("Analphabetic");
+				System.exit(0);
+			}
+			
+			System.out.println("Your Lucky Number: " + luckyNumber);
+//			age = sc.nextInt(); //why does not work?
+
+		} catch (NumberFormatException e) {
+			System.out.println("Analphabetic");
+			System.exit(0);
+		}
+
 	}
-	
+
 	public String outputData() {
-		
-		return firstName +" " + sirName + " " + age;
-		
+
+		return "-----------|| Player: " + ObjectCounter + " | " + "First Name: " + firstName + " | " + "Last Name: " + sirName + " | " + "Age: " +  age + " ||-----------";
+
 	}
-	
-	public int age() {
+
+	public int getAge() {
 		return age;
 	}
-	
-	public String firstName() {
+
+	public String getFirstName() {
 		return firstName;
 	}
-	
-	public String sirName() {
+
+	public String getSirName() {
 		return sirName;
+	}
+	
+	public int getLuckyNumber() {
+		return luckyNumber;
+	}
+	
+	public int GetObjectCounter() {
+		return ObjectCounter;
+	}
+
+	public synchronized void start() {
+		thread = new Thread(this);
+		thread.start();
+		running = true;
+	}
+	
+	public synchronized void stop() {
+		try {
+			thread.join();
+			running = false;
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	private void render() {
+		BufferStrategy bs = this.getBufferStrategy();
+		if(bs == null) {
+			this.createBufferStrategy(3);
+			return;
+		}
+		
+		Graphics g = bs.getDrawGraphics();
+		
+		g.setColor(Color.black);
+		g.fillRect(0,0,WIDTH, HEIGHT);
+		
+		g.setColor(Color.white);
+		g.drawString("Hello, fuck you", WIDTH/2, HEIGHT/2 );
+		
+		g.dispose();
+		bs.show();
+	}
+
+	
+	public void run() {
+		this.requestFocus();
+	    long lastTime = System.nanoTime();
+	    double amountOfTicks = 60.0;
+	    double ns = 1000000000 / amountOfTicks;
+	    double delta = 0;
+	    long timer = System.currentTimeMillis();
+	    int frames = 0 ;
+	    while (running) {
+	        long now = System.nanoTime();
+	        delta += (now - lastTime) / ns;
+	        lastTime = now;
+	        if(running)
+	            render();
+	        frames++;
+
+	        if(System.currentTimeMillis() - timer > 1000) {
+	            timer += 1000;
+	            System.out.println("FPS: " + frames);
+	            frames = 0;
+	        }
+	    }
+	    stop();
 	}
 }
