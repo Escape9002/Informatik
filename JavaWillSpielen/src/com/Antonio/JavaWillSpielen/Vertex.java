@@ -14,8 +14,8 @@ public class Vertex {
 		return "X: " + x + " | " + "Y: " + y;
 
 	}
-	
-	//--------------------------------------------page 46 OnGoing
+
+	// --------------------------------------------page 46 OnGoing
 	public double length() {
 		return Math.sqrt(x * x + y * y);
 	}
@@ -29,29 +29,54 @@ public class Vertex {
 		y = y * s;
 	}
 
-	public Vertex add(Vertex v2) {
-		return new Vertex(x + v2.x, y + v2.y);
+	public Vertex add(Vertex vertex) {
+		return new Vertex(x + vertex.x, y + vertex.y);
 	}
-	
-	public void addMod(Vertex v3) {
-		x  =x+v3.x;
-		y  =y+v3.y;
+
+	public Vertex sub(Vertex vertex) {
+		return new Vertex(x - vertex.x, y - vertex.y);
+	}
+
+	public double distance(Vertex vertex) {
+		double x = vertex.x - this.x;
+		double y = vertex.y - this.y;
+		return Math.sqrt(x * x + y * y);
+	}
+
+	public void normalize() {
+		double factor = this.length();
+		this.x = x/factor;
+		this.y= y/factor;
+	}
+
+	public void addMod(Vertex vertex) {
+		x = x + vertex.x;
+		y = y + vertex.y;
 	}
 
 	public double getX() {
 		return x;
 	}
-	
+
 	public double getY() {
 		return y;
 	}
-	
+
 	public double setX(double x) {
-		return this.x  =x;
+		return this.x = x;
 	}
-	
+
 	public double setY(double y) {
 		return this.y = y;
+	}
+
+	public boolean equals(Object thatObject) {
+		if (thatObject instanceof Vertex) {
+			Vertex that = (Vertex) thatObject;
+			return this.x == that.x && this.y == that.y;
+		}
+		return false;
+
 	}
 
 }
