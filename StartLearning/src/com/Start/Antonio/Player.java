@@ -7,7 +7,7 @@ import java.awt.image.BufferStrategy;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Player extends Canvas implements Runnable {
+public class Player extends Canvas implements Runnable{
 
 	private static final long serialVersionUID = 1L;
 	public static final int WIDTH = 640, HEIGHT = WIDTH / 12 * 9;
