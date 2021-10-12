@@ -10,12 +10,12 @@ public class Vertex {
 		this.y = y;
 	}
 
+	@Override
 	public String toString() {
 		return "X: " + x + " | " + "Y: " + y;
 
 	}
 
-	// --------------------------------------------page 46 OnGoing
 	public double length() {
 		return Math.sqrt(x * x + y * y);
 	}
