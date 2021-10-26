@@ -1,3 +1,4 @@
+package com.AntonioRehwinkel.KlausurVol1;
 public class Hund {
 
 	String rasse;
@@ -20,23 +21,23 @@ public class Hund {
 		this("Rudolf");
 	}
 
-	public void getAllData() {
-		System.out.println(rasse + " | " + name + " | "  + alter + " | "  + lautstaerkeDB);
+	public String getAllData() {
+		return rasse + " | " + name + " | " + alter + " | " + lautstaerkeDB;
 	}
 
 	public double wuff() {
 		return lautstaerkeDB;
 	}
-	
+
 	public static void main(String[] args) {
-		 Hund ma = new Hund("laprador", "gandalf",14, 44.5);
-		 Schaeferhund wd = new Schaeferhund("ahd", 16, 5);
-		 
-		 ma.getAllData();
-		 wd.getAllData();
-		 
-		 System.out.println("Hund " + ma.wuff());
-		 System.out.println("Schaferhund " + wd.wuff());
-		 }
+		Hund hund = new Hund("laprador", "gandalf", 16, 5);
+		Schaeferhund hund2 = new Schaeferhund("ahd", 16, 5, 5);
+
+		System.out.println(hund.getAllData());
+		System.out.println(hund2.getAllData());
+
+		System.out.println("Hund " + hund.wuff());
+		System.out.println("Schaferhund " + hund2.wuff());
+	}
 
 }

@@ -9,17 +9,16 @@ public class SimpleTriangle extends GeometricObject{
 		super(w, h, new Vertex(x, y));
 	}
 
-	@Override
+
 	public double area() {
 		return  (width / 2) * height;
 	}
 
-	@Override
+
 	public String toString() {
 		return "SimpleTriangle (" + super.toString() + ")";
 	}
 	
-	@Override
 	public boolean equals(Object that) {
 		return (that instanceof SimpleTriangle) && super.equals(that);
 	}

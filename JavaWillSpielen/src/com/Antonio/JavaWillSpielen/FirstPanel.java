@@ -11,7 +11,6 @@ public class FirstPanel extends JPanel {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	@Override
 	public void paintComponent(java.awt.Graphics g) {
 		g.setColor(Color.red);
 		g.drawRect(30, 50, 45, 80);
