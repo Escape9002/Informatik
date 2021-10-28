@@ -1,16 +1,18 @@
 package com.AntonioRehwinkel.KlausurVol1;
 
 public class Schaeferhund extends Hund {
-
-int lel = 0;	
 	
-	public Schaeferhund(String name, int alter, double laustraerkeDB, int lel){
-		super("Schäferhund", name,  alter, laustraerkeDB*1.5);
-		
-		this.lel = lel;
+	public Schaeferhund(String name, int alter, double laustraerkeDB){
+		super(name,  alter, laustraerkeDB);
+		this.rasse = "schaeferhund";
 	}
 	
-	public String getAllData() {
-		return super.getAllData() + " | " +  lel;
+	
+	 @Override public String getAllData() {
+		return super.getAllData() + " | " + rasse;
 	}
+	 
+	 @Override public double getLautstaerkeDB(){
+			return 1.5*super.getLautstaerkeDB();
+		}
 }
