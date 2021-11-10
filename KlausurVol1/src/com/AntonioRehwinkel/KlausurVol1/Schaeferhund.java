@@ -13,6 +13,6 @@ public class Schaeferhund extends Hund {
 	}
 	 
 	 @Override public double getLautstaerkeDB(){
-			return 1.5*super.getLautstaerkeDB();
+			return 1.5*super.lautstaerkeDB;
 		}
 }

@@ -1,0 +1,305 @@
+
+SELECT * FROM dorf
+dorfnr	name	haeuptling
+1	Affenstadt	1
+2	Gurkendorf	6
+3	Zwiebelhausen	13
+Yeah!
+SELECT * FROM dorf
+dorfnr	name	haeuptling
+1	Affenstadt	1
+2	Gurkendorf	6
+3	Zwiebelhausen	13
+Die Spalten sind falsch.
+SELECT * FROM dorf
+dorfnr	name	haeuptling
+1	Affenstadt	1
+2	Gurkendorf	6
+3	Zwiebelhausen	13
+Die Spalten sind falsch.
+SELECT * FROM bewohner
+bewohnernr	name	dorfnr	geschlecht	beruf	gold	status
+1	Paul Backmann	1	m	Baecker	850	friedlich
+2	Ernst Peng	3	m	Waffenschmied	280	friedlich
+3	Rita Ochse	1	w	Baecker	350	friedlich
+4	Carl Ochse	1	m	Kaufmann	250	friedlich
+5	Dirty Dieter	3	m	Schmied	650	boese
+6	Gerd Schlachter	2	m	Metzger	4850	boese
+7	Peter Schlachter	3	m	Metzger	3250	boese
+8	Arthur Schneiderpaule	2	m	Pilot	490	gefangen
+9	Tanja Trommler	1	w	Baecker	550	boese
+10	Peter Trommler	1	m	Schmied	600	friedlich
+11	Dirty Doerthe	3	w	Erntehelfer	10	boese
+12	Otto Armleuchter	2	m	Haendler	680	friedlich
+13	Fritz Dichter	3	m	Hoerbuchautor	420	friedlich
+14	Enrico Zimmermann	3	m	Waffenschmied	510	boese
+15	Helga Rasenkopf	2	w	Haendler	680	friedlich
+16	Irene Hutmacher	1	w	Haendler	770	boese
+17	Erich Rasenkopf	3	m	Metzger	990	friedlich
+18	Rudolf Gaul	3	m	Hufschmied	390	friedlich
+19	Anna Flysh	2	w	Metzger	2280	friedlich
+Yeah!
+SELECT * FROM bewohner WHERE beruf = 'Metzger'
+bewohnernr	name	dorfnr	geschlecht	beruf	gold	status
+6	Gerd Schlachter	2	m	Metzger	4850	boese
+7	Peter Schlachter	3	m	Metzger	3250	boese
+17	Erich Rasenkopf	3	m	Metzger	990	friedlich
+19	Anna Flysh	2	w	Metzger	2280	friedlich
+Yeah!
+SELECT * FROM bewohner WHERE beruf = "Metzger"
+bewohnernr	name	dorfnr	geschlecht	beruf	gold	status
+6	Gerd Schlachter	2	m	Metzger	4850	boese
+7	Peter Schlachter	3	m	Metzger	3250	boese
+17	Erich Rasenkopf	3	m	Metzger	990	friedlich
+19	Anna Flysh	2	w	Metzger	2280	friedlich
+Es kommen falsche Zeilen raus.
+SELECT * FROM bewohner WHERE status = "boese"
+bewohnernr	name	dorfnr	geschlecht	beruf	gold	status
+5	Dirty Dieter	3	m	Schmied	650	boese
+6	Gerd Schlachter	2	m	Metzger	4850	boese
+7	Peter Schlachter	3	m	Metzger	3250	boese
+9	Tanja Trommler	1	w	Baecker	550	boese
+11	Dirty Doerthe	3	w	Erntehelfer	10	boese
+14	Enrico Zimmermann	3	m	Waffenschmied	510	boese
+16	Irene Hutmacher	1	w	Haendler	770	boese
+Es kommen falsche Zeilen raus.
+SELECT * FROM bewohner WHERE status = "boese"
+bewohnernr	name	dorfnr	geschlecht	beruf	gold	status
+5	Dirty Dieter	3	m	Schmied	650	boese
+6	Gerd Schlachter	2	m	Metzger	4850	boese
+7	Peter Schlachter	3	m	Metzger	3250	boese
+9	Tanja Trommler	1	w	Baecker	550	boese
+11	Dirty Doerthe	3	w	Erntehelfer	10	boese
+14	Enrico Zimmermann	3	m	Waffenschmied	510	boese
+16	Irene Hutmacher	1	w	Haendler	770	boese
+Es kommen falsche Zeilen raus.
+SELECT * FROM bewohner WHERE status = "Metzer"
+null	null	null	null	null	null	null
+Da fehlen noch ein Paar Zeilen.
+SELECT * FROM bewohner WHERE status = "Metzger"
+null	null	null	null	null	null	null
+Da fehlen noch ein Paar Zeilen.
+SELECT * FROM bewohner WHERE status = "boese"
+bewohnernr	name	dorfnr	geschlecht	beruf	gold	status
+5	Dirty Dieter	3	m	Schmied	650	boese
+6	Gerd Schlachter	2	m	Metzger	4850	boese
+7	Peter Schlachter	3	m	Metzger	3250	boese
+9	Tanja Trommler	1	w	Baecker	550	boese
+11	Dirty Doerthe	3	w	Erntehelfer	10	boese
+14	Enrico Zimmermann	3	m	Waffenschmied	510	boese
+16	Irene Hutmacher	1	w	Haendler	770	boese
+Es kommen falsche Zeilen raus.
+SELECT * FROM bewohner WHERE status = "friedlich"
+bewohnernr	name	dorfnr	geschlecht	beruf	gold	status
+1	Paul Backmann	1	m	Baecker	850	friedlich
+2	Ernst Peng	3	m	Waffenschmied	280	friedlich
+3	Rita Ochse	1	w	Baecker	350	friedlich
+4	Carl Ochse	1	m	Kaufmann	250	friedlich
+10	Peter Trommler	1	m	Schmied	600	friedlich
+12	Otto Armleuchter	2	m	Haendler	680	friedlich
+13	Fritz Dichter	3	m	Hoerbuchautor	420	friedlich
+15	Helga Rasenkopf	2	w	Haendler	680	friedlich
+17	Erich Rasenkopf	3	m	Metzger	990	friedlich
+18	Rudolf Gaul	3	m	Hufschmied	390	friedlich
+19	Anna Flysh	2	w	Metzger	2280	friedlich
+Yeah!
+SELECT * FROM bewohner WHERE status = "friedlich" AND beruf = "Waffenschmied"
+bewohnernr	name	dorfnr	geschlecht	beruf	gold	status
+2	Ernst Peng	3	m	Waffenschmied	280	friedlich
+Yeah!
+SELECT * FROM bewohner WHERE status = "friedlich" AND beruf = "%schmied"
+null	null	null	null	null	null	null
+Da fehlen noch ein Paar Zeilen.
+SELECT * FROM bewohner WHERE status = "friedlich" AND beruf LIKE "%schmied"
+bewohnernr	name	dorfnr	geschlecht	beruf	gold	status
+2	Ernst Peng	3	m	Waffenschmied	280	friedlich
+10	Peter Trommler	1	m	Schmied	600	friedlich
+18	Rudolf Gaul	3	m	Hufschmied	390	friedlich
+Yeah!
+INSERT INTO bewohner (name, dorfnr, geschlecht, beruf, gold, status) VALUES ('Fremder', 1, '?', '?', 0, '?')
+Yeah!
+INSERT INTO bewohner(name, dorfnr, geschlecht, beruf, gold, status) VALUES ("Gandalf", 1, "m", "Zauberer", 0, "friedlich")
+Was machst du da eigentlich?
+INSERT INTO bewohner(name, dorfnr, geschlecht, beruf, gold, status) VALUES ("Fremder", 1, "?", "?", 0, "?")
+Was machst du da eigentlich?
+INSERT INTO bewohner(name, dorfnr, geschlecht, beruf, gold, status) VALUES ("Fremder", 1, "?", "?", 0, "?")
+Was machst du da eigentlich?
+SELECT Bewohnernr FROM Bewohner WHERE name = "Fremder" 
+bewohnernr
+20
+22
+23
+Yeah!
+SELECT gold FROM Bewohner WHERE name = "Fremder" 
+gold
+0
+0
+0
+Yeah!
+SELECT gegenstand(*, WHERE besitzer = null)
+Fehler: near ",": syntax error
+SELECT gegenstand WHERE besitzer = null
+Fehler: no such column: gegenstand
+SELECT gegenstand(*,*) WHERE besitzer = null
+Fehler: near ",": syntax error
+SELECT gegenstand() WHERE besitzer = null
+Fehler: no such function: gegenstand
+SELECT gegenstand(*,  null)
+Fehler: near ",": syntax error
+SELECT gegenstand WHERE besitzer = null
+Fehler: no such column: gegenstand
+SELECT * FROM gegenstand WHERE besitzer = null
+null	null
+Da fehlen noch ein Paar Zeilen.
+SELECT * FROM gegenstand WHERE besitzer IS null
+gegenstand	besitzer
+Teekanne	null
+Ring	null
+Kaffeetasse	null
+Eimer	null
+Pappkarton	null
+Gluehbirne	null
+Yeah!
+UPDATE gegenstand SET besitzer = 20 WHERE gegenstand = 'Kaffeetasse'
+Yeah!
+UPDATE gegenstand SET besitzer = 20 WHERE besitzer = null
+Oh oh... Entweder du hast zu viele oder zu wenige Änderungen durchgeführt.
+UPDATE gegenstand SET besitzer = 20 WHERE gegenstand = "Kaffeetasse"
+Oh oh... Entweder du hast zu viele oder zu wenige Änderungen durchgeführt.
+UPDATE gegenstand SET besitzer = 20 WHERE gegenstand = "Kaffeetasse"
+Oh oh... Entweder du hast zu viele oder zu wenige Änderungen durchgeführt.
+UPDATE gegenstand SET besitzer = 20 WHERE gegenstand = "Kaffeetasse"
+Oh oh... Entweder du hast zu viele oder zu wenige Änderungen durchgeführt.
+UPDATE gegenstand SET besitzer = 20 WHERE gegenstand = "Kaffeetasse"
+Oh oh... Entweder du hast zu viele oder zu wenige Änderungen durchgeführt.
+UPDATE gegenstand SET besitzer = 20 WHERE gegenstand = "Kaffeetasse"
+Oh oh... Entweder du hast zu viele oder zu wenige Änderungen durchgeführt.
+UPDATE gegenstand SET besitzer = 20 WHERE besitzer IS null
+Yeah!
+SELECT gegenstand FROM besitzer = 20
+Fehler: near "=": syntax error
+SELECT gegenstand FROM besitzer IS 20
+Fehler: near "IS": syntax error
+SELECT gegenstand WHERE besitzer = 20
+Fehler: no such column: gegenstand
+SELECT * WHERE besitzer = 20
+Fehler: no tables specified
+SELECT * from gegenstand WHERE besitzer = 20
+gegenstand	besitzer
+Teekanne	20
+Ring	20
+Kaffeetasse	20
+Eimer	20
+Pappkarton	20
+Gluehbirne	20
+Yeah!
+SELECT * from bewohner WHERE beruf = "haendler" OR beruf = "Kaufmann"
+bewohnernr	name	dorfnr	geschlecht	beruf	gold	status
+4	Carl Ochse	1	m	Kaufmann	250	friedlich
+Da fehlen noch ein Paar Zeilen.
+SELECT * from bewohner WHERE beruf = "Haendler" OR beruf = "Kaufmann"
+bewohnernr	name	dorfnr	geschlecht	beruf	gold	status
+4	Carl Ochse	1	m	Kaufmann	250	friedlich
+12	Otto Armleuchter	2	m	Haendler	680	friedlich
+15	Helga Rasenkopf	2	w	Haendler	680	friedlich
+16	Irene Hutmacher	1	w	Haendler	770	boese
+Es kommen zu viele Zeilen raus.
+SELECT * from bewohner WHERE status = "friedlich" AND beruf = "Haendler" OR beruf = "Kaufmann"
+bewohnernr	name	dorfnr	geschlecht	beruf	gold	status
+4	Carl Ochse	1	m	Kaufmann	250	friedlich
+12	Otto Armleuchter	2	m	Haendler	680	friedlich
+15	Helga Rasenkopf	2	w	Haendler	680	friedlich
+Yeah!
+UPDATE gegenstand SET besitzer = 15 WHERE gegenstand = "Ring" AND gegenstand = "Teekanne"
+Oh oh... Entweder du hast zu viele oder zu wenige Änderungen durchgeführt.
+UPDATE gegenstand SET besitzer = 15 WHERE gegenstand IS "Ring" AND gegenstand IS "Teekanne"
+Oh oh... Entweder du hast zu viele oder zu wenige Änderungen durchgeführt.
+UPDATE gegenstand SET besitzer = 15 WHERE gegenstand = "Ring" 
+Oh oh... Entweder du hast zu viele oder zu wenige Änderungen durchgeführt.
+UPDATE gegenstand SET besitzer = 15 WHERE gegenstand = "Ring" AND gegenstand = "Teekanne"
+Oh oh... Entweder du hast zu viele oder zu wenige Änderungen durchgeführt.
+SELECT bewohner WHERE bewohnernr = 15
+Fehler: no such column: bewohner
+SELECT * FROM bewohner WHERE bewohnernr = 15
+bewohnernr	name	dorfnr	geschlecht	beruf	gold	status
+15	Helga Rasenkopf	2	w	Haendler	680	friedlich
+Oh oh... Entweder du hast zu viele oder zu wenige Änderungen durchgeführt.
+UPDATE gegenstand SET besitzer = 15 WHERE gegenstand = "Ring" OR gegenstand = "Teekanne"
+Yeah!
+UPDATE bewohner SET gold = gold + 120 WHERE bewohnernr = 20
+Yeah!
+UPDATE bewohner SET gold = gold + 120 WHERE bewohnernr = 20
+Oh oh... Entweder du hast zu viele oder zu wenige Änderungen durchgeführt.
+UPDATE bewohner SET gold = gold + 120 WHERE bewohnernr = 20
+Oh oh... Entweder du hast zu viele oder zu wenige Änderungen durchgeführt.
+UPDATE name SET name = "Gandalf" WHERE bewohnernr = 20
+Fehler: no such table: name
+UPDATE bewohner SET name = "Gandalf" WHERE bewohnernr = 20
+Oh oh... Entweder du hast zu viele oder zu wenige Änderungen durchgeführt.
+SELECT bewohner update name SET name = "Gandalf" WHERE bewohnernr = 20
+Fehler: near "update": syntax error
+SELECT bewohner UPDATE name SET name = "Gandalf" WHERE bewohnernr = 20
+Fehler: near "UPDATE": syntax error
+UPDATE bewohner SET name = "Gandalf" WHERE bewohnernr = 20
+Oh oh... Entweder du hast zu viele oder zu wenige Änderungen durchgeführt.
+UPDATE bewohner SET name = "Gandalf" WHERE name = "FREMDER"
+Oh oh... Entweder du hast zu viele oder zu wenige Änderungen durchgeführt.
+SELECT name FROM bewohner where bewohnernr = 20 SET name = "Gandalf"
+Fehler: near "SET": syntax error
+SELECT name FROM bewohner where name = "Fremder" SET name = "Gandalf"
+Fehler: near "SET": syntax error
+UPDATE name FROM bewohner where name = "Fremder" SET name = "Gandalf"
+Fehler: near "FROM": syntax error
+UPDATE name SET name = "GANDALF" 
+Fehler: no such table: name
+UPDATE name SET name = "GANDALF" WHERE name = "Fremder"
+Fehler: no such table: name
+UPDATE bewohner SET name = "GANDALF" WHERE name = "Fremder"
+Yeah!
+ORDER BY gold DESC SELECT * FROM beruf WHERE beruf = "baecker" and status = "friedlich"
+Erlaubt sind nur SELECT-, INSERT-, UPDATE- und DELETE-Anfragen.
+SELECT * FROM beruf WHERE beruf = "baecker" and status = "friedlich"
+Fehler: no such table: beruf
+SELECT * FROM bewohner WHERE beruf = "baecker" and status = "friedlich"
+null	null	null	null	null	null	null
+Da fehlen noch ein Paar Zeilen.
+SELECT * FROM bewohner WHERE beruf = "Baecker" and status = "friedlich"
+bewohnernr	name	dorfnr	geschlecht	beruf	gold	status
+1	Paul Backmann	1	m	Baecker	850	friedlich
+3	Rita Ochse	1	w	Baecker	350	friedlich
+Da fehlen noch ein Paar Zeilen.
+SELECT * FROM bewohner WHERE beruf = "Baecker" and status = "friedlich" ORDER by gold DESC
+bewohnernr	name	dorfnr	geschlecht	beruf	gold	status
+1	Paul Backmann	1	m	Baecker	850	friedlich
+3	Rita Ochse	1	w	Baecker	350	friedlich
+Da fehlen noch ein Paar Zeilen.
+SELECT * FROM bewohner WHERE beruf = "Baecker" and status = "friedlich" ORDER by gold 
+bewohnernr	name	dorfnr	geschlecht	beruf	gold	status
+3	Rita Ochse	1	w	Baecker	350	friedlich
+1	Paul Backmann	1	m	Baecker	850	friedlich
+Da fehlen noch ein Paar Zeilen.
+SELECT * FROM bewohner WHERE beruf = "Baecker" and status = "friedlich" ORDER by gold DESC
+bewohnernr	name	dorfnr	geschlecht	beruf	gold	status
+1	Paul Backmann	1	m	Baecker	850	friedlich
+3	Rita Ochse	1	w	Baecker	350	friedlich
+Da fehlen noch ein Paar Zeilen.
+SELECT * FROM bewohner WHERE beruf = "Baecker" ORDER by gold DESC
+bewohnernr	name	dorfnr	geschlecht	beruf	gold	status
+1	Paul Backmann	1	m	Baecker	850	friedlich
+9	Tanja Trommler	1	w	Baecker	550	boese
+3	Rita Ochse	1	w	Baecker	350	friedlich
+Yeah!
+UPDATE bewohner SET gold = gold + 100 - 150 WHERE bewohnernr = 20
+Yeah!
+INSERT INTO gegenstand (gegenstand, besitzer) VALUES ('Schwert', 20)
+Yeah!
+INSERT INTO gegenstand (gegenstand, besitzer) VALUES ("Schwert", 20)
+Fehler: UNIQUE constraint failed: gegenstand.gegenstand
+SELECT * from bewohner WHERE beruf = "Pilot"
+bewohnernr	name	dorfnr	geschlecht	beruf	gold	status
+8	Arthur Schneiderpaule	2	m	Pilot	490	gefangen
+Yeah!
+SELECT dorf.name FROM dorf, bewohner WHERE dorf.dorfnr = bewohner.dorfnr AND bewohner.name = 'Dirty Dieter'
+name
+Zwiebelhausen
+Yeah!
