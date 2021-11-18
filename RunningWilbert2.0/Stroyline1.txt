@@ -1,0 +1,14 @@
+Lauf durch langen Gang, Donnergrollen ( wei schritte) immer lauter,
+Text auf Screen:""
+
+Weiße(1) + Schwarze(2) Kapuzengestalt/Engel[wirklich groß, doppelt zu Player(?)] tauchen auf, wie im Kampf, im hintergrund Tür
+Gespräch:
+2:"He is to good for hell, can`t take him in!"
+1:"Neither is he good enough for the promised land, give me a solution!"
+
+Player tritt auf Lockere gewegplatte --> Gestalten bemerken ihn
+
+WEis & schwarz drehen sich
+1+2: "Mortal, welcome to....yeah where ever we are"
+1: "As everyone before you, you shall be juged by us, who we are the final justice!"
+2:" Good and bad, you ethical people talk about it, 
