@@ -39,6 +39,6 @@ public class SizedPanel extends JPanel {
 	}
 	
 	public static void main (String [] args) {
-		ShowInFrame.show(new SizedPanel());
+		ShowInFrame.show("HELLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO there", new SizedPanel());
 	}
 }
