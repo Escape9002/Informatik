@@ -1,4 +1,4 @@
-package com.Antonio.JavaWillSpielen;
+package com.Antonio.util;
 
 import java.util.Random;
 
