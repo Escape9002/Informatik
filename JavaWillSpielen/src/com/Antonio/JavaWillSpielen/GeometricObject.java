@@ -25,6 +25,7 @@ public class GeometricObject {
 		this.height = height;
 		this.pos = pos;
 		this.width = width;
+		this.color = color;
 
 		if (width < 0) {
 			width = -width;

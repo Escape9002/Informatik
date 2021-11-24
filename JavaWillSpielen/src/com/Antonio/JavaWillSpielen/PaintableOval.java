@@ -10,6 +10,7 @@ public class PaintableOval extends SimpleOval implements Paintable{
 	}
 
 	public void paintTo(Graphics g) {
+		g.setColor(color);
 		g.fillOval((int) pos.x, (int) pos.y, (int) width, (int) height);
 	}
 }

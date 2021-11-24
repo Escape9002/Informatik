@@ -10,6 +10,7 @@ public class PaintableRectangle extends SimpleRectangle implements Paintable{
 	}
 
 	public void paintTo(Graphics g) {
+		g.setColor(color);
 		g.fillRect((int) pos.x, (int) pos.y, (int) width, (int) height);
 	}
 }
