@@ -1,12 +1,22 @@
 package com.Antonio.JavaWillSpielen;
 
+import java.awt.Color;
+
 public class SimpleTriangle extends GeometricObject{
+	public SimpleTriangle(double w, double h, Vertex pos, Color color) {
+		super(w, h, pos, color);
+	}
+	
 	public SimpleTriangle(double w, double h, Vertex pos) {
-		super(w, h, pos);
+		super(w, h, pos, new Color(0,0,0));
 	}
 
 	public SimpleTriangle(double w, double h, double x, double y) {
-		super(w, h, new Vertex(x, y));
+		super(w, h, new Vertex(x, y), new Color (0,0,0));
+	}
+	
+	public SimpleTriangle(double w, double h, double x, double y, Color color) {
+		super(w, h, new Vertex(x, y), color);
 	}
 
 
