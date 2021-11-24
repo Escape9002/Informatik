@@ -1,10 +1,13 @@
 package com.Antonio.JavaWillSpielen;
 
+import java.awt.Color;
+
 public class GeometricObject {
 
 	public Vertex pos;
 	public double width;
 	public double height;
+	public Color color;
 
 	public double getWidth() {
 		return width;
@@ -18,7 +21,7 @@ public class GeometricObject {
 		return pos;
 	}
 
-	public GeometricObject(double width, double height, Vertex pos) {
+	public GeometricObject(double width, double height, Vertex pos, Color color) {
 		this.height = height;
 		this.pos = pos;
 		this.width = width;
@@ -35,7 +38,7 @@ public class GeometricObject {
 	}
 
 	public GeometricObject(double width, double height) {
-		this(width, height, new Vertex(0, 0));
+		this(width, height, new Vertex(0, 0), Color.red);
 	}
 
 	public GeometricObject(double w) {
@@ -47,7 +50,7 @@ public class GeometricObject {
 	}
 	
 	public GeometricObject(Vertex pos) {
-		this(0,0,pos);
+		this(0,0,pos, Color.red);
 	}
 
 	public String toString() {

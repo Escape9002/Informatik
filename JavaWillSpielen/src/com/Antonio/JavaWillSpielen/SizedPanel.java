@@ -14,11 +14,11 @@ public class SizedPanel extends JPanel {
 
 	Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 	
-	//int preferredWidth = 400;
-	//int preferredHeight = 300;
+	int preferredWidth = 400;
+	int preferredHeight = 300;
 	
-	int preferredWidth = screenSize.width;
-	int preferredHeight = screenSize.height;
+//	int preferredWidth = screenSize.width;
+//	int preferredHeight = screenSize.height;
 	
 	public SizedPanel(int w, int h) {
 		preferredWidth = w;
@@ -39,6 +39,7 @@ public class SizedPanel extends JPanel {
 	}
 	
 	public static void main (String [] args) {
-		ShowInFrame.show("HELLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO there", new SizedPanel());
+		ShowInFrame.show("Hello there", new SizedPanel());
+		
 	}
 }
