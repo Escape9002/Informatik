@@ -14,7 +14,11 @@ public class MyImage {
 
 	public Image get() {
 		if (img == null) {
-			img = Toolkit.getDefaultToolkit().createImage(getClass().getClassLoader().getResource(name));
+			img = Toolkit.getDefaultToolkit().
+					createImage(getClass().
+							getClassLoader().
+							getResource(name));
+			
 		}
 		return img;
 	}
