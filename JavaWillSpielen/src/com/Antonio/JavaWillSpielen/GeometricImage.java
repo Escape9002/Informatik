@@ -32,9 +32,9 @@ public class GeometricImage extends GeometricObject implements Paintable {
 	}
 	
 	public static void main(String [] args) {
-		 GeometricImage gi = new GeometricImage("biene.png",10,10);
-		 GeometricImage gi2 = new GeometricImage("mage.png",10,10);
-		 GeometricImage gi3 = new GeometricImage("bat.png",10,10);
+		 GeometricImage gi = new GeometricImage("biene.png",20,10);
+		 GeometricImage gi2 = new GeometricImage("mage.png",30,10);
+		 GeometricImage gi3 = new GeometricImage("bat.png",100,10);
 		 
 		 System.out.println(gi.width);
 		 System.out.println(gi.height);
