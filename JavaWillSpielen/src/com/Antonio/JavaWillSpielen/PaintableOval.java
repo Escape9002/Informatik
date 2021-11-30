@@ -3,10 +3,14 @@ package com.Antonio.JavaWillSpielen;
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class PaintableOval extends SimpleOval implements Paintable{
+public class PaintableOval extends SimpleOval implements Paintable {
 
-	public PaintableOval (double width, double height, double x, double y, Color color) {
-		super (width, height, x,y, color);
+	public PaintableOval(double width, double height, double x, double y, Color color) {
+		super(width, height, x, y, color);
+	}
+
+	public PaintableOval(double width, double height, double x, double y) {
+		super(width, height,  x,  y, Color.red);
 	}
 
 	public void paintTo(Graphics g) {
