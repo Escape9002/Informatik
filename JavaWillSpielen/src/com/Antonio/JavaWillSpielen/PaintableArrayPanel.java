@@ -11,6 +11,8 @@ public class PaintableArrayPanel extends SizedPanel {
 	
 	Paintable[] ps;
 	
+	
+	
 	public PaintableArrayPanel (Paintable[] pa) {
 		ps = pa;
 	}
@@ -21,7 +23,7 @@ public class PaintableArrayPanel extends SizedPanel {
 	
 	
 	public static void main(String[] args) {
-
+		
 	}
 
 }
