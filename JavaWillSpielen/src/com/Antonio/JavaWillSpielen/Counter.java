@@ -19,6 +19,7 @@ int i = 0;
 		b.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				i++;
+				l.setText("" + i);
 			}
 		});
 		{// Empty
@@ -28,6 +29,7 @@ int i = 0;
 
 			public void actionPerformed(ActionEvent e) {
 				i--;
+				l.setText("" + i);
 			}
 		});
 		{// Empty
@@ -37,12 +39,13 @@ int i = 0;
 
 			public void actionPerformed(ActionEvent e) {
 				i = 0;
+				l.setText("" + i);
 			}
 		});
 		{// Empty
 		}
 
-		l.setText("" + i);
+		//l.setText("" + i); why this line not working???
 
 	}
 
