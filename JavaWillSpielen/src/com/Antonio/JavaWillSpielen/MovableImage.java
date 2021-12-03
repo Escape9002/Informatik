@@ -44,25 +44,23 @@ public class MovableImage extends GeometricImage implements GameObject {
 
 	@Override
 	public boolean isLargerThan(GameObject that) {
-		// TODO Auto-generated method stub
-		return false;
+		return getWidth() * getHeight() > that.getWidth() * that.getHeight();
 	}
 
-	@Override
 	public boolean isLeftOf(GameObject that) {		
 		return this.getPos().x+this.getWidth() < that.getPos().x;
 	}
 
-	@Override
 	public boolean isAbove(GameObject that) {
-		
 		return this.getPos().y+this.getHeight() < that.getPos().y;
 	}
 
-	@Override
 	public boolean touches(GameObject that) {
-		// TODO Auto-generated method stub
-		return false;
+		if (this.isLeftOf(that)) return false;
+		if (that.isLeftOf(this)) return false;
+		if (this.isAbove(that)) return false;
+		if (that.isAbove(this)) return false;
+		return true;
 	}
 
 }

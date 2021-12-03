@@ -2,14 +2,17 @@ package com.Antonio.JavaWillSpielen;
 
 import java.awt.Color;
 
+@SuppressWarnings("unused")
 public class TestVertex {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
+	/*
 		GeometricObject o1 = new GeometricObject(17, 4, new Vertex(42, 23), Color.gray);
 		GeometricObject o2 = new GeometricObject(17, 4);
 		GeometricObject o3 = new GeometricObject(17);
 		GeometricObject o4 = new GeometricObject();
-
+*/
 		SimpleOval ov1 = new SimpleOval(17, 4, new Vertex(42, 23));
 		SimpleRectangle rect1 = new SimpleRectangle(17, 4, new Vertex(42, 23));
 		SimpleRectangle rect2 = new SimpleRectangle(17, 4, new Vertex(42, 23));
