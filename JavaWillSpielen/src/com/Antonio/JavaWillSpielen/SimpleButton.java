@@ -1,11 +1,11 @@
 package com.Antonio.JavaWillSpielen;
 
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import com.Antonio.util.ShowInFrame;
-
 
 public class SimpleButton extends JPanel {
 
@@ -21,8 +21,8 @@ public class SimpleButton extends JPanel {
 	
 	
 	JButton b2 = new JButton ("Helpdklf öognhzulfgvbuk");
-	
-	
+
+
 	SimpleButton(){	
 		add(l);
 		add(b);
@@ -34,6 +34,7 @@ public class SimpleButton extends JPanel {
 		
 	}
 
+	
 	public static void main(String [] args) {
 		ShowInFrame.show(new SimpleButton());
 	}

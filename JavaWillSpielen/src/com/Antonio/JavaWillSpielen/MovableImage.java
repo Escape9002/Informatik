@@ -25,24 +25,20 @@ public class MovableImage extends GeometricImage implements GameObject {
 	}
 	
 
-	@Override
 	public void move() {
 		pos.addMod(deltaPos);
 		
 	}
 
-	@Override
 	public void turn() {
 		deltaPos.skalarMultMod(-1);
 	}
 
-	@Override
 	public Vertex getDeltaPos(Vertex v) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
 	public boolean isLargerThan(GameObject that) {
 		return getWidth() * getHeight() > that.getWidth() * that.getHeight();
 	}
