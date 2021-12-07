@@ -44,8 +44,8 @@ public class Vertex {
 
 	public void normalize() {
 		double factor = this.length();
-		this.x = x/factor;
-		this.y= y/factor;
+		this.x = x / factor;
+		this.y = y / factor;
 	}
 
 	public void addMod(Vertex vertex) {

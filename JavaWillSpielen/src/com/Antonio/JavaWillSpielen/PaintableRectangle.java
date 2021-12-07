@@ -3,14 +3,14 @@ package com.Antonio.JavaWillSpielen;
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class PaintableRectangle extends SimpleRectangle implements Paintable{
+public class PaintableRectangle extends SimpleRectangle implements Paintable {
 
-	public PaintableRectangle (double width, double height, double x, double y, Color color) {
-		super (width, height, x,y, color);
+	public PaintableRectangle(double width, double height, double x, double y, Color color) {
+		super(width, height, x, y, color);
 	}
 
 	public PaintableRectangle(double width, double height, double x, double y) {
-		super (width, height, x,y, Color.red);
+		super(width, height, x, y, Color.red);
 	}
 
 	public void paintTo(Graphics g) {

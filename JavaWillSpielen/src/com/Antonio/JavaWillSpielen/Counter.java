@@ -40,7 +40,7 @@ public class Counter extends SimpleButton {
 	private static final long serialVersionUID = 1L;
 
 	int i = 0;
-	
+
 	public Counter() {
 
 		b.addActionListener(new ActionListener() {
@@ -48,7 +48,7 @@ public class Counter extends SimpleButton {
 				i--;
 				l.setText("" + i);
 			}
-			
+
 		});
 
 		b1.addActionListener(new ActionListener() {
@@ -70,7 +70,6 @@ public class Counter extends SimpleButton {
 		// l.setText("" + i); why this line not working???
 
 	}
-	
 
 	public static void main(String[] args) {
 		ShowInFrame.show(new Counter());

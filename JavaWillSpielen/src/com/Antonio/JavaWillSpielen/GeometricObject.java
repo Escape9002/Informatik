@@ -45,13 +45,13 @@ public class GeometricObject {
 	public GeometricObject(double w) {
 		this(w, w);
 	}
-	
+
 	public GeometricObject() {
 		this(10);
 	}
-	
+
 	public GeometricObject(Vertex pos) {
-		this(0,0,pos, Color.red);
+		this(0, 0, pos, Color.red);
 	}
 
 	public String toString() {
@@ -67,10 +67,7 @@ public class GeometricObject {
 	}
 
 	public boolean contains(Vertex v) {
-		return v.x >= pos.x 
-				&& v.x <= pos.x + width 
-				&& v.y >= pos.y 
-				&& v.y <= pos.y + height;
+		return v.x >= pos.x && v.x <= pos.x + width && v.y >= pos.y && v.y <= pos.y + height;
 	}
 
 	public boolean isLargerThan(GeometricObject that) {
@@ -92,12 +89,9 @@ public class GeometricObject {
 	public boolean equals(Object thatObject) {
 		if (thatObject instanceof GeometricObject) {
 			GeometricObject that = (GeometricObject) thatObject;
-			return that.width == this.width
-					&& this.height == that.height 
-					&& this.pos.equals(that.pos);
+			return that.width == this.width && this.height == that.height && this.pos.equals(that.pos);
 		}
 		return false;
 	}
 
-	
 }
