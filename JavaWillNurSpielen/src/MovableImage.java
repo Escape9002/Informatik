@@ -60,7 +60,7 @@ public class MovableImage extends GeometricImage implements GameObject {
 	}
 
 	public void turn() {
-		deltaPos.skalarMultMod(-1);
+		deltaPos.skalarMultMod(-1.00);
 	}
 
 }
