@@ -11,6 +11,11 @@ public class MovableImage extends GeometricImage implements GameObject {
 	public void setDeltaPos(Vertex v) {
 		deltaPos = v;
 	}
+	
+	public void setDeltaPos(int x, int y) {
+		deltaPos = new Vertex(x,y);
+	}
+	
 
 	public MovableImage(String name, double x, double y) {
 		super(name, x, y);
