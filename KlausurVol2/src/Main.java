@@ -16,9 +16,10 @@ public class Main {
 			@Override
 			public void greeting(String name) {
 				System.out.println("hello " + name);
+				rechnen();
 			}
 			
-			public void rechnen() {
+			public void rechnen() {									// wie rufe ich diese Funktion auf? (alleine, ohne greeting
 				System.out.println(1+1);
 			}
 			
