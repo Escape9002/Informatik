@@ -1,3 +1,5 @@
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Main {
 	
@@ -19,7 +21,7 @@ public class Main {
 				rechnen();
 			}
 			
-			public void rechnen() {									// wie rufe ich diese Funktion auf? (alleine, ohne greeting
+			public void rechnen() {									// wie rufe ich diese Funktion auf? (alleine, ohne greeting)
 				System.out.println(1+1);
 			}
 			
@@ -34,7 +36,14 @@ public class Main {
 			
 		});
 		
-		
+		Player four = new Player("cat", new Languages() {
+			
+			@Override
+			public void greeting(String name) {
+				System.out.println("guten Tag " + name);
+			}
+			
+		});
 
 	}
 
