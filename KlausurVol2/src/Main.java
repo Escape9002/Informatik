@@ -47,5 +47,11 @@ public class Main {
 		});
 
 	}
+	
+	new Rolf() {
+		public void speech() {
+			System.out.println();
+		}
+	}
 
 }
