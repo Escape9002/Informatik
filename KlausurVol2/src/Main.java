@@ -21,6 +21,7 @@ public class Main {
 				rechnen();
 			}
 			
+			
 			public void rechnen() {									// wie rufe ich diese Funktion auf? (alleine, ohne greeting)
 				System.out.println(1+1);
 			}
