@@ -1,12 +1,11 @@
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class Main {
+public class Main{
 	
 	public static void main(String[] args) {
 		Player one = new Player("Gandalf", 	new Setting() {
 			
-			@Override
 			public void greeting(String name) {
 				System.out.println("bonjour " + name);
 			}
@@ -45,13 +44,10 @@ public class Main {
 			}
 			
 		});
+		
+		MouseHandler mouse = new MouseHandler();
+		KeyHandler key = new KeyHandler();
+		WindowHandler win = new WindowHandler(mouse, key);
 
 	}
-	
-	new Rolf() {
-		public void speech() {
-			System.out.println();
-		}
-	}
-
 }
