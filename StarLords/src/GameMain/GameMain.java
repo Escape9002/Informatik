@@ -8,6 +8,7 @@ import java.util.Random;
 
 import Visuals.*;
 import Visuals.Handler;
+import music.MusicPlayer;
 import Entities.*;
 
 public class GameMain extends Canvas implements Runnable{
@@ -25,6 +26,8 @@ public class GameMain extends Canvas implements Runnable{
 	private Spawn spawner;
 	
 	public GameMain() {
+		MusicPlayer player = new MusicPlayer();
+		player.play("music/evolution.wav");
 		
 		handler = new Handler();
 		
@@ -37,7 +40,7 @@ public class GameMain extends Canvas implements Runnable{
 		
 		r= new Random();
 		
-		handler.addObject(new Story(WIDTH/2-32,HEIGHT/2-32, ID.Story, handler, hud));
+		handler.addObject(new Story(0,0, ID.Story, handler, hud));
 		
 		handler.addObject(new Player(WIDTH/2-32,HEIGHT/2-32, ID.Player, handler));
 		
@@ -116,6 +119,7 @@ public class GameMain extends Canvas implements Runnable{
 	        if(System.currentTimeMillis() - timer > 1000) {
 	            timer += 1000;
 	            System.out.println("FPS: " + frames);
+	            System.out.println(hud.getScore());
 	            frames = 0;
 	        }
 	    }

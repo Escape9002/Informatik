@@ -5,13 +5,13 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 public class HUD {
-	Handler handler;
+	//Handler handler;
 	
 	public static float HEALTH = 100;
 	
 	
 	private  int score = 0;
-	private  int level = 1;
+	private  int level = 0;
 	
 	public boolean speaking = true;
 
