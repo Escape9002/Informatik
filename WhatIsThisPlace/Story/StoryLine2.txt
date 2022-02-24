@@ -1,0 +1,62 @@
+Storyline- Version 1	
+Wir befinden uns im 18.Jahrhundert. Im Zeitalter der Burgen, Ritter, Drachen und der Magie. Die Stadt Escuria  liegt am Rande eines riesigen Waldes, eines Waldes, 
+der eine Höhle beherbergt. In dieser Höhle befindet sich der Eingang zur Unterwelt. . Doch die Bewohner Escurias sind nicht bedroht, denn ein Pakt, der vor 
+Jahrhunderten geschlossen wurde, beschützt die Bewohner. Zumindest solange, bis sich die Tore des Todes öffnet und die Seelen entfliehen… Nun liegt es an den 
+Dorfbewohnern diese Seelen einzusammeln, ansonsten bekommen die Dorfbewohner den Zorn des Todes zu spüren, der sich dann anderweitig seine Seelen besorgt…
+_________________________________________________________________________________________________________________________________
+"Grundstock an Ideen"
+Whole Game:
+Andere Respektieren + Helfen
+Leben (vs / und) Tod --> Spieler Aktionen haben Auswirkungen!
+	Helfen / Verneinen
+		Wütende Seelen / böser|| Netter Gevatter Tod
+			Seelen könnten Fehler addressieren + "Merkmal" droppen --> Folge der Spieler-Aktion verdeutlichen
+Entities können interagieren + bauen spielverlauf auf. Totes Entitie bedeutet Spielverlaufsänderung
+
+Boss:
+Aktionen auswerten --> Analyse/ Einordnung des Spielers?
+Zusammenfassung des Spielverlaufs (siehe Analsye?)
+DENY: große Strafe, frage warum?, bezeugung der Weltzerstörung + Game Crash
+HELP: Befürworten, Ausweg aus GamePlot zeigen, Spieler soll auf sich selbst auch achten?
+BOTH: Ausweg zeigen, Outro zeigt getötete + GeisterForm
+_________________________________________________________________________________________________________________________________
+"Setting"
+Ort: Vorzugsweise Höhle / confined space [einfacher zu programmieren + designen] oder Wald mit Laubbäumen und Vögeln und Rehen mit Höhlen und  Schluchten mit einem unterirdischen Fluss
+Leben:freundlich/ farbig, manchmal braungrau, schwarzweis? || je mehr tote, desto grauer die Grafik
+Tod: schwarzweis + rot, grelles Licht? map Invertiert? 
+Entities: Menschen/ Fantasiewesen ; Geister ; Tod (ein schöner, Mann mit  schulterlangen schwarzen Haaren,schwarzen Flügeln, (damit die Leute verwirrt sind am Anfang), langes Schwert an der Seite)
+Zeit: Mittelalter(düster mit Fantasywesen und alten Kirchen und Burgen) 
+_________________________________________________________________________________________________________________________________
+"Character-Def" [Charactere in Chronologischer Reihenfolge][1: Problem ; NO||YES: Aufgaben annahme]
+Beth(hat Familie; versorgt sie]:
+1: überarbeitet, fragt nach Kinderbetreuung
+NO: Familie verhungert, zuerst Beth (fällt um?); Effekt: Dorf "schließt Türen", alles zukünftige obrflächlich
+YES: Kinderbetreunung: Versteck-Spiel, Rennen
+
+Yero(Kind Beth):
+1: stark wechselhaft ( fröhlich, schnell || Sinn des Lebens?)
+NO: Hat keinen Sinn: Beth kommt, bedankt, Yero ist matt / bewegt sich langsam [Yero wird stärkster Böser Geist?)
+YES: Hat Sinn: Beth kommt, Yero fröhlich/Schnelle Bewegung, gibt Item (Coins) an Spieler; Spieler zieht weiter ins Dorf
+
+Spieler erhält Auftrag in der Nähe des Berges. Aufbruch!
+
+"Obdachlose"/Schwache Schwester+ Bruder:
+1: Überfallen Spieler, Hungern // Geld geben und Helfen 1||0?
+NO: Beide 1-Hit down , Droppen Karte des Dorfes || Gift in Tod --> "neue Story"
+YES: zukünftige Hilfe mit Gedicht- "Stein"(Gedichte strg +v (Autor!)) für Geisterwelt (Spoiler), geben Karte des Dorfes || Spieler stirbt durch Skorpion--> Geisterwelt
+
+CUTSCENE:
+Alles Schwarzweiß, Tod kommt ins Bild. Tippt den Leichnam an, Geist erhebt sich, Tod: ( fragt ob man Dorf ein letztes mal helfen will)
+NO: Tod durchbohrt Geißt mit roter Stichflamme, ( Analyse des Spielers + Game Crash)
+YES: WEißer Bildschirm, dann aufwachen vor Tunneleingang. Plötzlich sieht Spieler die Geister; Zukünftiger Auftrag: Geister in Höhle führen/ töten
+
+Geister:
+Stellen teils Dorfbewohner da, teils unbekannte; immer stark verzerrt, schleim klumpen
+Führen: Attacken ausweichen + Geist erzählung anhören + richtig Antworten
+Töten: Spieler lv [Yes, das L.O.V.E. [Level of Violence]  strg c+v ^-^] steigt
+
+CUTSCENE:
+nach ~5 Geistern kommt Tod in Dorf
+erneute Entscheidung wie auf Berges
+
+

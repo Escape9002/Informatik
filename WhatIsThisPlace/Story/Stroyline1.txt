@@ -1,0 +1,43 @@
+HUD: 
+KAMPF: character oben in Mitte von front
+
+|| Lauf durch langen Gang, Donnergrollen ( wei schritte) immer lauter,
+|| Text auf Screen:""
+
+|| Weiße(1) + Schwarze(2) Kapuzengestalt/Engel[wirklich groß, doppelt zu Player(?)] tauchen auf, 
+|| wie im Kampf, im hintergrund Tür (zwei Platten links und rechts im blickfeld angedeutet)
+
+2:"He is to good for hell, can`t take him in!"
+1:"Neither is he good enough for the promised land, give me a solution!"
+
+|| Player tritt auf Lockere gewegplatte --> Gestalten bemerken ihn
+
+|| Weis & schwarz drehen sich
+1+2: "Mortal, welcome to....yeah where ever we are"
+1: "As everyone before you, you shall be juged by us, who we are the final justice!"
+2:" Good and bad, you ethical people talk about it, but your understanding doesn't go far enough..."
+
+1+2:" Your behavior...
+(1) ." was unfriendly, at least" || Zeitgleich
+(2) "going a dificult path"	 || Zeitgleich
+
+1: wisper"I thougth we talked about this..."
+2: "I wont take him in!"
+
+1+2 "We will send him down!"
+
+|| Spieler wird von beiden in die Mitte genommen und durch die Tür gestoßen,
+|| kurz leuchten zwei Platten links und Rechts rot auf, tür öffnet, fade to black
+
+|| Fade wieder auf normal, Aufploppen im Plattenhaus[poor pls], Plattenahus def: Wohnzimmer (ohne viel Zeug, Rolläden zu) | Flur direkt auf Tür zu  <-- Licht aus
+|| Gegend erkunden [gegenstände: Taschenlampe, Sonnenbrille]
+|| Auf Gang treffen auf Geist(3)[ploppt random auf, unsichtbar davor]:
+(3):" Welcome back dear!"
+<!-- Fight -->
+Geist: 
+
+<!-- Fight -->
+
+
+|| Raustreten auf Plattenbaugang (draufsicht) Querlicht von Fenstern
+ 
