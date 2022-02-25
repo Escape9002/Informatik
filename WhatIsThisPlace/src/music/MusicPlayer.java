@@ -22,7 +22,7 @@ public class MusicPlayer {
 			AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
 			Clip clip = AudioSystem.getClip();
 			clip.open(audioInput);
-			clip.start();
+			//clip.start();
 		}else {
 			JOptionPane.showMessageDialog(null, "couldnt find the file");
 		}
