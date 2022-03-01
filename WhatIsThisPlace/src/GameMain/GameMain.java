@@ -15,7 +15,7 @@ public class GameMain extends Canvas implements Runnable{
 
 	private static final long serialVersionUID = 1L;
 
-	public static final int WIDTH = 640, HEIGHT = WIDTH / 12 * 9;
+	public static final int WIDTH = 1080, HEIGHT = WIDTH / 12 * 9;
 	
 	private Thread thread;
 	private boolean running = false;
@@ -24,6 +24,8 @@ public class GameMain extends Canvas implements Runnable{
 	private Handler handler;
 	private HUD hud;
 	private Spawn spawner;
+	
+	public final static String OWNPATH = "Story/TextSheet.txt";
 	
 	public GameMain() {
 		MusicPlayer player = new MusicPlayer();
@@ -40,7 +42,7 @@ public class GameMain extends Canvas implements Runnable{
 		
 		r= new Random();
 		
-		handler.addObject(new Story(0,0, ID.Story, handler, hud));
+		handler.addObject(new Story(0,0, ID.Story, OWNPATH , handler, hud));
 		
 		handler.addObject(new Player(WIDTH/2-32,HEIGHT/2-32, ID.Player, handler));
 		

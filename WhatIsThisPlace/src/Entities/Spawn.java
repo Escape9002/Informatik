@@ -59,7 +59,7 @@ public class Spawn {
 				
 				case 9:
 					handler.clearEnemys();
-					handler.addObject(new Story(0,0, ID.Story, handler, hud));
+					handler.addObject(new Story(0,0, ID.Story, GameMain.OWNPATH,  handler, hud));
 					handler.addObject(new FirstBoss(r.nextInt(GameMain.WIDTH - 50),r.nextInt(GameMain.HEIGHT - 50), ID.FirstBoss, handler));
 				}	
 		}

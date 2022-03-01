@@ -21,18 +21,21 @@ public class Story extends GameObject{
 	Handler handler;
 	HUD hud;
 	
+	static String[] BethLines; 
+	static String[] YaroLines; 
+	static String[] SistersLines; 
+	
 
 	
-	public Story(float x, float y, ID id, Handler handler, HUD hud) {
+	public Story(float x, float y, ID id, String OwnPath, Handler handler, HUD hud) {
 		super(x,y,id);
-		
+		fileReadInit("Story/TextSheet.txt");
 		this.hud = hud;
 		this.handler = handler;
 	}
 
 	@Override
 	public void tick() {
-
 		
 	}
 
@@ -43,14 +46,14 @@ public class Story extends GameObject{
 			hud.speaking = true;
 			
 			g.setColor(Color.red);
-			g.drawString("", 150,50);
-			g.drawString("", 200, 100);
-			g.drawString("", 150, 150);
+			g.drawString(BethLines[0], 150,50);
+			g.drawString(BethLines[1], 200, 100);
+			g.drawString(BethLines[2], 150, 150);
 			
 		}else if(status(300,350)) {
 		
 			g.setColor(Color.red);
-			g.drawString("", 250,50);
+			g.drawString(YaroLines[0], 250,50);
 			
 		}else if(status(350,450)) {
 			
@@ -84,15 +87,15 @@ public class Story extends GameObject{
 		}
 	}
 	
-	public static void fileReadInit() {
-		Path path = Paths.get("Story/TextSheet.txt");
+	public static void fileReadInit(String OwnPath) {
+		Path path = Paths.get(OwnPath);
 		List<String> story = new ArrayList<>();
 		
 		try (Stream<String> stream = Files.lines(path, StandardCharsets.UTF_8)) {
 			story = stream.toList();
-			String[] BethLines = story.get(1).split(";");
-			String[] YaroLines = story.get(4).split(";");
-			String[] SistersLines = story.get(6).split(";");
+			 BethLines = story.get(1).split(";");
+			 YaroLines = story.get(3).split(";");
+			 SistersLines = story.get(5).split(";");
 			
 			//System.out.println(story.size());
 			//System.out.println(BethLines[0]);
