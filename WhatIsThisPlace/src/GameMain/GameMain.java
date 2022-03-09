@@ -42,7 +42,7 @@ public class GameMain extends Canvas implements Runnable{
 		
 		r= new Random();
 		
-		handler.addObject(new Story(0,0, ID.Story, OWNPATH , handler, hud));
+		//handler.addObject(new Story(0,0, ID.Story, OWNPATH , handler, hud));
 		
 		handler.addObject(new Player(WIDTH/2-32,HEIGHT/2-32, ID.Player, handler));
 		

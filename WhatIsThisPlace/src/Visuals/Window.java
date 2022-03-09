@@ -2,16 +2,24 @@ package Visuals;
 
 import java.awt.Canvas;
 import java.awt.Dimension;
+import java.awt.image.BufferedImage;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 import GameMain.GameMain;
 
 public class Window extends Canvas {
 	private static final long serialVersionUID = 1L;
 	
+	JFrame frame;
+	JPanel panel;
+	JLabel label;
+	
 	public Window (int width, int height, String title, GameMain GameMain) {
-		JFrame frame = new JFrame(title);
+		frame = new JFrame(title);
 		
 		frame.setPreferredSize(new Dimension(width, height));
 		frame.setMaximumSize(new Dimension(width, height));
@@ -22,7 +30,7 @@ public class Window extends Canvas {
 		frame.setLocationRelativeTo(null);
 		frame.add(GameMain);
 		frame.setVisible(true);
+		
 		GameMain.start();
 	}
-	
 }
