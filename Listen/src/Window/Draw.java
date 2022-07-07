@@ -7,6 +7,9 @@ import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import java.util.concurrent.TimeUnit;
 
+import javax.swing.JDialog;
+import javax.swing.JPanel;
+
 public class Draw extends Canvas implements Runnable {
 
 	/**
@@ -18,11 +21,11 @@ public class Draw extends Canvas implements Runnable {
 
 	private Thread thread; // "Laufzeit" erstellen || Thread eröffnen
 	private boolean running = false; // Laeuft das Spiel ? nope
-
-
+	
 	public Draw() {
 
 		new Window(WIDTH, HEIGHT, "Test", this);
+		
 
 	}
 
@@ -39,6 +42,9 @@ public class Draw extends Canvas implements Runnable {
 		for (int i = 0; i < array.length; i++) {
 			// g.fillRect(0, 0, i,array[i]);
 			g.drawLine(i, HEIGHT, i, HEIGHT - array[i]);
+			
+		
+			
 		}
 
 		try {
@@ -46,12 +52,24 @@ public class Draw extends Canvas implements Runnable {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		System.out.println("Finishes");
+
 		g.dispose();
 		bs.show();
-		
 
-		System.out.println("Finished");
+	}
+	
+	public static void consoleDraw(int[] array, int speed) {
+
+		for (int i = 0; i < array.length; i++) {
+			
+			for(int y = 0; y < array[i]; y++) {
+				System.out.print("0");
+			}
+			System.out.print("\n");
+			
+		}
+
+
 	}
 
 	public synchronized void start() {

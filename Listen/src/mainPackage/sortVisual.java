@@ -31,6 +31,7 @@ public class sortVisual {
 
 		Draw Visual = new Draw();
 		ausgabe(bubblelySort(array, Visual));
+	
 
 	}
 
@@ -77,6 +78,7 @@ public class sortVisual {
 				if (sort[y] > sort[y + 1]) {
 					swap(sort, y, y + 1);
 					Draw.draw(sort, 100, obj);
+					
 					// System.out.println(sort.length);
 				}
 
@@ -84,12 +86,10 @@ public class sortVisual {
 		}
 
 		// System.out.println(System.nanoTime() - startTimer);
-
+		Draw.consoleDraw(sort, 100);
 		return sort;
 
 	}
-	
-	
 
 	public static int[] swap(int[] array, int i, int y) {
 		int n = array[i];
