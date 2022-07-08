@@ -1,10 +1,9 @@
 package mainPackage;
 
-import java.awt.Canvas;
+import java.awt.Graphics;
 import java.util.Random;
 
 import Window.Draw;
-import Window.Window;
 
 public class sortVisual {
 
@@ -13,21 +12,17 @@ public class sortVisual {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	static int[] array = new int[50]; // zu sortierendes Array
+	static int[] array = new int[500]; // zu sortierendes Array
 
 	public sortVisual() {
 
 	}
+	
+
 
 	public static void main(String[] args) {
 
-		Random r = new Random();
-
-		for (int i = 0; i < array.length; i++) {
-			array[i] = r.nextInt(0, 400);
-			System.out.print(array[i] + " | ");
-			// array[i] = i;
-		}
+		array = formArray(array, 0,400,true);
 
 		Draw Visual = new Draw();
 		ausgabe(bubblelySort(array, Visual));
@@ -68,8 +63,10 @@ public class sortVisual {
 		return sort;
 	}
 
-	public static int[] bubblelySort(int[] array, Draw obj) {
-		// long startTimer = System.nanoTime();
+	public static int[] bubblelySort(int[] array,Draw g) {
+		long startTimer = System.nanoTime();
+		int speed = 0;
+		int count = 0;
 
 		int[] sort = array;
 
@@ -77,16 +74,15 @@ public class sortVisual {
 			for (int y = 0; y < sort.length - 1; y++) {
 				if (sort[y] > sort[y + 1]) {
 					swap(sort, y, y + 1);
-					Draw.draw(sort, 100, obj);
-					
-					// System.out.println(sort.length);
+					Draw.drawLine(sort,y, speed, g);
+					count++;
 				}
 
 			}
 		}
 
-		// System.out.println(System.nanoTime() - startTimer);
-		Draw.consoleDraw(sort, 100);
+		System.out.println("RunTime: " + ((System.nanoTime() - startTimer) - speed*count));
+		//Draw.consoleDraw(sort, 100);
 		return sort;
 
 	}
@@ -104,6 +100,20 @@ public class sortVisual {
 			System.out.println(array[i] + " ");
 		}
 
+	}
+	
+	public static int[] formArray(int[] array, int min, int max, boolean debug) {
+		
+		Random r = new Random();
+
+		for (int i = 0; i < array.length; i++) {
+			array[i] = r.nextInt(0, 400);
+			if(debug) System.out.print(array[i] + " | ");
+		}
+		if(debug) System.out.println();
+		
+		return array;
+		
 	}
 
 }

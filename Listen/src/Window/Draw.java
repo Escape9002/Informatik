@@ -21,15 +21,14 @@ public class Draw extends Canvas implements Runnable {
 
 	private Thread thread; // "Laufzeit" erstellen || Thread eröffnen
 	private boolean running = false; // Laeuft das Spiel ? nope
-	
+
 	public Draw() {
 
 		new Window(WIDTH, HEIGHT, "Test", this);
-		
 
 	}
 
-	public static void draw(int[] array, int speed, Draw obj) {
+	public static void drawLine(int[] array,int y, int speed, Draw obj) {
 
 		BufferStrategy bs = obj.getBufferStrategy();
 		if (bs == null) {
@@ -39,12 +38,19 @@ public class Draw extends Canvas implements Runnable {
 		Graphics g = bs.getDrawGraphics();
 
 		g.setColor(Color.white);
-		for (int i = 0; i < array.length; i++) {
-			// g.fillRect(0, 0, i,array[i]);
-			g.drawLine(i, HEIGHT, i, HEIGHT - array[i]);
-			
+		g.clearRect(0, 0, WIDTH, HEIGHT);
+
 		
-			
+		for (int i = 0; i < array.length; i++) {
+			int fac = (int) WIDTH / array.length;
+			if(array[i] == array[y]) {
+				g.setColor(Color.red);
+			}else {
+			g.setColor(Color.black);
+			}
+		
+			g.drawLine(i*fac,HEIGHT,i*fac,HEIGHT - array[i]);
+		
 		}
 
 		try {
@@ -54,6 +60,7 @@ public class Draw extends Canvas implements Runnable {
 		}
 
 		g.dispose();
+
 		bs.show();
 
 	}
@@ -61,15 +68,34 @@ public class Draw extends Canvas implements Runnable {
 	public static void consoleDraw(int[] array, int speed) {
 
 		for (int i = 0; i < array.length; i++) {
-			
-			for(int y = 0; y < array[i]; y++) {
+
+			for (int y = 0; y < array[i]; y++) {
 				System.out.print("0");
 			}
 			System.out.print("\n");
-			
+
 		}
 
+	}
 
+	public static void test(Draw obj) {
+
+		BufferStrategy bs = obj.getBufferStrategy();
+		if (bs == null) {
+			obj.createBufferStrategy(3);
+			return;
+		}
+		Graphics g = bs.getDrawGraphics();
+
+		g.setColor(Color.white);
+		g.clearRect(0, 0, WIDTH, HEIGHT);
+
+		int x = 1;
+		g.setColor(Color.black);
+		g.fillRect(x, 0, x + 5, 250);
+
+		g.dispose();
+		bs.show();
 	}
 
 	public synchronized void start() {
