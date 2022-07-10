@@ -1,16 +1,10 @@
 package mainPackage;
 
-import java.awt.Graphics;
 import java.util.Random;
 
 import Window.Draw;
 
 public class sortVisual {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	static int[] array = new int[500]; // zu sortierendes Array
 
@@ -19,20 +13,25 @@ public class sortVisual {
 	}
 	
 
-
+	static int speed = 0;
 	public static void main(String[] args) {
 
 		array = formArray(array, 0,400,true);
 
-		Draw Visual = new Draw();
+		Draw Visual = new Draw(speed);
 		ausgabe(bubblelySort(array, Visual));
+		
+		array = formArray(array, 0,400,true);
+		
+		ausgabe(selectionSort(array, Visual));
 	
 
 	}
 
-	public static int[] selectionSort(int[] array) {
+	public static int[] selectionSort(int[] array, Draw obj) {
 		long startTimer = System.nanoTime();
-
+		int draws = 0;
+		
 		int[] sort = array; // array wird in ein Arbeitsarray überschrieben.
 
 		int counter = 0; // Zähler, der den Beginn des Sorierbereiches anzeigt.
@@ -51,21 +50,24 @@ public class sortVisual {
 					tmp = sort[j + 1];
 					sort[j + 1] = number;
 					number = tmp;
+					
+					
 
 				} // ...tausche die Werte
+				Draw.drawLine(sort,j,  obj);
+				draws++;
 			}
 			sort[counter] = number; // Schreibe gefundene kleinste Zahl in erstes Feld.
 			counter++; // Erstes Feld ist hier sortiert, zähle Anfangsbereich für nächsten Durchgang um
 						// 1 hoch.
 		}
 
-		System.out.println(System.nanoTime() - startTimer);
+		System.out.println("RunTime: " + ((System.nanoTime() - startTimer) - speed*draws));
 		return sort;
 	}
 
 	public static int[] bubblelySort(int[] array,Draw g) {
 		long startTimer = System.nanoTime();
-		int speed = 0;
 		int count = 0;
 
 		int[] sort = array;
@@ -74,7 +76,7 @@ public class sortVisual {
 			for (int y = 0; y < sort.length - 1; y++) {
 				if (sort[y] > sort[y + 1]) {
 					swap(sort, y, y + 1);
-					Draw.drawLine(sort,y, speed, g);
+					Draw.drawLine(sort,y,  g);
 					count++;
 				}
 
@@ -86,6 +88,8 @@ public class sortVisual {
 		return sort;
 
 	}
+	
+	
 
 	public static int[] swap(int[] array, int i, int y) {
 		int n = array[i];

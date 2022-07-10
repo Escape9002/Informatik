@@ -20,15 +20,17 @@ public class Draw extends Canvas implements Runnable {
 	public static final int WIDTH = 640, HEIGHT = WIDTH / 12 * 9; // Fenster groese
 
 	private Thread thread; // "Laufzeit" erstellen || Thread eröffnen
-	private boolean running = false; // Laeuft das Spiel ? nope
+	
+	static int speed = 0;
 
-	public Draw() {
+	public Draw(int speed) {
 
 		new Window(WIDTH, HEIGHT, "Test", this);
+		this.speed = speed;
 
 	}
 
-	public static void drawLine(int[] array,int y, int speed, Draw obj) {
+	public static void drawLine(int[] array,int y, Draw obj) {
 
 		BufferStrategy bs = obj.getBufferStrategy();
 		if (bs == null) {
@@ -104,7 +106,7 @@ public class Draw extends Canvas implements Runnable {
 		 */
 		thread = new Thread(this);
 		thread.start();
-		running = true;
+		
 	}
 
 	public synchronized void stop() {
@@ -113,7 +115,7 @@ public class Draw extends Canvas implements Runnable {
 		 */
 		try {
 			thread.join();
-			running = false;
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
