@@ -7,21 +7,24 @@ import Window.Draw;
 public class sortVisual {
 
 	static int[] array = new int[500]; // zu sortierendes Array
-
+	static int max = 400;
+	static int speed = 0;
+	
 	public sortVisual() {
 
 	}
 	
 
-	static int speed = 0;
+	
 	public static void main(String[] args) {
 
-		array = formArray(array, 0,400,true);
-
+		// array = formArray(array, 0,400,true);
+		array = formArray(array,max,true);
 		Draw Visual = new Draw(speed);
 		ausgabe(bubblelySort(array, Visual));
 		
-		array = formArray(array, 0,400,true);
+		array = formArray(array, max,true);
+		// array = formArray(array, 0,400,true);
 		
 		ausgabe(selectionSort(array, Visual));
 	
@@ -76,7 +79,7 @@ public class sortVisual {
 			for (int y = 0; y < sort.length - 1; y++) {
 				if (sort[y] > sort[y + 1]) {
 					swap(sort, y, y + 1);
-					Draw.drawLine(sort,y,  g);
+					Draw.drawLine(sort,y,max,  g);
 					count++;
 				}
 
@@ -111,7 +114,21 @@ public class sortVisual {
 		Random r = new Random();
 
 		for (int i = 0; i < array.length; i++) {
-			array[i] = r.nextInt(0, 400);
+			array[i] = r.nextInt(min, max);
+			if(debug) System.out.print(array[i] + " | ");
+		}
+		if(debug) System.out.println();
+		
+		return array;
+		
+	}
+	
+public static int[] formArray(int[] array,  int max, boolean debug) {
+		
+		Random r = new Random();
+
+		for (int i = 0; i < array.length; i++) {
+			array[i] = r.nextInt( max);
 			if(debug) System.out.print(array[i] + " | ");
 		}
 		if(debug) System.out.println();

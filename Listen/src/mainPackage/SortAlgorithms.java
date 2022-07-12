@@ -1,6 +1,6 @@
 package mainPackage;
 
-public class SortAlgorithms  {
+public class SortAlgorithms {
 
 	static int[] array = { 4, 5, 9, 1, 5, 90, 8, 4, 5, 3, -1 }; // zu sortierendes Array
 
@@ -12,7 +12,6 @@ public class SortAlgorithms  {
 		System.out.println("\n");
 
 		bubblelySort(array);
-
 
 	}
 
@@ -67,7 +66,48 @@ public class SortAlgorithms  {
 		return sort;
 	}
 
-	public static int[] swap(int[] array, int i, int y) {
+	private int teilung(int[] array, final int erstes, final int letztes) {
+
+		int pivot = array[(erstes + letztes / 2)];
+		int posL = erstes;
+		int posR = letztes;
+		
+		while(posL <= posR) {
+			while(array[posL] < pivot) {
+				posL++;
+			}
+			
+			while(array[posR] > pivot) {
+				posR--;
+			}
+			
+			
+			if(posL <= posR) {
+				
+				swap(array, posR, posL);
+				
+//				int tmp = array[posL];
+//				array[posL] = array[posR];
+//				array[posR] = tmp;
+
+				// muss ins if
+				posR--;
+				posL++;
+				
+			}
+			
+			
+		} // 12:26 
+		
+		return posL;
+	}
+
+	public static int[] quicksort(int[] array) {
+		int[] sort = array;
+		return sort;
+	}
+
+	private static int[] swap(int[] array, int i, int y) {
 		int n = array[i];
 		array[i] = array[y];
 		array[y] = n;
