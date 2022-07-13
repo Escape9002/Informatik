@@ -68,6 +68,42 @@ public class Draw extends Canvas implements Runnable {
 
 	}
 	
+	public static void drawLine(int[] array,Draw obj) {
+
+		BufferStrategy bs = obj.getBufferStrategy();
+		if (bs == null) {
+			obj.createBufferStrategy(3);
+			return;
+		}
+		Graphics g = bs.getDrawGraphics();
+
+		g.setColor(Color.white);
+		g.clearRect(0, 0, WIDTH, HEIGHT);
+
+		
+		for (int i = 0; i < array.length; i++) {
+			int facX = (int) WIDTH / array.length;
+			
+			
+			g.setColor(Color.black);
+			
+		
+			g.drawLine(i*facX,HEIGHT,i*facX,HEIGHT - array[i]);
+		
+		}
+
+		try {
+			TimeUnit.MICROSECONDS.sleep(speed);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
+		g.dispose();
+
+		bs.show();
+
+	}
+	
 	public static void drawLine(int[] array,int y, int max,Draw obj) {
 
 		BufferStrategy bs = obj.getBufferStrategy();

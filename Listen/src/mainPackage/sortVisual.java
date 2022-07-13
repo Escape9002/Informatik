@@ -9,32 +9,29 @@ public class sortVisual {
 	static int[] array = new int[500]; // zu sortierendes Array
 	static int max = 400;
 	static int speed = 0;
-	
+
 	public sortVisual() {
 
 	}
-	
 
-	
 	public static void main(String[] args) {
 
 		// array = formArray(array, 0,400,true);
-		array = formArray(array,max,true);
+		array = formArray(array, max, true);
 		Draw Visual = new Draw(speed);
-		ausgabe(bubblelySort(array, Visual));
-		
-		array = formArray(array, max,true);
+		//ausgabe(bubblelySort(array, Visual));
+
+		array = formArray(array, max, true);
 		// array = formArray(array, 0,400,true);
-		
+
 		ausgabe(selectionSort(array, Visual));
-	
 
 	}
 
 	public static int[] selectionSort(int[] array, Draw obj) {
 		long startTimer = System.nanoTime();
 		int draws = 0;
-		
+
 		int[] sort = array; // array wird in ein Arbeitsarray überschrieben.
 
 		int counter = 0; // Zähler, der den Beginn des Sorierbereiches anzeigt.
@@ -53,8 +50,6 @@ public class sortVisual {
 					tmp = sort[j + 1];
 					sort[j + 1] = number;
 					number = tmp;
-					
-					
 
 				} // ...tausche die Werte
 				Draw.drawLine(sort,j,  obj);
@@ -63,13 +58,14 @@ public class sortVisual {
 			sort[counter] = number; // Schreibe gefundene kleinste Zahl in erstes Feld.
 			counter++; // Erstes Feld ist hier sortiert, zähle Anfangsbereich für nächsten Durchgang um
 						// 1 hoch.
+		
 		}
 
-		System.out.println("RunTime: " + ((System.nanoTime() - startTimer) - speed*draws));
+		System.out.println("RunTime: " + ((System.nanoTime() - startTimer) - speed * draws));
 		return sort;
 	}
 
-	public static int[] bubblelySort(int[] array,Draw g) {
+	public static int[] bubblelySort(int[] array, Draw g) {
 		long startTimer = System.nanoTime();
 		int count = 0;
 
@@ -79,20 +75,18 @@ public class sortVisual {
 			for (int y = 0; y < sort.length - 1; y++) {
 				if (sort[y] > sort[y + 1]) {
 					swap(sort, y, y + 1);
-					Draw.drawLine(sort,y,max,  g);
+					Draw.drawLine(sort, y, max, g);
 					count++;
 				}
 
 			}
 		}
 
-		System.out.println("RunTime: " + ((System.nanoTime() - startTimer) - speed*count));
-		//Draw.consoleDraw(sort, 100);
+		System.out.println("RunTime: " + ((System.nanoTime() - startTimer) - speed * count));
+		// Draw.consoleDraw(sort, 100);
 		return sort;
 
 	}
-	
-	
 
 	public static int[] swap(int[] array, int i, int y) {
 		int n = array[i];
@@ -104,37 +98,43 @@ public class sortVisual {
 
 	public static void ausgabe(int[] array) {
 		for (int i = 0; i <= array.length - 1; i++) {
-			System.out.println(array[i] + " ");
+			System.out.print(array[i] + " | ");
 		}
 
 	}
-	
+
+	// Java --version > 8
 	public static int[] formArray(int[] array, int min, int max, boolean debug) {
-		
+
 		Random r = new Random();
 
 		for (int i = 0; i < array.length; i++) {
 			array[i] = r.nextInt(min, max);
-			if(debug) System.out.print(array[i] + " | ");
+			if (debug)
+				System.out.print(array[i] + " | ");
 		}
-		if(debug) System.out.println();
-		
+		if (debug)
+			System.out.println();
+
 		return array;
-		
+
 	}
 	
-public static int[] formArray(int[] array,  int max, boolean debug) {
-		
+	// Java --version < 8
+	public static int[] formArray(int[] array, int max, boolean debug) {
+
 		Random r = new Random();
 
 		for (int i = 0; i < array.length; i++) {
-			array[i] = r.nextInt( max);
-			if(debug) System.out.print(array[i] + " | ");
+			array[i] = r.nextInt(max);
+			if (debug)
+				System.out.print(array[i] + " | ");
 		}
-		if(debug) System.out.println();
-		
+		if (debug)
+			System.out.println();
+
 		return array;
-		
+
 	}
 
 }

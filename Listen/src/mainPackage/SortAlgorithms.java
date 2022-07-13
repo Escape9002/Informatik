@@ -1,18 +1,27 @@
 package mainPackage;
 
+import java.util.Arrays;
+
 public class SortAlgorithms {
 
 	static int[] array = { 4, 5, 9, 1, 5, 90, 8, 4, 5, 3, -1 }; // zu sortierendes Array
 
 	public static void main(String[] args) {
 
-		selectionSort(array); // Ausgabe mir aufgerufen und das Ergebnis von Funktion "selectionSort"
-								// übergeben.
+		// selectionSort(array); 
+								
+		// System.out.println("\n");
 
-		System.out.println("\n");
-
-		bubblelySort(array);
-
+		// bubblelySort(array);
+		
+		// Quicksort qieeek = new Quicksort(array, 0,array.length-1);
+		
+		int[] zuSortieren = {7,2,4,8,6,1,3,5,9};
+		System.out.println(Arrays.toString(zuSortieren));
+		Quicksort qieeek = new Quicksort();
+		System.out.println("7hjzunhzujnhjzuhzuhh");
+		qieeek.quicksort(zuSortieren, 0,8);
+		System.out.println(Arrays.toString(zuSortieren));
 	}
 
 	public static int[] selectionSort(int[] array) {
@@ -66,46 +75,7 @@ public class SortAlgorithms {
 		return sort;
 	}
 
-	private int teilung(int[] array, final int erstes, final int letztes) {
-
-		int pivot = array[(erstes + letztes / 2)];
-		int posL = erstes;
-		int posR = letztes;
-		
-		while(posL <= posR) {
-			while(array[posL] < pivot) {
-				posL++;
-			}
-			
-			while(array[posR] > pivot) {
-				posR--;
-			}
-			
-			
-			if(posL <= posR) {
-				
-				swap(array, posR, posL);
-				
-//				int tmp = array[posL];
-//				array[posL] = array[posR];
-//				array[posR] = tmp;
-
-				// muss ins if
-				posR--;
-				posL++;
-				
-			}
-			
-			
-		} // 12:26 
-		
-		return posL;
-	}
-
-	public static int[] quicksort(int[] array) {
-		int[] sort = array;
-		return sort;
-	}
+	
 
 	private static int[] swap(int[] array, int i, int y) {
 		int n = array[i];
