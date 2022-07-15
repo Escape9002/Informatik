@@ -1,5 +1,6 @@
 package mainPackage;
 
+import java.util.Arrays;
 import java.util.Random;
 
 import Window.Draw;
@@ -17,14 +18,19 @@ public class sortVisual {
 	public static void main(String[] args) {
 
 		// array = formArray(array, 0,400,true);
-		array = formArray(array, max, true);
+		//array = formArray(array, max, true);
 		Draw Visual = new Draw(speed);
 		//ausgabe(bubblelySort(array, Visual));
 
 		array = formArray(array, max, true);
 		// array = formArray(array, 0,400,true);
 
-		ausgabe(selectionSort(array, Visual));
+		//ausgabe(selectionSort(array, Visual));
+		
+		QuickSort qieeek = new QuickSort();
+		qieeek.quicksort(array, 0,array.length-1, Visual);
+		
+		System.out.println(Arrays.toString(array));
 
 	}
 

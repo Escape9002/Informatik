@@ -1,31 +1,67 @@
 package mainPackage;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class SortAlgorithms {
 
-	static int[] array = { 4, 5, 9, 1, 5, 90, 8, 4, 5, 3, -1 }; // zu sortierendes Array
-
+	static int values = 1000000;
+	static int max = values;
+	
 	public static void main(String[] args) {
-
-		// selectionSort(array); 
-								
-		// System.out.println("\n");
-
-		// bubblelySort(array);
+		int[] numbers = new int[values];
 		
-		// Quicksort qieeek = new Quicksort(array, 0,array.length-1);
+		long startTimer = System.nanoTime();
+		formArray(numbers,max,false);
+		System.out.println("formArray: "+(double)(System.nanoTime() - startTimer)/1000000000);
 		
-		int[] zuSortieren = {7,2,4,8,6,1,3,5,9};
-		System.out.println(Arrays.toString(zuSortieren));
-		Quicksort qieeek = new Quicksort();
-		System.out.println("7hjzunhzujnhjzuhzuhh");
-		qieeek.quicksort(zuSortieren, 0,8);
-		System.out.println(Arrays.toString(zuSortieren));
+		int[] array = numbers;
+		
+		
+		selectionSort(array);
+		System.out.println("selection: " +(double)(System.nanoTime() - startTimer)/1000000000);
+		//ausgabe(array);
+		
+		array = numbers;
+		startTimer = System.nanoTime();
+		bubblelySort(array);
+		System.out.println("bubble: " +(double)(System.nanoTime() - startTimer)/1000000000);
+		//ausgabe(array);
+
+		array = numbers;
+		QuickSort qieeek = new QuickSort();
+		startTimer = System.nanoTime();
+		qieeek.quicksort(numbers, 0, numbers.length-1);
+		System.out.println("qick: " +(double)(System.nanoTime() - startTimer)/1000000000);
+		//ausgabe(array);
+		
+		array = numbers;
+		MergeSort mergues = new MergeSort();
+		startTimer = System.nanoTime();
+		mergues.mergeSort(numbers);
+		System.out.println("merge: " +(double)(System.nanoTime() - startTimer)/1000000000);
+		//ausgabe(array);
+		
 	}
+	
+	// Java --version < 8
+		public static int[] formArray(int[] array, int max, boolean debug) {
+
+			Random r = new Random();
+
+			for (int i = 0; i < array.length; i++) {
+				array[i] = r.nextInt(max);
+				if (debug)
+					System.out.print(array[i] + " | ");
+			}
+			if (debug)
+				System.out.println();
+
+			return array;
+
+		}
 
 	public static int[] selectionSort(int[] array) {
-		long startTimer = System.nanoTime();
 
 		int[] sort = array; // array wird in ein Arbeitsarray überschrieben.
 
@@ -52,13 +88,11 @@ public class SortAlgorithms {
 						// 1 hoch.
 		}
 
-		System.out.println(System.nanoTime() - startTimer);
+	
 		return sort;
 	}
 
 	public static int[] bubblelySort(int[] array) {
-		long startTimer = System.nanoTime();
-
 		int[] sort = array;
 		for (int i = sort.length; i > 1; i--) {
 			for (int y = 0; y < sort.length - 1; y++) {
@@ -71,11 +105,8 @@ public class SortAlgorithms {
 			}
 		}
 
-		System.out.println(System.nanoTime() - startTimer);
 		return sort;
 	}
-
-	
 
 	private static int[] swap(int[] array, int i, int y) {
 		int n = array[i];
@@ -87,8 +118,9 @@ public class SortAlgorithms {
 
 	public static void ausgabe(int[] array) {
 		for (int i = 0; i <= array.length - 1; i++) {
-			System.out.println(array[i] + " ");
+			System.out.print(array[i] + "|");
 		}
+		System.out.println();
 
 	}
 
