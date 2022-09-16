@@ -110,6 +110,7 @@ public class sortVisual {
 	}
 
 	// Java --version > 8
+	/*
 	public static int[] formArray(int[] array, int min, int max, boolean debug) {
 
 		Random r = new Random();
@@ -125,7 +126,7 @@ public class sortVisual {
 		return array;
 
 	}
-	
+	*/
 	// Java --version < 8
 	public static int[] formArray(int[] array, int max, boolean debug) {
 
