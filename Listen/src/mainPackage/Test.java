@@ -27,7 +27,8 @@ public class Test {
 		
 		liste.remove(7);
 		System.out.println(liste);*/
-		
+		//////////////////////////////////
+		/*
 		Stack stacky = new Stack(55);
 		for(int i= 0; i<50;i++) {
 			stacky.push(i);
@@ -37,6 +38,23 @@ public class Test {
 			stacky.pop();
 		}
 		System.out.println(stacky.toString());
+		*/
+		///////////////////////////////////
+		Queue queue = new Queue(5);
+		System.out.println(queue.toString());
+		for(int i = 0; i < 20; i++) {
+			queue.enqueue(i);	
+		}
+		
+		System.out.println(queue.toString());
+		
+		for(int i = 0; i < 20; i++) {
+			queue.dequeue();	
+		}
+		
+		System.out.println(queue.toString());
+		
+		
 		
 	}
 
