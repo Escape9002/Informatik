@@ -3,6 +3,7 @@ package mainPackage;
 public class Test {
 
 	public static void main(String[] args) {
+		/*
 		Liste liste = new Liste(3);
 		liste.add(5);
 		liste.add(43);
@@ -25,7 +26,17 @@ public class Test {
 		System.out.println("\n"+liste.find(4));
 		
 		liste.remove(7);
-		System.out.println(liste);
+		System.out.println(liste);*/
+		
+		Stack stacky = new Stack(55);
+		for(int i= 0; i<50;i++) {
+			stacky.push(i);
+		}
+		System.out.println(stacky.toString());
+		for(int i = 0;i<30;i++) {
+			stacky.pop();
+		}
+		System.out.println(stacky.toString());
 		
 	}
 
