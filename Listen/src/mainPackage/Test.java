@@ -43,7 +43,8 @@ public class Test {
 		Queue queue = new Queue(5);
 		System.out.println(queue.toString());
 		for(int i = 0; i < 20; i++) {
-			queue.enqueue(i);	
+			queue.enqueue(i);
+			System.out.println(queue.toString());
 		}
 		
 		System.out.println(queue.toString());

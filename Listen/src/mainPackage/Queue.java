@@ -11,22 +11,14 @@ public class Queue {
 	}
 
 	public void enqueue(int wert) {
-
-		while (end == false) {
-			if (kopf.getNext() == null) {
-				kopf.add(new ListenElement(wert));
-				end = true;
-			} else {
-				kopf = kopf.getNext();
-				end = false;
-			}
-		}
+		kopf.add(new ListenElement(wert));
 	}
 
-	public void dequeue() {
-	
+	public int dequeue() {
+		int val = kopf.get();
 		kopf = kopf.getNext();
-		
+		return val;
+
 	}
 
 	public String toString() {
