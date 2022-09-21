@@ -37,21 +37,6 @@ public class ArrayStack {
 			return null;
 	}
 
-	public ArrayStack copyL(ArrayStack stacky, boolean debug) {
-	
-		ArrayStack stack = new ArrayStack();
-		for (int i = 0; i <= stacky.stack.length; i++) {
-			stack.push(stacky.stack[i]);
-			
-			if (debug) {
-				System.out.println(stacky.top());
-				System.out.println(stack.top());
-				System.out.println("next value");
-			}
-		}
-		return stack;
-	}
-
 	public void copyH(ArrayStack stacky, boolean debug) {
 		ArrayStack tmp = new ArrayStack();
 		
