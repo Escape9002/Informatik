@@ -77,18 +77,23 @@ public class Test {
 		ArrayStack copL = new ArrayStack();
 		copL.copyL(arStack,true);
 		*/
-		
+		/*
 		System.out.println("---------------------------------------------------------------------------");
 		
 		ArrayStack copH = new ArrayStack();
 		copH.copyH(arStack, true);
 		 
 		System.out.println("---------------------------------------------------------------------------");
-		/*
+		*/
 		ArrayStack appendL = new ArrayStack();
+		appendL.push(5555);
 		
 		appendL.append(arStack);
-		*/
+		
+		for(int i=0; i<50; i++) {
+			appendL.pop();
+			System.out.println(appendL.top());
+		}
 	}
 
 }
