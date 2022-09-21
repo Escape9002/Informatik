@@ -85,6 +85,7 @@ public class Test {
 		 
 		System.out.println("---------------------------------------------------------------------------");
 		*/
+		/*
 		ArrayStack appendL = new ArrayStack();
 		appendL.push(5555);
 		
@@ -94,6 +95,23 @@ public class Test {
 			appendL.pop();
 			System.out.println(appendL.top());
 		}
+		
+		System.out.println("---------------------------------------------------------------------------");
+		*/
+		ArrayQueue queue = new ArrayQueue();
+		for(int i = 0; i<50; i++) {
+			queue.enqueue(i);
+			System.out.println(queue.front());
+		}
+		System.out.println("AHHH");
+		for(int i = 0; i<45; i++) {
+			//System.out.println("AHHHHHHHHHHHH");
+			queue.dequeue();
+			System.out.println(queue.front());
+		}
+		
+		
+		
 	}
 
 }
