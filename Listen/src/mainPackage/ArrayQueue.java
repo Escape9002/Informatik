@@ -2,7 +2,7 @@ package mainPackage;
 
 public class ArrayQueue {
 	private int[] queue;
-	private int end;
+	private byte end;
 	// private int start;
 
 	public ArrayQueue() {
@@ -40,5 +40,21 @@ public class ArrayQueue {
 		} else {
 			return false;
 		}
+	}
+	
+	public void concat(ArrayQueue q) {
+		ArrayQueue tmp = new ArrayQueue();
+		while(!q.empty()) {
+			enqueue(q.front());
+			tmp.enqueue(q.front());
+			q.dequeue();
+		}
+		
+		while(!tmp.empty()) {
+			q.enqueue(tmp.front());
+			tmp.dequeue();
+		}
+	
+
 	}
 }

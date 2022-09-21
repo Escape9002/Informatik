@@ -98,17 +98,27 @@ public class Test {
 		
 		System.out.println("---------------------------------------------------------------------------");
 		*/
+		
 		ArrayQueue queue = new ArrayQueue();
-		for(int i = 0; i<50; i++) {
+		ArrayQueue muhahahaha = new ArrayQueue();
+		
+		for(int i = 0; i<25; i++) {
 			queue.enqueue(i);
-			System.out.println(queue.front());
+			muhahahaha.enqueue(i%2);
+			//System.out.println(queue.front());
 		}
+		
+		queue.concat(muhahahaha);
+		
 		System.out.println("AHHH");
 		for(int i = 0; i<45; i++) {
 			//System.out.println("AHHHHHHHHHHHH");
 			queue.dequeue();
 			System.out.println(queue.front());
 		}
+		
+		System.out.println("---------------------------------------------------------------------------");
+		
 		
 		
 		
