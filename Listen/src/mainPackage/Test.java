@@ -2,7 +2,7 @@ package mainPackage;
 
 public class Test {
 
-	public static void main(String[] args) {
+	public static void main(String[] args){
 		/*
 		 * Liste liste = new Liste(3); liste.add(5); liste.add(43); liste.add(9);
 		 * liste.add(12); liste.add(13); liste.add(7);
@@ -21,11 +21,11 @@ public class Test {
 		 * System.out.println("\n"+liste.find(4));
 		 * 
 		 * liste.remove(7); System.out.println(liste);
+		 *
+		 *	System.out.println("---------------------------------------------------------------------------");
 		 */
-		//////////////////////////////////
+		
 		/*
-		System.out.println(
-				"Following Stack! --------------------------------------------------------------------------------");
 		Stack stacky = new Stack(55);
 		for (int i = 0; i < 50; i++) {
 			stacky.push(i);
@@ -39,9 +39,8 @@ public class Test {
 		}
 		System.out.println(stacky.toString());
 
-		///////////////////////////////////
-		System.out.println(
-				"Following queue! --------------------------------------------------------------------------------");
+		
+		System.out.println("---------------------------------------------------------------------------");
 		Queue queue = new Queue(5);
 		System.out.println(queue.toString());
 		for (int i = 0; i < 20; i++) {
@@ -58,15 +57,17 @@ public class Test {
 
 		System.out.println(queue.toString());
 */
-		///////////////////////////////////
-		System.out.println("Following ArrayStack! --------------------------------------------------------------------------------");
+		/*
+		System.out.println("---------------------------------------------------------------------------");
 		ArrayStack arStack = new ArrayStack();
 		System.out.println(arStack.empty());
 		for(int i=0; i<50; i++) {
 			arStack.push(i);
 			System.out.println(arStack.top());
 		}
-		System.out.println("FINISHED....................................................");
+		System.out.println("FINISHED Creating and filling ArrayStacks!");
+		*/
+		
 		/*
 		for(int i=0; i<50; i++) {
 			arStack.pop();
@@ -102,24 +103,27 @@ public class Test {
 		ArrayQueue queue = new ArrayQueue();
 		ArrayQueue muhahahaha = new ArrayQueue();
 		
-		for(int i = 0; i<25; i++) {
+		for(int i = 0; i<=25; i++) {
 			queue.enqueue(i);
 			muhahahaha.enqueue(i%2);
-			//System.out.println(queue.front());
 		}
+		System.out.println(queue.toString());
+		System.out.println("---------------------------------------------------------------------------");
 		
-		queue.concat(muhahahaha);
-		
+		// queue.concat(muhahahaha);
+		/*
 		System.out.println("AHHH");
 		for(int i = 0; i<45; i++) {
 			//System.out.println("AHHHHHHHHHHHH");
 			queue.dequeue();
 			System.out.println(queue.front());
 		}
+		*/
 		
+		System.out.println("value 24 is: " + queue.search(24));
+		System.out.println("value 55 is: " + queue.search(55));
 		System.out.println("---------------------------------------------------------------------------");
-		
-		
+		System.out.println(queue.toString());
 		
 		
 	}
