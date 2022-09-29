@@ -3,6 +3,8 @@ package BinaryTree;
 public class Element {
 	public int value;
 	public Element left, right;
+	
+	static int depthMax = 0;
 
 	public Element(int n) {
 		value = n;
@@ -11,29 +13,32 @@ public class Element {
 	}
 
 	public void show() {
-		System.out.println("" + value);
+		System.out.println(value);
+	}
+	public void show(String pos) {
+		System.out.println(pos +": " + value);
 	}
 
-	public void insert(int wert) {
-		if (wert < value) {
-			if (left != null) {
-				this.left.insert(wert);
+	// großes nach rechts | kleines nach links
+	public void insert(int value) {
+		if (value >= this.value) {
+			if (right == null) {
+
+				right = new Element(value);
+			} else {
+				right.insert(value);
 			}
-		} else if (wert > value) {
-			if (right != null) {
-				this.right.insert(wert);
-			}
+
 		} else {
 			if (left == null) {
-				left = new Element(wert);
+				left = new Element(value);
 			} else {
-				right = new Element(wert);
+				left.insert(value);
 			}
-			return;
 		}
 	}
 
-	static int depthMax = 0;
+	
 	public int depth(int depth) {
 		depth++;
 
@@ -59,5 +64,21 @@ public class Element {
 		}
 		
 	return depthMax;
+	}
+	
+	public int count(int count) {
+		
+		
+		count++;
+
+		if (left != null) {
+			left.depth(count);
+		} 
+
+		if (right != null) {
+			right.depth(count);
+		}
+		
+		return count;
 	}
 }
