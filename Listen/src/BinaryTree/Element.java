@@ -3,8 +3,10 @@ package BinaryTree;
 public class Element {
 	public int value;
 	public Element left, right;
-	
-	static int depthMax = 0;
+
+	static public int depthMax = 0;
+	static public int count = 0;
+	static public String msg = "";
 
 	public Element(int n) {
 		value = n;
@@ -15,11 +17,12 @@ public class Element {
 	public void show() {
 		System.out.println(value);
 	}
+
 	public void show(String pos) {
-		System.out.println(pos +": " + value);
+		System.out.println(pos + ": " + value);
 	}
 
-	// großes nach rechts | kleines nach links
+	// groï¿½es nach rechts | kleines nach links
 	public void insert(int value) {
 		if (value >= this.value) {
 			if (right == null) {
@@ -38,23 +41,22 @@ public class Element {
 		}
 	}
 
-	
 	public int depth(int depth) {
 		depth++;
 
 		if (left == null) {
-			if(depthMax < depth) {
+			if (depthMax < depth) {
 				depthMax = depth;
 			}
-			
+
 			depth--;
-			 return depthMax;
+			return depthMax;
 		} else {
 			left.depth(depth);
 		}
 
 		if (right == null) {
-			if(depthMax < depth) {
+			if (depthMax < depth) {
 				depthMax = depth;
 			}
 			depth--;
@@ -62,23 +64,64 @@ public class Element {
 		} else {
 			right.depth(depth);
 		}
-		
-	return depthMax;
+
+		return depthMax;
 	}
-	
-	public int count(int count) {
-		
-		
+
+	public int count() {
 		count++;
 
 		if (left != null) {
-			left.depth(count);
-		} 
+			left.count();
+		}
 
 		if (right != null) {
-			right.depth(count);
+			right.count();
 		}
-		
+
 		return count;
 	}
+
+	public String preOrder() {
+		msg = msg + Integer.toString(value) + " | ";
+
+		if (left != null) {
+			left.preOrder();
+		}
+
+		if (right != null) {
+			right.preOrder();
+		}
+
+		return msg;
+	}
+
+	public String inOrder() { // not starting at the very left down
+		if (left != null) {
+			left.preOrder();
+		}
+
+		msg = msg + Integer.toString(value) + " | ";
+
+		if (right != null) {
+			right.preOrder();
+		}
+		
+		return msg;
+	}
+	
+	public String postOrder() { // not starting at the very left down
+		if (left != null) {
+			left.preOrder();
+		}
+
+		
+
+		if (right != null) {
+			right.preOrder();
+		}
+		msg = msg + Integer.toString(value) + " | ";
+		return msg;
+	}
+
 }
