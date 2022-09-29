@@ -32,4 +32,32 @@ public class Element {
 			return;
 		}
 	}
+
+	static int depthMax = 0;
+	public int depth(int depth) {
+		depth++;
+
+		if (left == null) {
+			if(depthMax < depth) {
+				depthMax = depth;
+			}
+			
+			depth--;
+			 return depthMax;
+		} else {
+			left.depth(depth);
+		}
+
+		if (right == null) {
+			if(depthMax < depth) {
+				depthMax = depth;
+			}
+			depth--;
+			return depthMax;
+		} else {
+			right.depth(depth);
+		}
+		
+	return depthMax;
+	}
 }

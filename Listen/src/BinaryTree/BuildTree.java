@@ -15,4 +15,7 @@ public class BuildTree{
    public void  insert(int value) {
 	  root.insert(value);
    }
+   public int depth() {
+	   return root.depth(0);
+   }
 }
