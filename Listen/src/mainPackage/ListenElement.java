@@ -3,9 +3,17 @@ public class ListenElement {
 
 	private int inhalt;
 	private ListenElement next;
+	
+	priority flag;
 
 	public ListenElement(int inhalt) {
 		this.inhalt = inhalt;
+	}
+	
+	//TATÜTTATA
+	public ListenElement(int inhalt, priority flag) {
+		this.inhalt = inhalt;
+		this.flag = flag;
 	}
 
 	public void add(ListenElement neu) {
@@ -22,6 +30,11 @@ public class ListenElement {
 
 	public int get() {
 		return inhalt;
+	}
+	
+	//TATÜTATA
+	public ListenElement getAnruf() {
+		return this;
 	}
 
 	public void remove(int wert) {
