@@ -9,6 +9,9 @@ public class Test {
 		bintree.insert(60);
 		bintree.insert(80);
 		bintree.insert(90);
+		
+		// bintree.insert(150);
+		// bintree.insert(220);
 
 		//////////////////////////////////////////////////////
 

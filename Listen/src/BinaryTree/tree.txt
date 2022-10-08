@@ -1,4 +1,44 @@
+Source: https://github.com/Escape9002/Informatik/blob/main/Listen/src/BinaryTree/Test.java
+
 		100
 	75		200
 60	80	
 		90
+
+Own:
+	PreOrder(WLR): 100 75 60 80 90 200
+
+	inOrder(LWR): 60 75 80 90 100 200
+
+	postOrder(LRW): 60 90 80 75 200 100
+
+PC:
+	preOrder: 100 | 75 | 60 | 80 | 90 | 200 | 
+	inOrder: 60 | 75 | 80 | 90 | 100 | 200 | 
+	postOrder: 60 | 90 | 80 | 75 | 200 | 100 | 
+ 
+--------------------------------------------------------
+Source: https://github.com/hibbes/Uebung/blob/master/Uebung/src/BuildTree.java
+
+		42
+	9		90
+8	14			222
+			98			569
+
+Own:
+	preOrder: 42 9 8 14	90 222 98 569
+	inOrder: 8 9 14 42 90 98 222 569
+	postOrder: 8 14 9 98 569 222 90 42
+	
+PC:
+ 	preOrder: 42 9 8 14 90 222 98 569 
+	inOrder: 8 9 14 42 90 98 222 569 
+	postOrder: 8 14 9 98 569 222 90 42 
+
+--------------------------------------------------------
+Source: https://ddi.uni-wuppertal.de/www-madin/material/materialsammlung/oberstufe/datenstrukturen/baeume/ab_03_traversierung.pdf
+
+1: 
+	preOrder: W G A D X Y Z S T N M L
+	inOrder: A G X D Y Z W  N T S L M
+	postOrder: A X Z Y D G N T L M S W

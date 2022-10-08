@@ -22,7 +22,7 @@ public class Element {
 		System.out.println(pos + ": " + value);
 	}
 
-	// gro�es nach rechts | kleines nach links
+	// groeszes nach rechts | kleines nach links yes, i did this on purpose
 	public void insert(int value) {
 		if (value >= this.value) {
 			if (right == null) {
@@ -96,29 +96,26 @@ public class Element {
 		return msg;
 	}
 
-	public String inOrder() { // not starting at the very left down
+	public String inOrder() {
 		if (left != null) {
-			left.preOrder();
+			left.inOrder();
 		}
-
 		msg = msg + Integer.toString(value) + " | ";
 
 		if (right != null) {
-			right.preOrder();
+			right.inOrder();
 		}
-		
+
 		return msg;
 	}
-	
-	public String postOrder() { // not starting at the very left down
+
+	public String postOrder() {
 		if (left != null) {
-			left.preOrder();
+			left.postOrder();
 		}
 
-		
-
 		if (right != null) {
-			right.preOrder();
+			right.postOrder();
 		}
 		msg = msg + Integer.toString(value) + " | ";
 		return msg;

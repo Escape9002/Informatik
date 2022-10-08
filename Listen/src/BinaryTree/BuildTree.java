@@ -10,14 +10,11 @@ public class BuildTree {
 		root.insert(75);
 
 	}
-	/*
-public class BuildTree {
-	Element root;
-
+	
 	public BuildTree(int val) {
 		root = new Element(val);
 
-	}*/
+	}
 	
 	public void nullVar() {
 		Element.count = 0;
