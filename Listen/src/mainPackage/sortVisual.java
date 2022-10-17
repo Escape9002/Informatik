@@ -23,12 +23,12 @@ public class sortVisual {
 		//ausgabe(bubblelySort(array, Visual));
 
 		array = formArray(array, max, true);
-		// array = formArray(array, 0,400,true);
+		//array = formArray(array, 0,400,true);
 
-		//ausgabe(selectionSort(array, Visual));
+		ausgabe(selectionSort(array, Visual));
 		
-		QuickSort qieeek = new QuickSort();
-		qieeek.quicksort(array, 0,array.length-1, Visual);
+		//QuickSort qieeek = new QuickSort();
+		//qieeek.quicksort(array, 0,array.length-1, Visual);
 		
 		System.out.println(Arrays.toString(array));
 
@@ -38,21 +38,21 @@ public class sortVisual {
 		long startTimer = System.nanoTime();
 		int draws = 0;
 
-		int[] sort = array; // array wird in ein Arbeitsarray überschrieben.
+		int[] sort = array; // array wird in ein Arbeitsarray ï¿½berschrieben.
 
-		int counter = 0; // Zähler, der den Beginn des Sorierbereiches anzeigt.
-		int number = 0; // Speicher für die "Selected" Zahl.
-		int tmp = 0; // Hilfsvariable für Kopiervorgang
+		int counter = 0; // Zï¿½hler, der den Beginn des Sorierbereiches anzeigt.
+		int number = 0; // Speicher fï¿½r die "Selected" Zahl.
+		int tmp = 0; // Hilfsvariable fï¿½r Kopiervorgang
 
-		for (int i = 0; i < sort.length - 1; i++) { // Schleife, die die Suchvorgänge von Feld 0 bis zum letzten Feld
+		for (int i = 0; i < sort.length - 1; i++) { // Schleife, die die Suchvorgï¿½nge von Feld 0 bis zum letzten Feld
 													// steuert. Schleife Endet, wenn letztes Feld als kleinste,
 													// sortierende Zahl markiert.
 			number = sort[i];
 
-			for (int j = counter; j < sort.length - 1; j++) { // Schleife, die den Suchdurchgang für das jeweils erste
+			for (int j = counter; j < sort.length - 1; j++) { // Schleife, die den Suchdurchgang fï¿½r das jeweils erste
 																// Arrayfeld steuert und damit alle Felder
 																// durchklappert.
-				if (number > sort[j + 1]) { // wenn Zahl im ersten Feld größer als Vergleichsfeld...
+				if (number > sort[j + 1]) { // wenn Zahl im ersten Feld grï¿½ï¿½er als Vergleichsfeld...
 					tmp = sort[j + 1];
 					sort[j + 1] = number;
 					number = tmp;
@@ -62,7 +62,7 @@ public class sortVisual {
 				draws++;
 			}
 			sort[counter] = number; // Schreibe gefundene kleinste Zahl in erstes Feld.
-			counter++; // Erstes Feld ist hier sortiert, zähle Anfangsbereich für nächsten Durchgang um
+			counter++; // Erstes Feld ist hier sortiert, zï¿½hle Anfangsbereich fï¿½r nï¿½chsten Durchgang um
 						// 1 hoch.
 		
 		}
