@@ -29,6 +29,13 @@ public class KlausurVol3{
         System.out.println("intArray(bench): " + ownArray.benchmarkInt(100));
         System.out.println("hashedArray(bench): " + ownArray.benchmarkH(100));
         
+        int[] array = {5,4,6,9,8,1,2,3,5,7,8,5,2,1,3,9,9};
+        Sorting sorter = new Sorting(array);
+        
+        for(int g: sorter.bubblesort(array)) {
+        	System.out.print(g + ",");
+        }
+        
     }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
