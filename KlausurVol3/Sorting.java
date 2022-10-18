@@ -19,26 +19,21 @@ public class Sorting {
 		return array;
 	}
 
-	public int[] selectionSort(int[] array) {
-		int counter = 0;
-		int number = 0;
-		int tmp = 0;
+	public int[] selectionSort(int[] arr) {
+		   for (int i = 0; i < arr.length - 1; i++)  
+			{  
+				int index = i;  
+				for (int j = i + 1; j < arr.length; j++){  
+				if (arr[j] < arr[index]){  
+					index = j;//searching for lowest index  
+				}  
+				}  
+				int smallerNumber = arr[index];   
+				arr[index] = arr[i];  
+				arr[i] = smallerNumber;  
+			} 
 		
-		for(int i = 0; i < array.length -1; i++) {
-			number = array[i];
-			
-			for(int j = counter; j<array.length-1; j++) {
-				if(number > array[j+1]) {
-					tmp = array[j+1];
-					array[j+1] = number;
-					number = tmp;
-				}
-			}
-			array[counter] = number;
-			counter++;
-		}
-
-		return array;
+			return arr
 
 	}
 
