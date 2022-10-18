@@ -10,3 +10,5 @@ Schularbeit <br />
 --> StartLearning (Forgot it )  <br />
 # Information for Collaborators:
 please don't delete stuff, as others could want to use it ( just like me....)
+
+necessary stuff for the klausuren in Klausur1; Klausur2 and Klausur3 (this is our current Klausurstuff)
