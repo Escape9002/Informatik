@@ -8,3 +8,5 @@ Schularbeit <br />
 --> KlausurenVol1 (Trainings Prog. für erste Klausur )  <br />
 --> WhatIsThisPlace ("Facharbeit" || Spiel zum Spaß haben ? ^^)  <br />
 --> StartLearning (Forgot it )  <br />
+# Information for Collaborators:
+please don't delete stuff, as others could want to use it ( just like me....)
