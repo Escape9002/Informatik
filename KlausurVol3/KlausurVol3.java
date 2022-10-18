@@ -110,7 +110,22 @@ public class KlausurVol3{
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //	Sortierverfahren hinsichtlich der Laufzeit, Speicherbedarf und Stabilität (letzteres erläutere ich in kommender Stunde) bewerten.   ////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+        
+        /*
+         * #define Stabilität das Verhalten der Laufzeit im Verhältnis zur "vorsortierung" des Array
+         * 
+         * Bubblesort: 
+         * 	instabil, wenn niedrigster Wert ganz hinten im Array (pro Takt nur ein Schritt nach vorne für die Zahl) vs vorsortiert (ein Durchlauf)
+         * 
+         * Selection Sort:
+         * 	stabil, da jeder Wert mit jedem Wert verglichen wird (und ein sofortiger Tausch stattfindet), egal ob sortiert oder nicht
+         * 
+         * Mergesort:
+         * 	mehr oder weniger Stabil, sortierte Teillisten werden schneller zusammengefügt als unsortierte, macht aber keinen großen Unterschied(?)
+         * 
+         * Quicksort:
+         * 	stabil, jedes Element wird mit Pivot verglichen, stabilitaet also wie Mergesort
+         */
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //	ADTs (einfach verkettete Liste, Schlange, Queue, Stack, binärer Baum, Set) beschreiben und Implementieren (gemäß unserer Übungsaufgaben)   /
