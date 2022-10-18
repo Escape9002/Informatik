@@ -87,9 +87,24 @@ public class KlausurVol3{
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         /*
-         * MergeSort:
+         * MergeSort: --> Devide and Conquer 
+         * Die Liste wird an so lange in kleinere Listen geteilt, bis nur noch 1 Wert darin steht. Die Werte zweier Listen werden
+         * verglichen und in der Reihenfolge zusammengefügt. Dies passiert für alle Listenteile.
          * 
-         * QuickSort:
+         * 		1,5,3,8
+         * 		1,5	| 3,8
+         * 		1 | 5 | 3 | 8
+         * 		1,5 | 3,8
+         * 		1,3,5,8
+         *
+         * 
+         * QuickSort: --> devid(ieren)e and concque(st of paradise)r
+         * #define Pivotelement allgemein: ein Punkt an dem ihr etwas unterteilt; hier: alle Elemente möglich (erstes, letztes, median, random, idc)
+         * #define PivotelementBSP das erste Element
+         * 
+         * Es wird an dem Pivotelement sortiert (kleiner nach Links, größer nach rechts);
+         * Vorgang wiederholen bis Pivotelement == letzes Element aka Pivotelement hat keine vergleichswerte mehr
+         * 
          */
         
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
