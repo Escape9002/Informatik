@@ -118,13 +118,13 @@ public class KlausurVol3{
          * 	instabil, wenn niedrigster Wert ganz hinten im Array (pro Takt nur ein Schritt nach vorne für die Zahl) vs vorsortiert (ein Durchlauf)
          * 
          * Selection Sort:
-         * 	stabil, da jeder Wert mit jedem Wert verglichen wird (und ein sofortiger Tausch stattfindet), egal ob sortiert oder nicht
+         * 	instabil größtes element am anfang --> worst case wie bubblesort
          * 
          * Mergesort:
          * 	mehr oder weniger Stabil, sortierte Teillisten werden schneller zusammengefügt als unsortierte, macht aber keinen großen Unterschied(?)
          * 
          * Quicksort:
-         * 	stabil, jedes Element wird mit Pivot verglichen, stabilitaet also wie Mergesort
+         * 	isntabil
          */
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
