@@ -1,4 +1,6 @@
+package KlausurVol3;
 
+import LinkedList.LinkedList;
 
 public class KlausurVol3{
     public static void main(String[] args){
@@ -60,6 +62,11 @@ public class KlausurVol3{
         System.out.println("StrArray(bench): " + ownArray.benchmarkStr("100"));
         System.out.println("StrhashedArray(bench): " + ownArray.benchmarkHStr("100"));
         
+        //	TEST---------------------------------------------------------------
+        System.out.println("print 2d Array: " + ownArray.test());
+        System.out.println("print missing between 0-9: "+ ownArray.missing());
+        
+        
         
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //	Sortieralgorithmen inkl Implementation von Bubblesort, SelectionSort.   ////////////////////////////////////////////////////////////////////
@@ -71,16 +78,13 @@ public class KlausurVol3{
         int[] array = {5,4,6,9,8,1,2,3,5,7,8,5,2,1,3,9,9};
         Sorting sorter = new Sorting(array);
         
-        for(int g: sorter.bubblesort(array)) {
-        	System.out.print(g + ",");
-        }
+       System.out.println("BubbleSort: " + sorter.ausgabe(sorter.BubbleSort(array)));
+        	
         
         int[] array2 = {5,4,6,9,8,1,2,3,5,7,8,5,2,1,3,9,9};
-        System.out.println();
+        
 
-        for(int g: sorter.selectionSort(array2)){
-            System.out.print(g + ",");
-        }
+        System.out.println("SelectionSort: " + sorter.ausgabe(sorter.selectionSort(array2)));
         
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //	MergeSort/QuickSort beschreiben.    ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -112,25 +116,34 @@ public class KlausurVol3{
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         
         /*
-         * #define Stabilität das Verhalten der Laufzeit im Verhältnis zur "vorsortierung" des Array
+         * #define Stabil das Verhalten der Laufzeit im Verhaeltnis zur "vorsortierung" des Array; Achtung, das ist nicht die WIKI-Def
          * 
          * Bubblesort: 
          * 	instabil, wenn niedrigster Wert ganz hinten im Array (pro Takt nur ein Schritt nach vorne für die Zahl) vs vorsortiert (ein Durchlauf)
          * 
          * Selection Sort:
-         * 	instabil größtes element am anfang --> worst case wie bubblesort
+         * 	instabil groestes element am anfang --> worst case wie bubblesort
          * 
          * Mergesort:
-         * 	mehr oder weniger Stabil, sortierte Teillisten werden schneller zusammengefügt als unsortierte, macht aber keinen großen Unterschied(?)
+         * 	mehr oder weniger Stabil, sortierte Teillisten werden schneller zusammengefuegt als unsortierte, macht aber keinen grosen Unterschied(?)
          * 
          * Quicksort:
-         * 	isntabil
+         * 	instabil
          */
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //	ADTs (einfach verkettete Liste, Schlange, Queue, Stack, binärer Baum, Set) beschreiben und Implementieren (gemäß unserer Übungsaufgaben)   /
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+        
+        LinkedList list = new LinkedList(100);
+        list.add(1);
+        list.add(55);
+        list.add(9);
+        System.out.println("liste front: " + list.front());
+        System.out.println("liste end: " + list.end());
+        System.out.println("liste all: " + list.getAll());
+        list.remove();
+        System.out.println("liste all: " + list.getAll());
         
         
         
