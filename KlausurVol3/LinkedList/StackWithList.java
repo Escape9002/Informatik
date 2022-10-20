@@ -10,9 +10,7 @@ public class StackWithList implements Stack {
     }
     
     public void push(int data) {
-        Element tmp = head;
-        head = new Element(data);
-        head.add(tmp);
+        head.add(new Element(data));
         
     }
 
