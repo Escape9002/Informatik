@@ -127,10 +127,10 @@ System.out.println("\n//	Sortieralgorithmen inkl Implementation von Bubblesort, 
          * 	instabil, wenn niedrigster Wert ganz hinten im Array (pro Takt nur ein Schritt nach vorne für die Zahl) vs vorsortiert (ein Durchlauf)
          * 
          * Selection Sort:
-         * 	instabil groestes element am anfang --> worst case wie bubblesort
+         * 	stabil, alle elementen mit allen vergleichen, no matter what
          * 
          * Mergesort:
-         * 	mehr oder weniger Stabil, sortierte Teillisten werden schneller zusammengefuegt als unsortierte, macht aber keinen grosen Unterschied(?)
+         * 	Stabil, sortierte Teillisten werden schneller zusammengefuegt als unsortierte, macht aber keinen grosen Unterschied(?)
          * 
          * Quicksort:
          * 	instabil
