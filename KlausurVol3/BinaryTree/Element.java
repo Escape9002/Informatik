@@ -5,6 +5,9 @@ public class Element {
     int data;
     static String msg = "";
 
+    static int depth = 0;
+    static int count = 0;
+
     public Element(int data) {
         this.data = data;
     }
@@ -51,7 +54,7 @@ public class Element {
         if(left !=null){
             left.inOrder();
         }
-        msg = msg+data+" | ";
+        msg = msg + data + " | ";
 
         if(right != null){
             right.inOrder();
@@ -71,7 +74,7 @@ public class Element {
             right.inOrder();
         }
 
-        msg = msg+data+" | ";
+        msg = msg + data + " | ";
         return msg;
     }
 

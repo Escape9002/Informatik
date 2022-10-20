@@ -8,7 +8,7 @@ public class Element implements ElementInterface{
 	public Element(int data) {
 		this.data = data;
 	}
-	
+
 	public int end() {
 		if(next != null) {
 			return next.end();

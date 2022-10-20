@@ -8,6 +8,42 @@ import java.util.LinkedList;
  */
 
 public class Arrays {
+	
+
+	// ------------------------------------------------------------------- Das hier ist wichtig!
+	int[][] test = { { 1, 2, 3 }, { 4, 6 }, { 7, 9 } };
+
+	public String test() {
+		String msg = "";
+		for (int[] g : test) {
+			for (int l : g) {
+				msg = msg + l + " | ";
+			}
+		}
+		return msg;
+	}
+
+	public String missing() {
+		
+		int counter = 0;
+		String msg = "";
+
+		for (int[] g : test) {
+			for (int l : g) {
+
+				if (counter != l) {
+					msg = msg + counter + " | ";
+					counter++;
+				} 
+				counter++;
+
+			}
+		}
+		return msg;
+	}
+
+	// ------------------------------------------------------------------- Das hier ist NICHT wichtig!
+
 	// Eindimensional Array + suche nach einer Zahl
 
 	int[] values = new int[100];
@@ -157,37 +193,5 @@ public class Arrays {
 		findHashedArrayStr(value);
 
 		return Long.toString((System.nanoTime() - current));
-	}
-
-	// -------------------------------------------------------------------
-	int[][] test = { { 1, 2, 3 }, { 4, 6 }, { 7, 9 } };
-
-	public String test() {
-		String msg = "";
-		for (int[] g : test) {
-			for (int l : g) {
-				msg = msg + l + " | ";
-			}
-		}
-		return msg;
-	}
-
-	public String missing() {
-		
-		int counter = 0;
-		String msg = "";
-
-		for (int[] g : test) {
-			for (int l : g) {
-
-				if (counter != l) {
-					msg = msg + counter + " | ";
-					counter++;
-				} 
-				counter++;
-
-			}
-		}
-		return msg;
 	}
 }

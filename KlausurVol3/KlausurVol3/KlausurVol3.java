@@ -1,6 +1,5 @@
 package KlausurVol3;
 
-import java.util.Queue;
 import java.util.Random;
 
 import BinaryTree.Bintree;
@@ -182,7 +181,6 @@ System.out.println("\n//	ADTs (einfach verkettete Liste, Schlange, Queue, Stack,
             stack.pop();
             System.out.println(stack.toString());
         }
-
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //	Auswahl passender ADTs auf konkrete Anwendungsfälle (Rangierbahnhof, Familienbaum, ToDo-Liste, Klammerausdrücke).   ////////////////////////
