@@ -16,7 +16,8 @@ public class KlausurVol3{
 //	Arrays (eindimensional und zweidimensional)    /////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// See Arrays.java 
+        // See Arrays.java 
+        System.out.println("\n//	Arrays (eindimensional und zweidimensional)    /////////////////////////////////////////////////////////////////////////////////////////////\n");
         Arrays ownArray = new Arrays();
 
         ownArray.arrayInt(5);
@@ -81,6 +82,7 @@ public class KlausurVol3{
 
 
 // See Sorting.java
+System.out.println("\n//	Sortieralgorithmen inkl Implementation von Bubblesort, SelectionSort.   ////////////////////////////////////////////////////////////////////\n");
 
         int[] array = formArray(10);
         Sorting sorter = new Sorting(array);
@@ -137,8 +139,9 @@ public class KlausurVol3{
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //	ADTs (einfach verkettete Liste, Schlange, Queue, Stack, binärer Baum, Set) beschreiben und Implementieren (gemäß unserer Übungsaufgaben)   /
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        
+System.out.println("\n//	ADTs (einfach verkettete Liste, Schlange, Queue, Stack, binärer Baum, Set) beschreiben und Implementieren (gemäß unserer Übungsaufgaben)   /\n");
         //  EINFACHE LISTE  ------------------------------------------------------------------
+        System.out.println("\n//  EINFACHE LISTE  ------------------------------------------------------------------\n");
         LinkedList list = new LinkedList(100); 
         list.add(1);
         list.add(55);
@@ -150,34 +153,29 @@ public class KlausurVol3{
         System.out.println("liste all: " + list.getAll());
 
         //  Queue  --------------------------------------------------------------------------
+        System.out.println("\n//  Queue  --------------------------------------------------------------------------\n");
 
         QueueWithList queue = new QueueWithList(0);
         for(int i = 0; i < 25; i++){
             queue.enqueue(i);
+            System.out.println("Queue: " + queue.toString());
         }
-        
-        System.out.println("Queue: " + queue.toString());
 
         for(int i = 0; i < 25; i++){
             queue.dequeue();
+            System.out.println("Queue: " + queue.toString());
         }
         System.out.println("Queue: " + queue.toString());
         
        
-
         //  Stack  --------------------------------------------------------------------------
-        
+        System.out.println("\n//  Stack  --------------------------------------------------------------------------\n");
 
-        //  Set  ----------------------------------------------------------------------------
-
-
-
-        
-        
-        
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //	Auswahl passender ADTs auf konkrete Anwendungsfälle (Rangierbahnhof, Familienbaum, ToDo-Liste, Klammerausdrücke).   ////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+System.out.println("\n//	Auswahl passender ADTs auf konkrete Anwendungsfälle (Rangierbahnhof, Familienbaum, ToDo-Liste, Klammerausdrücke).   ////////////////////////\n");
 
         Bintree tree = new Bintree(100);
         tree.insert(45);

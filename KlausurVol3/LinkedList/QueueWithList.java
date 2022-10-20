@@ -12,7 +12,9 @@ public class QueueWithList implements Queue {
     }
 
     public void dequeue(){
-        head.remove();
+       
+        Element tmp = head.next;
+        head = tmp;
         
     }
 
