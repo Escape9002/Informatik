@@ -1,8 +1,13 @@
 package KlausurVol3;
 
+import java.util.Random;
+
+import BinaryTree.Bintree;
 import LinkedList.LinkedList;
 
 public class KlausurVol3{
+
+    static Random rand = new Random();
     public static void main(String[] args){
     	
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -75,17 +80,13 @@ public class KlausurVol3{
 
 // See Sorting.java
 
-        int[] array = {5,4,6,9,8,1,2,3,5,7,8,5,2,1,3,9,9};
+        int[] array = formArray(10);
         Sorting sorter = new Sorting(array);
-        
-       System.out.println("BubbleSort: " + sorter.ausgabe(sorter.BubbleSort(array)));
-        	
-        
-        int[] array2 = {5,4,6,9,8,1,2,3,5,7,8,5,2,1,3,9,9};
-        
+        System.out.println("BubbleSort: " + sorter.ausgabe(sorter.BubbleSort(array)));
 
-        System.out.println("SelectionSort: " + sorter.ausgabe(sorter.selectionSort(array2)));
-        
+        array = formArray(10);
+        System.out.println("SelectionSort: " + sorter.ausgabe(sorter.selectionSort(array)));
+               
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //	MergeSort/QuickSort beschreiben.    ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -151,6 +152,14 @@ public class KlausurVol3{
 //	Auswahl passender ADTs auf konkrete Anwendungsfälle (Rangierbahnhof, Familienbaum, ToDo-Liste, Klammerausdrücke).   ////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+        Bintree tree = new Bintree(100);
+        System.out.println("PreOrder: "+tree.preOrder());
+        tree.insert(45);
+        tree.insert(75);
+        tree.insert(100);
+        tree.insert(125);
+        tree.insert(150);
+        System.out.println("PreOrder: "+tree.preOrder());
         
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //	Inorder/Postorder/Preorder händisch darstellen. ////////////////////////////////////////////////////////////////////////////////////////////
@@ -162,5 +171,15 @@ public class KlausurVol3{
 //	UML-Klassendiagramme mit Vererbung und Assoziation entwerfen und zur Modellierung nutzen.   ////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    }
+
+//  OWN STUFF------------------------------------------------
+    public static int[] formArray(int size){
+        int[] ar = new int[size];
+        for(int i = 0; i < size; i++){
+            ar[i] = rand.nextInt(100);
+        }
+
+        return ar;
     }
 }
