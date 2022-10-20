@@ -17,4 +17,14 @@ public class Bintree {
         return root.preOrder();
     }
 
+    public String inOrder(){
+        Element.msg = "";
+        return root.inOrder();
+    }
+
+    public String postOrder(){
+        Element.msg = "";
+        return root.postOrder();
+    }
+
 }

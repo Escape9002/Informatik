@@ -21,6 +21,10 @@ public class Element {
 		return data;
 	}
 
+	public Element getNext(){
+		return next;
+	}
+
 	public void setData(int data) {
 		this.data = data;
 	}
@@ -34,6 +38,7 @@ public class Element {
 	}
 
 	public boolean remove() {
+
 		if (next != null) {
 			if (next.remove()) {
 				next = null;
@@ -54,6 +59,14 @@ public class Element {
 		
 		
 		return all;
+	}
+
+	public String toString(){
+		if(next == null){
+			return "" + data;
+		}else{
+			return "" + data + " | " + next.toString();
+		}
 	}
 	
 }

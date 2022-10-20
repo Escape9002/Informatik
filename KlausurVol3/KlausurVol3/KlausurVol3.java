@@ -1,9 +1,11 @@
 package KlausurVol3;
 
+import java.util.Queue;
 import java.util.Random;
 
 import BinaryTree.Bintree;
 import LinkedList.LinkedList;
+import LinkedList.QueueWithList;
 
 public class KlausurVol3{
 
@@ -136,15 +138,40 @@ public class KlausurVol3{
 //	ADTs (einfach verkettete Liste, Schlange, Queue, Stack, binärer Baum, Set) beschreiben und Implementieren (gemäß unserer Übungsaufgaben)   /
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         
-        LinkedList list = new LinkedList(100);
+        //  EINFACHE LISTE  ------------------------------------------------------------------
+        LinkedList list = new LinkedList(100); 
         list.add(1);
         list.add(55);
         list.add(9);
-        System.out.println("liste front: " + list.front());
-        System.out.println("liste end: " + list.end());
         System.out.println("liste all: " + list.getAll());
+
         list.remove();
+       
         System.out.println("liste all: " + list.getAll());
+
+        //  Queue  --------------------------------------------------------------------------
+
+        QueueWithList queue = new QueueWithList(0);
+        for(int i = 0; i < 25; i++){
+            queue.enqueue(i);
+        }
+        
+        System.out.println("Queue: " + queue.toString());
+
+        for(int i = 0; i < 25; i++){
+            queue.dequeue();
+        }
+        System.out.println("Queue: " + queue.toString());
+        
+       
+
+        //  Stack  --------------------------------------------------------------------------
+        
+
+        //  Set  ----------------------------------------------------------------------------
+
+
+
         
         
         
@@ -153,23 +180,44 @@ public class KlausurVol3{
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         Bintree tree = new Bintree(100);
-        System.out.println("PreOrder: "+tree.preOrder());
         tree.insert(45);
         tree.insert(75);
-        tree.insert(100);
+        tree.insert(101);
         tree.insert(125);
         tree.insert(150);
-        System.out.println("PreOrder: "+tree.preOrder());
+
+        System.out.println("PreOrder (WLR): "+tree.preOrder());
+        System.out.println("inOrder (LWR): "+tree.inOrder());
+        System.out.println("postOrder (LRW): "+tree.postOrder());
+
+        // notice: ( PreO; InO; PosO; --> pip | und das W rutscht durch LR durch )|| (oder zeitformen beachten pre in post....)
+        // p: WLR
+        // i: LWR
+        // p: LRW
+
+        /*
+         * Anwendungsfälle:
+         *  Rangierbahnhof: first zug in first zug out --> fifo --> queue
+         *  Familienbaum: 1 parent + 2 childs --> binary Tree                       (oder???)
+         *  ToDo-Liste: Queue oder Stack; Last in First out --> lifo --> stack
+         *  Klammerausdrücke: what even are these | PS: kommt nicht dran....
+         */
         
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //	Inorder/Postorder/Preorder händisch darstellen. ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        
+        /*
+         * 
+         */
         
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //	UML-Klassendiagramme mit Vererbung und Assoziation entwerfen und zur Modellierung nutzen.   ////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        /*
+         * 
+         */
 
     }
 

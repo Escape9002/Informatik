@@ -31,7 +31,7 @@ public class Element {
 		}
 	}
 
-    // WLR
+    //  WLR
     public String preOrder(){
         msg = msg + data + " | ";
         if(left != null){
@@ -42,6 +42,36 @@ public class Element {
             right.preOrder();
         }
 
+        return msg;
+    }
+
+    //  LWR
+    public String inOrder(){
+        
+        if(left !=null){
+            left.inOrder();
+        }
+        msg = msg+data+" | ";
+
+        if(right != null){
+            right.inOrder();
+        }
+
+        return msg;
+    }
+
+    //  LRW
+    public String postOrder(){
+
+        if(left !=null){
+            left.inOrder();
+        }
+       
+        if(right != null){
+            right.inOrder();
+        }
+
+        msg = msg+data+" | ";
         return msg;
     }
 

@@ -3,8 +3,6 @@ package LinkedList;
 public class LinkedList {
 	Element head;
 	
-	
-	
 	public LinkedList(int data) {
 		head = new Element(data);
 	}
@@ -20,6 +18,10 @@ public class LinkedList {
 	public int front() {
 		return head.data;
 	}
+
+	public Element getNext(){
+		return head.getNext();
+	}
 	
 	public int end() {
 		return head.end();
@@ -30,4 +32,14 @@ public class LinkedList {
 		Element.all ="";
 		return msg;
 	}
+
+	public boolean isEmpty(){
+		if(head == null){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+
 }

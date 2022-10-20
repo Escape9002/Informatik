@@ -99,7 +99,7 @@ public class Test {
 		
 		System.out.println("---------------------------------------------------------------------------");
 		*/
-		/*
+		
 		ArrayQueue queue = new ArrayQueue();
 		ArrayQueue muhahahaha = new ArrayQueue();
 		
@@ -110,16 +110,16 @@ public class Test {
 		System.out.println(queue.toString());
 		
 		System.out.println("---------------------------------------------------------------------------");
-		*/
+		
 		// queue.concat(muhahahaha);
-		/*
+		
 		System.out.println("AHHH");
 		for(int i = 0; i<45; i++) {
 			//System.out.println("AHHHHHHHHHHHH");
 			queue.dequeue();
 			System.out.println(queue.front());
 		}
-		*/
+		
 		/*
 		System.out.println("value 24 is: " + queue.search(24));
 		System.out.println("value 55 is: " + queue.search(55));
@@ -127,7 +127,7 @@ public class Test {
 		System.out.println(queue.toString());*/
 		
 		System.out.println("---------------------------------------------------------------------------");
-		
+		/*
 		priorityQueue Krankenhaus = new priorityQueue();
 		Krankenhaus.insert(1, priority.doom);
 		Krankenhaus.insert(2, priority.is);
@@ -140,7 +140,7 @@ public class Test {
 			System.out.println("Anruf: "+Krankenhaus.maxAnruf());
 			Krankenhaus.delete();
 		}
-		
+		*/
 	}
 
 }
