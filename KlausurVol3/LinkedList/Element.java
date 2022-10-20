@@ -1,6 +1,6 @@
 package LinkedList;
 
-public class Element {
+public class Element implements ElementInterface{
 	Element next;
 	int data;
 	static String all = "";
@@ -25,10 +25,6 @@ public class Element {
 		return next;
 	}
 
-	public void setData(int data) {
-		this.data = data;
-	}
-
 	public void add(Element el) {
 		if (next != null) {
 			next.add(el);
@@ -47,18 +43,6 @@ public class Element {
 			return true;
 		}
 		return false;
-	}
-	
-	public String getAll() {
-		if(next != null) {
-			all = all + data + " | ";
-			next.getAll();
-		}else {
-			all = all + data;
-		}
-		
-		
-		return all;
 	}
 
 	public String toString(){

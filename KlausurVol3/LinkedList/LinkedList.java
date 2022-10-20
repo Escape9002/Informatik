@@ -1,6 +1,6 @@
 package LinkedList;
 
-public class LinkedList {
+public class LinkedList implements LinkedListInterface {
 	Element head;
 	
 	public LinkedList(int data) {
@@ -14,23 +14,9 @@ public class LinkedList {
 	public void remove() {
 		head.remove();
 	}
-	
-	public int front() {
-		return head.data;
-	}
 
 	public Element getNext(){
 		return head.getNext();
-	}
-	
-	public int end() {
-		return head.end();
-	}
-	
-	public String getAll() {
-		String msg = head.getAll();
-		Element.all ="";
-		return msg;
 	}
 
 	public boolean isEmpty(){
@@ -39,6 +25,10 @@ public class LinkedList {
 		}else{
 			return false;
 		}
+	}
+
+	public int getData() {
+		return head.getData();
 	}
 
 

@@ -6,6 +6,7 @@ import java.util.Random;
 import BinaryTree.Bintree;
 import LinkedList.LinkedList;
 import LinkedList.QueueWithList;
+import LinkedList.StackWithList;
 
 public class KlausurVol3{
 
@@ -146,11 +147,11 @@ System.out.println("\n//	ADTs (einfach verkettete Liste, Schlange, Queue, Stack,
         list.add(1);
         list.add(55);
         list.add(9);
-        System.out.println("liste all: " + list.getAll());
+        System.out.println("liste all: " + list.toString());
 
         list.remove();
        
-        System.out.println("liste all: " + list.getAll());
+        System.out.println("liste all: " + list.toString());
 
         //  Queue  --------------------------------------------------------------------------
         System.out.println("\n//  Queue  --------------------------------------------------------------------------\n");
@@ -170,6 +171,18 @@ System.out.println("\n//	ADTs (einfach verkettete Liste, Schlange, Queue, Stack,
        
         //  Stack  --------------------------------------------------------------------------
         System.out.println("\n//  Stack  --------------------------------------------------------------------------\n");
+
+        StackWithList stack = new StackWithList(0);
+        for(int i = 0; i < 25; i++){
+            stack.push(i);
+            System.out.println(stack.toString());
+        }
+
+        for(int i = 0; i< 25; i++){
+            stack.pop();
+            System.out.println(stack.toString());
+        }
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //	Auswahl passender ADTs auf konkrete Anwendungsfälle (Rangierbahnhof, Familienbaum, ToDo-Liste, Klammerausdrücke).   ////////////////////////
