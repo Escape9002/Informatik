@@ -1,0 +1,11 @@
+	AB	-AB	-A-B	A-B
+CD	0	0	0	0
+-CD	1	1	0	0
+-C-D	1	1	1	1
+C-D	0	0	0	0
+----------------------------------
+disjunk: verbinden mit n, neuer term mit v
+konjunk: werte invertieren, verbinden mit v, neuer term mit n
+----------------------------------
+dis: (B n -C) v (-C n -D) = -C n (B v -D)
+kon: (B v -D) n -C
