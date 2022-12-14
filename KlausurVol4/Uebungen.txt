@@ -3,18 +3,40 @@ disjunk: verbinden mit n, neuer term mit v
 konjunk: werte invertieren, verbinden mit v, neuer term mit n
 ----------------------------------------------
 Binaer(bas2):
-	Dec(bas10) --> bin(bas2)
-	Teile den Wert durch 2, nimm den ganzzahligen Wert und teil ihn weiter bis 0 raus kommt. state of Rest gibt 0 || 1 an
+	Dec(bas10) --> bin(bas2) | uses 0-1
+	wenn zahl < 2, keine konvertierung nötig |  Teile den Wert durch 2, nimm den ganzzahligen Wert und teil ihn weiter bis 0 raus kommt. state of Rest gibt 0 || 1 an, von unten nach oben lesen für ergebnis
 	
 	55 / 2 = 27.5 --> 27	|	1 (es gibt nen Rest)
 	27 / 2 = 13.5 --> 13	|	1
-	13 / 2 = 6.5  --> 6	|	1
-	 6 / 2 = 3    --> 3	|	0 (es gibt kein Rest)
-	 3 / 2 = 1.5  --> 1	|	1
-	 1 / 2 = 0.5  --> 0	|	1
-	--> 55(bas10) ==> 111011(bas2)
+	13 / 2 = 6.5  --> 6		|	1
+	 6 / 2 = 3    --> 3		|	0 (es gibt kein Rest)
+	 3 / 2 = 1.5  --> 1		|	1
+	 1 / 2 = 0.5  --> 0		|	1
+	--> 55(bas10) ==> 110111(bas2)
 ---------------------------------------------
-Octal(bas8
+Octal(bas8)
+	Dec(bas10) --> oct(bas8) | uses 0-7
+	wenn zahl <8 keine konvertierung nötig | konvertiere zu binär, mach 3er päckchen. nimm die dargestellte (bas10) zahl und schreib bas8 dran. falls ein die 3päckchen nicht aufgehen, füge bei einem päckchen (vurzugsweise das letzte) eine leitende 0 an, sollte keinen unterschied machen.
+
+	55(bas10) --> 110111(bas2) --> 110(bas2) 111(bas2) --> 76(bas8)
+
+	oder:
+	teile /8, nimm rest *8 --> aufschreiben, wiederholen mit ganzer Zahl (nicht runden,einfach abschneiden...), von unten nach oben aufgeschriebenens lesen --> ergebnis
+
+	55 / 8 = 6,875 --> 0,875 * 8 = 7	| 7
+	6 < 8								| 6
+	-->55(10) ==> 67(8)
+---------------------------------------------
+hexa(bas16)
+	Dec(10) --> Hexa(16) | uses 1-F [0,1...8,9,A,B...E,F]
+	wenn zahl < 16 keine konvertierung nötig | teile zahl durch 16, nimm den rest (xx,REST) mal 16, diese zahl aufschreiben, weitermachen mit ganzer Zahl (xx); aufgeschriebene zahlen von unten nach oben sind das ergebnis (alles <9 in buchstaben konvertieren!)
+	
+	555 / 16 = 34,6875 --> 0,6875 * 16 = 11	| 11 --> B
+	34 / 16 = 2,125 --> 0,125*16 = 2		|  2 --> 2
+	2 < 16									|  2 --> 2
+	--> 555(10) ==> 22B(16)  
+---------------------------------------------
+
 	
 		
 
