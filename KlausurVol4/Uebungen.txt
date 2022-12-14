@@ -1,7 +1,7 @@
-----------------------------------------------
+---------------------------------------------- https://www.youtube.com/watch?v=DoQFR1a6BOY&t
 disjunk: verbinden mit n, neuer term mit v
 konjunk: werte invertieren, verbinden mit v, neuer term mit n
-----------------------------------------------
+---------------------------------------------- https://www.binaryhexconverter.com/
 Binaer(bas2):
 	Dec(bas10) --> bin(bas2) | uses 0-1
 	wenn zahl < 2, keine konvertierung nötig |  Teile den Wert durch 2, nimm den ganzzahligen Wert und teil ihn weiter bis 0 raus kommt. state of Rest gibt 0 || 1 an, von unten nach oben lesen für ergebnis
@@ -13,7 +13,7 @@ Binaer(bas2):
 	 3 / 2 = 1.5  --> 1		|	1
 	 1 / 2 = 0.5  --> 0		|	1
 	--> 55(bas10) ==> 110111(bas2)
----------------------------------------------
+--------------------------------------------- https://www.binaryhexconverter.com/
 Octal(bas8)
 	Dec(bas10) --> oct(bas8) | uses 0-7
 	wenn zahl <8 keine konvertierung nötig | konvertiere zu binär, mach 3er päckchen. nimm die dargestellte (bas10) zahl und schreib bas8 dran. falls ein die 3päckchen nicht aufgehen, füge bei einem päckchen (vurzugsweise das letzte) eine leitende 0 an, sollte keinen unterschied machen.
@@ -26,15 +26,36 @@ Octal(bas8)
 	55 / 8 = 6,875 --> 0,875 * 8 = 7	| 7
 	6 < 8								| 6
 	-->55(10) ==> 67(8)
----------------------------------------------
+--------------------------------------------- https://www.binaryhexconverter.com/
 hexa(bas16)
 	Dec(10) --> Hexa(16) | uses 1-F [0,1...8,9,A,B...E,F]
 	wenn zahl < 16 keine konvertierung nötig | teile zahl durch 16, nimm den rest (xx,REST) mal 16, diese zahl aufschreiben, weitermachen mit ganzer Zahl (xx); aufgeschriebene zahlen von unten nach oben sind das ergebnis (alles <9 in buchstaben konvertieren!)
-	
+
 	555 / 16 = 34,6875 --> 0,6875 * 16 = 11	| 11 --> B
 	34 / 16 = 2,125 --> 0,125*16 = 2		|  2 --> 2
 	2 < 16									|  2 --> 2
 	--> 555(10) ==> 22B(16)  
+--------------------------------------------- https://de.wikipedia.org/wiki/Festkommazahl#Rechnen_mit_Festkommazahlen
+Festkomma Rechenregeln
+	korrigierungen: 7,4 --> 7,4000000000; (falls 7,4 * 8,455 gilt: 7,400 * 8,455)
+
+	selbe Regeln wie unsere Arithmetik: 
+	+- --> position des kommas bleibt überall gleich
+	*  --> nachkommastellen = nachkommastellen des ersten werts + nachkommastellen des 2ten werts
+	/  --> ergibt das selbe, genauigkeit beachten! (du kannst keine bits hinzufügen) |||| ICH WEIS NICHT OB DAS STIMMT; BITTE GUCKT NOCHMAL SELBST...UND SAGT ES MIR DANN xD
+
+	real: 5,25 + 7,48 = 12,73
+	pc: 525 + 748 = 1273 --> 2 nachkommastellen --> 12,73
+
+	real: 5,25 * 7,48 = 39,27
+	pc: 525 * 748 = 392700 --> 2 * 2 nachkommastellen --> 39,2700
+
+	real: 5,25 / 7,48 = 0,7018716577
+	pc: 525 / 748 = 0,7018
+--------------------------------------------- https://de.wikipedia.org/wiki/Festkommazahl#Probleme
+Festkomma vs Gleitkomma (Floating point)
+	kleinere Genauigkeit als Gleitkomma (es gibt nur 1byte, wenn die Kommazahl weiter geht...pech gehabt, wird nichtmal beachtet [unterschied zu floatingpoint])
+	dafür rechengünstiger aka (manchmal) schneller (wenn zahlen in bas2 bearbeitet werden, muss man nur kommas [pointer] schieben, fast nicht rechnen)
 ---------------------------------------------
 
 	
