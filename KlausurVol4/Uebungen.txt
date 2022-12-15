@@ -114,22 +114,68 @@ LZW
 ----------------------------------------------
 Automaten ^-^
 	keller automat kennen aber nicht entwerfen 
-	mealy ist der standard automat, eingabealphabet
+	mealy ist der standard automat, eingabealphabet, bei tabelle ist das hinter / die Ausgabe, bei Graph auch (eher markiert durch ""); es gibt eine ausgabe ^-^
+	Ein Mealy-Automat ist wie folgt definiert:
+    - es gibt eine endliche Menge von Zuständen
+    - genau einer der Zustände ist der Anfangszustand
+    - es gibt ein Eingabealphabet mit endlich vielen Zeichen
+    - es gibt ein Ausgabealphabet mit endlich vielen Zeichen
+    - jedem möglichen Übergang von einem Zustand zu einem anderen Zustand ist eine eindeutige Kombination aus einem Zeichen des Eingabealphabets und einem Zeichen des Ausgabealphabets zugeordnet.
+	- kein zwang für endzustand
+
 	siehe pdf (https://schillgymoffenburg.sharepoint.com/:b:/s/J1Inf1SJ2223/EdSghcgWbu5JvO88yzEnWu0BfGlIp5IHlwp3dhuQsEyk5A?e=AZXdY0)
 			loes: (https://schillgymoffenburg.sharepoint.com/:b:/s/J1Inf1SJ2223/ES7SXNY-Q7dJlAU65fCyiF8BWo23rq__xNYhVMZRzpJ3Og?e=Ir7TYI)
 
-	E(eingabealphabet) = {A,M,D,5,6}
-	
+	E(ingabealphabet) = {A,M,D,5,6}
+	q0 --A---> q1 --M--> q2 --D--> q3 --6--> q4
+									  --5--> q0
 
+	Zustand		Eingaben
+				A		M		D		5		6
+	q0			q1/A	-		-		-		-
+	q1			-		q2/M 	-		-		-
+	q2			-		-		q3/D	-		-
+	q3			-		-		-		q0/5	q4/6
+	q4			-		-		-		-		-	
+
+	Mögliche Ausgaben:
+	AMD5555555...6
+	AMD56
+	AMD5556
 ----------------------------------------------
 ReGGex(e.de)
 	ausprobieren, weiß ich auch nicht mehr...
-	befehle: (http://regexe.de/hilfe.jsp)
+	befehle: (http://regexe.de/hilfe.jsp) | zeilenweise an
+
+000111
+005012
+95468524
+0
+0
+
+111005
+05104252
+101100101
+
+	filtere alle binären raus...
+	[01][01]*+$
 ----------------------------------------------
-
-----------------------------------------------
-
-
+0000000000000000000000000000000000000000000000
+0000000001100000000000000000110000000000000000
+0000000001100000000000000000110000000000000000
+0000000001100000000000000000110000000000000000
+0000000001100000000000000000110000000000000000
+0000000001100000000000000000110000000000000000
+0000000001100000000000000000110000000000000000
+0000000000000000000000000000000000000000000000
+0000011100000000000000000000000000011100000000
+0000001110000000000000000000000001110000000000
+0000000011100000000000000000000111000000000000
+0000000000111000000000000000011100000000000000
+0000000000001111111111111111110000000000000000
+0000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000
 ----------------------------------------------
 /////////////////Aufgaben/////////////////////
 ----------------------------------------------
@@ -143,7 +189,39 @@ ReGGex(e.de)
 	-->Forme Disjunktive und Konjunktive normalform ^^
 
 1)
+	1575(10) zu (2) und (8) und (16)
+
+2)
+	Festkomma: 2.20005+8.05
+	Festkomma: 2.20005*8.05
+	Festkomma: 2.20005/8.08
+
+3)
+	Warum ist Festkomma besser, wenn ihr einen IntelPotato habt? Wann ist Fließkomma besser.
+
+4)
+	Dieser Satz ist zu lang. Änder das.
+
+5)
+	mach ne tabelle hier raus (+mögliche Ausgaben):
+	E = {S,T,D,F,69}
+	q0 --S--> q1 --T--> q2 --D--> q2 --F--> q0
+									 --69--> q2
+				
+6)
+	selbe aufgabenstellung wie 5):
+		A			B				C 
+	q0	q1/"Help"	q2/"Gandalf"	q2/"Fuck"
+	q1	q2/"me"		q0/"Klopapier"	q0/"Ezekiel"
+	q2	q0/"Fucker"	q1/"braucht"	q1/"you"
 	
+7)
+Filtere alle A's raus:
+AJAAAAAAAAAAAAA
+AAAAOAAAMAAAAAA
+AAOAAAAAAAIAAAA
+AAAAAANAAAAAAAA
+AAAA'AAA-AAA'AA
 
 
 ------------------------------------------------ 
