@@ -37,6 +37,7 @@ hexa(bas16)
 	34 / 16 = 2,125 --> 0,125*16 = 2		|  2 --> 2
 	2 < 16									|  2 --> 2
 	--> 555(10) ==> 22B(16)  
+
 --------------------------------------------- https://de.wikipedia.org/wiki/Festkommazahl#Rechnen_mit_Festkommazahlen
 Festkomma Rechenregeln
 	korrigierungen: 7,4 --> 7,4000000000; (falls 7,4 * 8,455 gilt: 7,400 * 8,455)
@@ -222,6 +223,11 @@ AAAAOAAAMAAAAAA
 AAOAAAAAAAIAAAA
 AAAAAANAAAAAAAA
 AAAA'AAA-AAA'AA
+
+8)
+Select alle Hex-Zahlen:
+000 100 G55 9AF
+011 R22 165 
 
 
 ------------------------------------------------ 
