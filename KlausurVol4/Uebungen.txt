@@ -36,8 +36,14 @@ hexa(bas16)
 	555 / 16 = 34,6875 --> 0,6875 * 16 = 11	| 11 --> B
 	34 / 16 = 2,125 --> 0,125*16 = 2		|  2 --> 2
 	2 < 16									|  2 --> 2
-	--> 555(10) ==> 22B(16)  
+	--> 555(10) ==> 22B(16)
+-----------------------
+notiz: alle rechenvorgänge sind mit Modulo machbar:
+	555 / 16  = ~34
+	555 - 34 * 16 = 555 - 544 = 11
 
+	555 % 16 = 11
+	!Achtung, bei der letzten Zahl (x%y = 0) nur x/y = deine Zahl
 --------------------------------------------- https://de.wikipedia.org/wiki/Festkommazahl#Rechnen_mit_Festkommazahlen
 Festkomma Rechenregeln
 	korrigierungen: 7,4 --> 7,4000000000; (falls 7,4 * 8,455 gilt: 7,400 * 8,455)
@@ -206,8 +212,8 @@ ReGGex(e.de)
 5)
 	mach ne tabelle hier raus (+mögliche Ausgaben):
 	E = {S,T,D,F,69}
-	q0 --S--> q1 --T--> q2 --D--> q2 --F--> q0
-									 --69--> q2
+	q0 --S/"why"--> q1 --T/"do"--> q2 --D/"hurt"--> q3 --F/"like"--> q0
+									 --69/"that"--> q2
 				
 6)
 	selbe aufgabenstellung wie 5):
@@ -238,6 +244,101 @@ Select alle Hex-Zahlen:
 	kon: (B v -D) n -C
 
 1)
+	(8):
+	1575 / 8 = 196,875 | 0,875 * 8 = 7
+	196 / 8 = 24,5 	   | 0,5 * 4 = 2
+	24 / 8 = 3         | 3
+
+	1575(10) = 327(8)
+
+	(16):
+	~(x/y): kappt alle kommastellen der  Rechnung ab
+	1575 % 16 = 1575 - (~(1575 / 16) * 16) = 7 | 7
+	98 % 16 = 98 - (~(98/16) * 16) = 2		   | 2
+	98 / 16 = 6 < 16 = 6					   | 6
+ 
+
+	1575(10) = 627(16)
+
+2)
+	Festkomma: 2.20005+8.05
+	2.20005 + 8.05000 = 220005 + 805000 = 1025005 = 10.25005
+
+	Festkomma: 2.20005*8.05
+	2.20005*8.05000 = 220005 * 805000 = 17.71040
+	
+	Festkomma: 2.20005 / 8.08
+	2.20005 / 8.80000 = 220008 / 880000 = 2.5000
+
+3)
+	Festkomma braucht weniger Rechenleistung als Gleitkomma, da keine weiteren Kommastellen "erzeugt" werden müsssen 
+	binäre Festkommazahlen erfordern nur pointer Verschiebungen 
+
+	Fließkomma sind für Genauigkeit besser (und durch Flieskomma-Rechenzentren auf CPUs heutzutage insgesam performanter)
+
+4)
+	DieserSatzIstZuLang
+	A = 1
+	E = 2
+	D = 3
+	i = 4
+	S = 5
+	r = 6
+	T = 7
+	u = 8
+	L = 9
+	n = 10
+	g = 11
+	z = 12
+	==neu==
+	siehe code, ich bin faul...
+
+	previous	letter	code	OUT
+				d 				
+	d 			i 		di=13	3
+	i 			e 		ie=14	4
+	e 	 		s		es=15	2
+	s 			e 		se=16	5
+	e 			r 		er=17	2
+	r 			s 		rs=18	6
+	s 			a 		sa=19	5
+	a 			t 		at=20	1
+	t 			z 		tz=21	7
+	z 			i 		zi=22 	12
+	i 			s 		is=23	4
+	s 			t 		st=24 	5
+	t 			z 		tz		7
+	tz 			u 		tzu=25	21
+	u 			l 		ul=26	8
+	l 			a 		la=27 	9
+	a 			n		an=28 	1
+	n 			g 		ng=29	10
+	g 							11
+
+	"kürzer": 3 4 2 5 2 6 5 1 7 12 4 5 7 21 8 9 1 10 11 
+	(bitte macht ein beispiel das man komprimieren kann...ich bin anscheinend kacke darin)
+
+5)
+		S			T			D			F		 	69
+	q0	q1/"Why"	-			-			-			-
+	q1	-			q2/"do"		-			-			-
+	q2	-			-			q3/"hurt"	-			-
+	q3	-			-			-			q0/"like"	q2/"that"	
+
+	mögliche Ausgaben:
+	Why do hurt that [do hurt that] wiederholungen... like [why do hurt [like || that]]
+	Why do hurt like why do hurt like ....you get Ir7TYI
+
+6)
+	siehe einziger Bild in diesem Ordner
+
+	mögliche Aussagen: yes, einfach yes, schickt die in discord rein, ich überprüfe die...oder es funkt einfach
+
+7)
+	eine mögliche lösung: [B-Z][^A]*
+
+8)
+	keine korrekte möglichkeit, ich wechsel nur schnell den PC: [0-9[A-F]]*
 
 ------------------------------------------------	
 ////////////////Contributors////////////////////
