@@ -11,4 +11,4 @@ Schularbeit <br />
 # Information for Collaborators:
 please don't delete stuff, as others could want to use it ( just like me....)
 
-necessary stuff for the klausuren in [klausur1](https://github.com/Escape9002/Informatik/tree/main/KlausurVol1) ; [Klausur2](https://github.com/Escape9002/Informatik/tree/main/KlausurVol2), [Klausur3](https://github.com/Escape9002/Informatik/tree/main/KlausurVol3) and [Klausur 4] (https://github.com/Escape9002/Informatik/tree/main/KlausurVol4) (this is our current Klausurstuff)
+necessary stuff for the klausuren in [klausur1](https://github.com/Escape9002/Informatik/tree/main/KlausurVol1) ; [Klausur2](https://github.com/Escape9002/Informatik/tree/main/KlausurVol2), [Klausur3](https://github.com/Escape9002/Informatik/tree/main/KlausurVol3) and [Klausur 4](https://github.com/Escape9002/Informatik/tree/main/KlausurVol4) (this is our current Klausurstuff)
