@@ -4,10 +4,13 @@ import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
+import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
-public class Player extends Canvas implements Runnable{
+public class Player extends Canvas implements Runnable {
 
 	private static final long serialVersionUID = 1L;
 	public static final int WIDTH = 640, HEIGHT = WIDTH / 12 * 9;
@@ -23,14 +26,31 @@ public class Player extends Canvas implements Runnable{
 	int luckyNumber = 0;
 
 	int randNumber = 0;
-	private String[] BadWordStorage = { "Hello, fuck you", "There is a difference between letters and integers...",
-			"48 6f 70 65 49 74 48 75 72 74 73", "BrainCells.exe stoppped working", "42 79 65 48 61 76 65 53 68 69 74 54 69 6d 65",
-			"Appears you can read...USE IT", "Shit piss fuck cunt cocksucker motherfucker tit fart turd and twat", "https://www.youtube.com/watch?v=0SqhSfx2TkE", "..."};
+
+	private String[] BadWordStorage = { "48656c6c6f2c206675636b20796f75", "5468657265206973206120646966666572656e6365206265747765656e206c65747465727320616e6420696e7465676572732e2e2e",
+			"427261696e43656c6c732e6578652073746f707070656420776f726b696e67",
+			"4170706561727320796f752063616e20726561642e2e2e444f204954",
+			"536869742070697373206675636b2063756e7420636f636b7375636b6572206d6f746865726675636b6572207469742066617274207475726420616e642074776174",
+			"68747470733a2f2f7777772e796f75747562652e636f6d2f77617463683f763d3053716853667832546b45", "2e2e2e" };
+
 
 	static int ObjectCounter = 0;
 
 	public Player() {
 		ObjectCounter = ObjectCounter++;
+	}
+
+	public String HEXtoString(String hexStr) {
+
+		StringBuilder output = new StringBuilder("");
+
+		for (int i = 0; i < hexStr.length(); i += 2) {
+			String str = hexStr.substring(i, i + 2);
+			output.append((char) Integer.parseInt(str, 16));
+		}
+
+		return output.toString();
+
 	}
 
 	private boolean validateInputStr(String nameInput) {
@@ -41,8 +61,8 @@ public class Player extends Canvas implements Runnable{
 
 		for (int i = 0; i < len; i++) {
 			if ((Character.isLetter(nameInput.charAt(i)) == false)) {
-
-				System.out.println("Analphabetic");
+				randNumber = r.nextInt(BadWordStorage.length);
+				System.out.println(HEXtoString(BadWordStorage[randNumber]));
 				new Window(WIDTH, HEIGHT, "TextGame", this);
 				return false;
 			}
@@ -60,7 +80,8 @@ public class Player extends Canvas implements Runnable{
 		firstName = sc.next();
 
 		validateInputStr(firstName);
-
+		
+		randNumber = r.nextInt(BadWordStorage.length);
 		System.out.println("How old are you? (Please enter integers between 0-120)");
 
 		eingabe = sc.next();
@@ -71,10 +92,12 @@ public class Player extends Canvas implements Runnable{
 //			age = sc.nextInt(); //why does not work?
 
 		} catch (NumberFormatException e) {
-			System.out.println("Analphabetic");
+			randNumber = r.nextInt(BadWordStorage.length);
+			System.out.println(HEXtoString(BadWordStorage[randNumber]));
 			new Window(WIDTH, HEIGHT, "TextGame", this);
 		}
 
+		randNumber = r.nextInt(BadWordStorage.length);
 		System.out.println("Enter your lucky number! (Between 1- 100)");
 
 		eingabe = sc.next();
@@ -84,17 +107,20 @@ public class Player extends Canvas implements Runnable{
 			luckyNumber = Integer.parseInt(eingabe);
 
 			if (luckyNumber < 0) {
-				System.out.println("Analphabetic");
+				randNumber = r.nextInt(BadWordStorage.length);
+				System.out.println(HEXtoString(BadWordStorage[randNumber]));
 				new Window(WIDTH, HEIGHT, "TextGame", this);
 			} else if (luckyNumber > 100) {
-				System.out.println("Analphabetic");
+				randNumber = r.nextInt(BadWordStorage.length);
+				System.out.println(HEXtoString(BadWordStorage[randNumber]));
 				new Window(WIDTH, HEIGHT, "TextGame", this);
 			}
 
 			System.out.println("Your Lucky Number: " + luckyNumber);
 
 		} catch (NumberFormatException e) {
-			System.out.println("Analphabetic");
+			randNumber = r.nextInt(BadWordStorage.length);
+			System.out.println(HEXtoString(BadWordStorage[randNumber]));
 			new Window(WIDTH, HEIGHT, "TextGame", this);
 		}
 
@@ -155,7 +181,8 @@ public class Player extends Canvas implements Runnable{
 		g.fillRect(0, 0, WIDTH, HEIGHT);
 
 		g.setColor(Color.white);
-		g.drawString(BadWordStorage[randNumber], WIDTH / 2-128, HEIGHT / 2);
+
+		g.drawString(HEXtoString(BadWordStorage[randNumber]), WIDTH / 2 - 128, HEIGHT / 2);
 
 		g.dispose();
 		bs.show();

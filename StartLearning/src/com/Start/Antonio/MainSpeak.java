@@ -6,6 +6,8 @@ public class MainSpeak  {
 		
 		Player player1 = new Player();
 		Player player2 = new Player();
+		
+		
 
 		player1.catchData();
 		System.out.println(player1.outputData());
