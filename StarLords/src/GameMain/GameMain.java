@@ -27,7 +27,7 @@ public class GameMain extends Canvas implements Runnable{
 	
 	public GameMain() {
 		MusicPlayer player = new MusicPlayer();
-		player.play("music/evolution.wav");
+		player.play("music/2ndSong.wav");
 		
 		handler = new Handler();
 		
