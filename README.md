@@ -1,6 +1,6 @@
 # Informatik
 Schularbeit <br />
-9h Java Tutorial (3-4 hours max needed): https://www.youtube.com/watch?v=grEKMHGYyns&t=2135s
+9h Java Tutorial (3-4 hours max needed): https://www.youtube.com/watch?v=grEKMHGYyns
 
 ## Lessons:
 | Project  | Function | Status |
