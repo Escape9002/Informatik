@@ -35,7 +35,7 @@ public class GameMain extends Canvas implements Runnable{
 		
 		this.addKeyListener(new Controlls(handler));
 		
-		new Window(WIDTH, HEIGHT, "StarLords", this);
+		new Window(WIDTH, HEIGHT, "WhatIsThisPlace", this);
 		
 		hud = new HUD();
 		spawner = new Spawn(handler, hud);
