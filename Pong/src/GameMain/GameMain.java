@@ -19,7 +19,7 @@ public class GameMain extends Canvas implements Runnable{
 
 	public static final int WIDTH = 640, HEIGHT = WIDTH / 12 * 9;	// Fenster groese
 	
-	private Thread thread;	// "Laufzeit" erstellen || Thread eröffnen
+	private Thread thread;	// "Laufzeit" erstellen || Thread erï¿½ffnen
 	private boolean running = false;	// Laeuft das Spiel ? nope
 	
 	private Handler handler;	// Objekt Verwalter 
@@ -28,6 +28,7 @@ public class GameMain extends Canvas implements Runnable{
 	public GameMain() {
 		MusicPlayer player = new MusicPlayer();	// Musik!
 		player.play("music/eisenfunk_pong.wav", true);	// Musik! und loop
+		player.play("music/2ndSong.wav", true);	// Musik! und loop
 		
 		handler = new Handler();	// init Verwalter
 		
@@ -67,7 +68,7 @@ public class GameMain extends Canvas implements Runnable{
 	
     private void tick() {
     	/*
-    	 * führe Berechnungen aus für Objekte und HUD
+    	 * fï¿½hre Berechnungen aus fï¿½r Objekte und HUD
     	 */
     		handler.tick();
     		hud.tick();
@@ -107,7 +108,7 @@ public class GameMain extends Canvas implements Runnable{
 	public static float clamp(float var, float min, float max) {
 		/*
 		 * Werte Begrenzer
-		 * setzt zu große Werte auf mitgegebenen max Wert
+		 * setzt zu groï¿½e Werte auf mitgegebenen max Wert
 		 * setzt zu kleine Werte auf mitgegebenen min Wert
 		 */
 		if(var >= max) {
@@ -122,7 +123,7 @@ public class GameMain extends Canvas implements Runnable{
 		/*
 		 * Game-Loop
 		 * FPS: unbegrenzt
-		 * führe in gleichmaesigen Abstaenden die Methoden tick und render aus
+		 * fï¿½hre in gleichmaesigen Abstaenden die Methoden tick und render aus
 		 * unendlicher loop bis running seinen status aendert
 		 */
 		//TODO ueber running einen exit knopf einfuegen

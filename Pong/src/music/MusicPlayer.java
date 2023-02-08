@@ -35,7 +35,7 @@ public class MusicPlayer {
 			
 			clip.start();
 		}else {
-			JOptionPane.showMessageDialog(null, "couldnt find the music file");
+			JOptionPane.showMessageDialog(null, "couldnt find the music file (it works never the less...lol");
 		}
 			
 			
@@ -54,7 +54,7 @@ public class MusicPlayer {
 			
 			clip.start();
 		}else {
-			JOptionPane.showMessageDialog(null, "couldnt find the music file");
+			JOptionPane.showMessageDialog(null, "couldnt find the music file (it works never the less...lol");
 		}
 			
 			

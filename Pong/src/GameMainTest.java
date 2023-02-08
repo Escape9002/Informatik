@@ -11,7 +11,7 @@ public class GameMainTest {
 	static MusicPlayer mPlayer = new MusicPlayer();
 
 	public static void main(String[] args) {
-		mPlayer.play("music/evolution.wav");
+		mPlayer.play("music/2ndSong.wav");
 		
 		JOptionPane.showMessageDialog(null,"Press ok to stop");
 
