@@ -3,6 +3,8 @@ package BinaryTree;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
+import java.util.function.Consumer;
 
 /*
 1. Lineare Suche auf Liste und Array implementieren
@@ -17,48 +19,109 @@ Material dazu:
         - Erklärung des Algorithmus' Die BINÄRE SUCHE (einfach erklärt) 
         - Implementierung: 4 Binaere Suche Laufzeitbergleich linear/binär: 6 Laufzeit- und allgemeiner Vergleich : Lineare und Binäre Suche 
 */
+
 public class BinaryTreeMain {
-    
+
     static Random rand = new Random();
+    public static boolean runningThread = true;
 
     public static void main(String[] args) {
-        int val = 1;
-        int[] lol = createArr(0, 100, true);
-        for(int g : lol) {
-            System.out.print(g + " | ");     
+        int val = 55;
+
+        System.out.println("----------------------------- Array -----------------------------");
+        int[] arr = createArr(0, 100, false);
+        for (int g : arr) {
+            System.out.print(g + " | ");
         }
         System.out.println();
-       
-        int lSerResu = linearSearch(lol, val);
-        
-        boolean running = true;
-        while(running) {
-            
-            if(lSerResu != 404) {
-                running = false;
-                System.out.println("Searched: " + val + " | found i: " + lSerResu + " | lol[i] :" + lol[lSerResu]);
-            }else {
-                System.out.println("looking for val: " + val);
-                lSerResu = linearSearch(lol, val);
-                val = val+1;
-            }
-       }
-       
-    }
-	public static int findAnyValue(int[] arr, int val){
-		int lSerResu = linearSearch(arr,val);
-		if(arr[lSerResu] != val){
-			val = 0;
-		}else{
-			return linearSearch(arr,val);
-		}
 
-		boolean running = true;
-		while(running){
-			if(
-		
-		
-	}
+        System.out.println("----------------------------- List -----------------------------");
+        List<Integer> list = createList(0,100,false);
+        System.out.println(list);
+
+        System.out.println("----------------------------- Array Linear Search -----------------------------");
+        
+        LinearSearch searchArray = new LinearSearch(arr);
+        int lSerResu = searchArray.search(val);
+        
+        System.out.print("search: ");
+        if(lSerResu == 404) {
+            System.out.println("Int not found, triggered Random while creation?");
+        }else {
+        System.out.println("Searched: " + val + " | found i: " + lSerResu + " | lol[i] :" + arr[lSerResu]);
+        }
+        System.out.println("findAnyvalue: " + searchArray.findAnyValue(val));
+
+        System.out.println("----------------------------- List Linear Search -----------------------------");
+        
+        LinearSearch searchList = new LinearSearch(list);
+        lSerResu = searchList.search(val);
+        
+        System.out.print("search: ");
+        if(lSerResu == 404) {
+            System.out.println("Int not found, triggered Random while creation?");
+        }else {
+            System.out.println("Searched: " + val + " | found i: " + lSerResu + " | lol[i] :" + list.get(lSerResu));
+        }
+
+        System.out.println("findAnyvalue: " + searchList.findAnyValue(val));
+        
+        System.out.println("----------------------------- Array Binary Search -----------------------------");
+        BinarySearch binSearch = new BinarySearch(arr);
+        int bSerResu = binSearch.search(val);
+        
+        System.out.print("search: ");
+        if(lSerResu == 404) {
+            System.out.println("Int not found, triggered Random while creation?");
+        }else {
+        System.out.println("Searched: " + val + " | found i: " + bSerResu + " | lol[i] :" + arr[bSerResu]);
+        }
+        
+        System.out.println("----------------------------- Benchmark -----------------------------");
+        int iterations = 500;
+        int arraySize = 500;
+        int[] benArr = createArr(0, arraySize, false);
+        
+        String[] info = {"runtime (millis): ", "array size: ", "iterations: "};
+        
+        long[] benRes = benchmark(searchArray, benArr,iterations);
+        System.out.print("linear (array)[ ");
+        for(int i = 0; i < info.length; i++) {
+            System.out.print(info[i] + benRes[i] + " | ");
+        }
+        System.out.println("]");
+        
+        
+        benRes = benchmark(binSearch, benArr, iterations);
+        System.out.print("binarry (array)[ ");
+        for(int i = 0; i < info.length; i++) {
+            System.out.print(info[i] + benRes[i] + " | ");
+        }
+        
+        System.out.println("]");
+    }
+    
+  
+    public static long[] benchmark(SearchAlgorithms d, int[] arr, int iterations) {
+                
+             Benchmark runnable = new Benchmark(TimeUnit.MILLISECONDS.toNanos(250));
+             //Thread thread = new Thread(runnable);
+             runnable.start();
+             //thread.run();
+        
+        long start = System.nanoTime();
+        
+        for(int i = iterations; i > 0; i--) {
+            d.search(i);
+        }
+        runningThread = false;
+        
+        long[] res = {TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - start), arr.length,  iterations};
+        return res;
+        
+    }
+   
+
     public static int[] createArr(int min, int max, boolean random) {
         int[] arr = new int[(max - min)];
         if (random) {
@@ -73,21 +136,21 @@ public class BinaryTreeMain {
         return arr;
     }
 
-    public static int linearSearch(int[] arr, int val) {
-        for (int i = arr.length - 1; i > 0; i--) {
-            if (arr[i] == val) {
-                return i;
+    public static List<Integer> createList(int min, int max, boolean random) {
+        List<Integer> list = new LinkedList<Integer>();
+
+        if (random) {
+            for (int i = 0; i < (max - min); i++) {
+                list.add(rand.nextInt(max));
+            }
+
+        } else {
+            for (int i = 0; i < (max - min); i++) {
+                list.add(i);
             }
         }
-        return 404;
+        
+        return list;
     }
 
-    public int linearSearch(List<Integer> list, int val) {
-        int[] arr = new int[list.size() - 1];
-        for (int i = 0; i < list.size() - 1; i++) {
-            arr[i] = list.get(i);
-        }
-
-        return linearSearch(arr, val);
-    }
 }
