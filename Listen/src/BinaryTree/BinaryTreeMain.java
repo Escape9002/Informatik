@@ -42,18 +42,23 @@ public class BinaryTreeMain {
                 lSerResu = linearSearch(lol, val);
                 val = val+1;
             }
-            
-//            try {
-//                System.out.println("Searched: " + val + " | found i: " + lSerResu + " | lol[i] :" + lol[lSerResu]);
-//                running = true;
-//                }catch(ArrayIndexOutOfBoundsException e) {
-//                    System.out.println("this number doesn't seem to be in this array...");
-//                    running = false;
-//                }
        }
        
     }
+	public static int findAnyValue(int[] arr, int val){
+		int lSerResu = linearSearch(arr,val);
+		if(arr[lSerResu] != val){
+			val = 0;
+		}else{
+			return linearSearch(arr,val);
+		}
 
+		boolean running = true;
+		while(running){
+			if(
+		
+		
+	}
     public static int[] createArr(int min, int max, boolean random) {
         int[] arr = new int[(max - min)];
         if (random) {
