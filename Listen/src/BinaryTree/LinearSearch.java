@@ -5,7 +5,7 @@ import java.util.List;
 
 /*
  * Definition: Lineare Suche:
- * Man fängt beim ersten Element der linearen Datenstruktur an zu suchen
+ * Man faengt beim ersten Element der linearen Datenstruktur an zu suchen
  * und macht so lange weiter, bis man entweder die gesuchten Daten gefunden hat oder
  * am Ende der Datenstruktur angekommen ist und nichts gefunden hat.
  * 

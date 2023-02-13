@@ -10,16 +10,16 @@ import benchmarking.Benchmark;
 
 /*
 1. Lineare Suche auf Liste und Array implementieren
-2. Bin�re Suche auf sortiertem Array implementieren.
+2. Binaere Suche auf sortiertem Array implementieren.
 
 Material dazu:    
     1. Die lineare Suche auf Array und Liste implementieren 
-        - Erkl�rung inkl. Implementation auf einer Liste (�ber die �bung + L�sung) http://u-helmich.de/inf/kursQ1/folge12/folge12-1.html 
-        - Hier wird der im Video erkl�rt : Die lineare Suche | Algorithmen und Datenstrukturen.  
+        - Erklaerung inkl. Implementation auf einer Liste (ueber die uebung + Loesung) http://u-helmich.de/inf/kursQ1/folge12/folge12-1.html 
+        - Hier wird der im Video erklaert : Die lineare Suche | Algorithmen und Datenstrukturen.  
     2. Implementation auf einem Array:  3 Lineare Suche auf dem Array in Java 
-        - Bin�re Suche auf einem sortierten Array implementieren. 
-        - Erkl�rung des Algorithmus' Die BIN�RE SUCHE (einfach erkl�rt) 
-        - Implementierung: 4 Binaere Suche Laufzeitbergleich linear/bin�r: 6 Laufzeit- und allgemeiner Vergleich : Lineare und Bin�re Suche 
+        - Binaere Suche auf einem sortierten Array implementieren. 
+        - Erklaerung des Algorithmus' Die BINaeRE SUCHE (einfach erklaert) 
+        - Implementierung: 4 Binaere Suche Laufzeitbergleich linear/binaer: 6 Laufzeit- und allgemeiner Vergleich : Lineare und Bin�re Suche 
 */
 
 public class BinaryTreeMain {
