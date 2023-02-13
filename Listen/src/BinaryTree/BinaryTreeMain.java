@@ -6,6 +6,8 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Consumer;
 
+import benchmarking.Benchmark;
+
 /*
 1. Lineare Suche auf Liste und Array implementieren
 2. Bin�re Suche auf sortiertem Array implementieren.
@@ -36,94 +38,76 @@ public class BinaryTreeMain {
         System.out.println();
 
         System.out.println("----------------------------- List -----------------------------");
-        List<Integer> list = createList(0,100,false);
+        List<Integer> list = createList(0, 100, false);
         System.out.println(list);
 
         System.out.println("----------------------------- Array Linear Search -----------------------------");
-        
+
         LinearSearch searchArray = new LinearSearch(arr);
         int lSerResu = searchArray.search(val);
-        
+
         System.out.print("search: ");
-        if(lSerResu == 404) {
+        if (lSerResu == 404) {
             System.out.println("Int not found, triggered Random while creation?");
-        }else {
-        System.out.println("Searched: " + val + " | found i: " + lSerResu + " | lol[i] :" + arr[lSerResu]);
+        } else {
+            System.out.println("Searched: " + val + " | found i: " + lSerResu + " | lol[i] :" + arr[lSerResu]);
         }
         System.out.println("findAnyvalue: " + searchArray.findAnyValue(val));
 
         System.out.println("----------------------------- List Linear Search -----------------------------");
-        
+
         LinearSearch searchList = new LinearSearch(list);
         lSerResu = searchList.search(val);
-        
+
         System.out.print("search: ");
-        if(lSerResu == 404) {
+        if (lSerResu == 404) {
             System.out.println("Int not found, triggered Random while creation?");
-        }else {
+        } else {
             System.out.println("Searched: " + val + " | found i: " + lSerResu + " | lol[i] :" + list.get(lSerResu));
         }
 
         System.out.println("findAnyvalue: " + searchList.findAnyValue(val));
-        
+
         System.out.println("----------------------------- Array Binary Search -----------------------------");
         BinarySearch binSearch = new BinarySearch(arr);
         int bSerResu = binSearch.search(val);
-        
+
         System.out.print("search: ");
-        if(lSerResu == 404) {
+        if (lSerResu == 404) {
             System.out.println("Int not found, triggered Random while creation?");
-        }else {
-        System.out.println("Searched: " + val + " | found i: " + bSerResu + " | lol[i] :" + arr[bSerResu]);
+        } else {
+            System.out.println("Searched: " + val + " | found i: " + bSerResu + " | lol[i] :" + arr[bSerResu]);
         }
-        
+
         System.out.println("----------------------------- Benchmark -----------------------------");
+        /*
+         * java -XX:+PrintFlagsFinal -version | findstr /i
+         * "HeapSize PermSize ThreadStackSize"
+         * size_t HeapSizePerGCThread = 43620760
+         * size_t MaxHeapSize = 4284481536
+         * size_t LargePageHeapSizeThreshold = 134217728
+         */
+
         int iterations = 100000000;
-        int arraySize = 100000000;
+        int arraySize = 43620760;
         int[] benArr = createArr(0, arraySize, false);
+        List<Integer> benList = createList(0, arraySize, false);
+
+        long[] benResLinearArr = benchmarking.Benchmark.benchmark(searchArray, benArr, iterations, "linearArr");
+        Benchmark.printResult(benResLinearArr);
+
+        long[] benResLinearList = benchmarking.Benchmark.benchmark(searchList, benList, iterations, "linearList");
+        Benchmark.printResult(benResLinearList);
+
+        long[] benResbinarArr = benchmarking.Benchmark.benchmark(binSearch, benArr, iterations, "binarArray");
+        Benchmark.printResult(benResbinarArr);
         
-        String[] info = {"runtime (millis): ", "array size: ", "iterations: "};
-        
-        long[] benRes = benchmark(searchArray, benArr,iterations, "linearArr");
-        System.out.print("linear (array)[ ");
-        for(int i = 0; i < info.length; i++) {
-            System.out.print(info[i] + benRes[i] + " | ");
-        }
-        System.out.println("]");
-        
-        
-        benRes = benchmark(binSearch, benArr, iterations, "binarArray");
-        System.out.print("binarry (array)[ ");
-        for(int i = 0; i < info.length; i++) {
-            System.out.print(info[i] + benRes[i] + " | ");
-        }
-        
-        System.out.println("]");
-    }
-    
-  
-    public static long[] benchmark(SearchAlgorithms d, int[] arr, int iterations, String name) {
-                
-             //Benchmark runnable = new Benchmark(TimeUnit.MILLISECONDS.toNanos(250));
-             Thread bench = new Thread(new Benchmark(TimeUnit.MILLISECONDS.toNanos(250)));
-             bench.setName(name);
-             bench.start();
-             //thread.run();
-        
-        long start = System.nanoTime();
-        
-        for(int i = iterations; i > 0; i--) {
-            d.search(i);
-        }
-        runningThread = false;
-        while(bench.isAlive()) {
-            // wait for bench.thread to stop
-        }
-        long[] res = {TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - start), arr.length,  iterations};
-        return res;
+        System.out.println("----------- RESULTS ----------------");
+        Benchmark.printResult(benResLinearArr);
+        Benchmark.printResult(benResLinearList);
+        Benchmark.printResult(benResbinarArr);
         
     }
-   
 
     public static int[] createArr(int min, int max, boolean random) {
         int[] arr = new int[(max - min)];
@@ -140,6 +124,9 @@ public class BinaryTreeMain {
     }
 
     public static List<Integer> createList(int min, int max, boolean random) {
+        if ((max - min) > 43620760) {
+            System.out.println("Size problems may occur...");
+        }
         List<Integer> list = new LinkedList<Integer>();
 
         if (random) {
@@ -152,7 +139,7 @@ public class BinaryTreeMain {
                 list.add(i);
             }
         }
-        
+
         return list;
     }
 
