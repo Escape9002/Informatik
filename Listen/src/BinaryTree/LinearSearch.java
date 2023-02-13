@@ -1,5 +1,6 @@
 package BinaryTree;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /*
@@ -14,19 +15,22 @@ import java.util.List;
 public class LinearSearch implements SearchAlgorithms {
 
     int[] arr = null;
-    
+    List<Integer> list = new LinkedList<Integer>();
+
     public LinearSearch(int[] arr) {
         this.arr = arr;
     }
-    
-    public LinearSearch(List<Integer> list){
-        arr = new int[(list.size())-1];
+
+    public LinearSearch(List<Integer> list) {
+        /*
+        arr = new int[(list.size()) - 1];
         for (int i = 0; i < list.size() - 1; i++) {
             arr[i] = list.get(i);
         }
-               
+        */
+
+        this.list = list;
     }
-    
 
     public String findAnyValue(int val) {
         int lSerResu = search(val);
@@ -36,7 +40,12 @@ public class LinearSearch implements SearchAlgorithms {
 
             if (lSerResu != 404) {
                 running = false;
-                return "Searched: " + val + " | found i: " + lSerResu + " | lol[i] :" + arr[lSerResu];
+                if(arr == null) {
+                    return "Searched: " + val + " | found i: " + lSerResu + " | lol[i] :" + list.get(lSerResu);
+                }else {
+                    return "Searched: " + val + " | found i: " + lSerResu + " | lol[i] :" + arr[lSerResu];    
+                }
+                
             } else {
                 System.out.println("findAnyvalue: looking for val: " + val);
                 lSerResu = search(val);
@@ -47,14 +56,22 @@ public class LinearSearch implements SearchAlgorithms {
         return "however you got here...";
 
     }
-    
+
     public int search(int val) {
-        for (int i = arr.length - 1; i > 0; i--) {
-            if (arr[i] == val) {
-                return i;
+        if (arr == null) {
+            for (int i = list.size() - 1; i > 0; i--) {
+                if (val == list.get(i)) {
+                    return i;
+                }
+            }
+        } else {
+            for (int i = arr.length - 1; i > 0; i--) {
+                if (arr[i] == val) {
+                    return i;
+                }
             }
         }
         return 404;
     }
-    
+
 }
