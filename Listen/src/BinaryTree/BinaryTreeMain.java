@@ -78,13 +78,13 @@ public class BinaryTreeMain {
         }
         
         System.out.println("----------------------------- Benchmark -----------------------------");
-        int iterations = 500;
-        int arraySize = 500;
+        int iterations = 100000000;
+        int arraySize = 100000000;
         int[] benArr = createArr(0, arraySize, false);
         
         String[] info = {"runtime (millis): ", "array size: ", "iterations: "};
         
-        long[] benRes = benchmark(searchArray, benArr,iterations);
+        long[] benRes = benchmark(searchArray, benArr,iterations, "linearArr");
         System.out.print("linear (array)[ ");
         for(int i = 0; i < info.length; i++) {
             System.out.print(info[i] + benRes[i] + " | ");
@@ -92,7 +92,7 @@ public class BinaryTreeMain {
         System.out.println("]");
         
         
-        benRes = benchmark(binSearch, benArr, iterations);
+        benRes = benchmark(binSearch, benArr, iterations, "binarArray");
         System.out.print("binarry (array)[ ");
         for(int i = 0; i < info.length; i++) {
             System.out.print(info[i] + benRes[i] + " | ");
@@ -102,11 +102,12 @@ public class BinaryTreeMain {
     }
     
   
-    public static long[] benchmark(SearchAlgorithms d, int[] arr, int iterations) {
+    public static long[] benchmark(SearchAlgorithms d, int[] arr, int iterations, String name) {
                 
-             Benchmark runnable = new Benchmark(TimeUnit.MILLISECONDS.toNanos(250));
-             //Thread thread = new Thread(runnable);
-             runnable.start();
+             //Benchmark runnable = new Benchmark(TimeUnit.MILLISECONDS.toNanos(250));
+             Thread bench = new Thread(new Benchmark(TimeUnit.MILLISECONDS.toNanos(250)));
+             bench.setName(name);
+             bench.start();
              //thread.run();
         
         long start = System.nanoTime();
@@ -115,7 +116,9 @@ public class BinaryTreeMain {
             d.search(i);
         }
         runningThread = false;
-        
+        while(bench.isAlive()) {
+            // wait for bench.thread to stop
+        }
         long[] res = {TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - start), arr.length,  iterations};
         return res;
         
