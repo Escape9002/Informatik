@@ -1,4 +1,4 @@
-LZW:
+# LZW:
     verlustfreies Komprimieren: "bananen san nat"
         last    current     lib    code
         -       b           -      -
@@ -15,3 +15,6 @@ LZW:
         n       a           3       
         a       t           at      9
 
+# Huffman:
+    1 buchstaben zählen (mit leerzeichen)
+    2 
