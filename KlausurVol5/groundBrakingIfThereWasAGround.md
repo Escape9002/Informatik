@@ -1,5 +1,5 @@
-## lol, ignore if you want:
-# LZW:
+# lol, ignore if you want:
+## LZW:
     verlustfreies Komprimieren: "bananen san nat"
         last    current     lib    code
         -       b           -      -
@@ -18,7 +18,7 @@
 
     Code: 12345672839
 
-# Huffman:
+## Huffman:
     1 buchstaben zählen (mit leerzeichen)
     2 Binärbaum aufbauen:
         2.1 geringste Häufigkeits-Buchstaben als unterste Knoten
@@ -38,12 +38,12 @@
         ![HuffmanTree](https://github.com/Escape9002/Informatik/blob/main/KlausurVol5/Huffman.png)
     Code: 111 100 0 100 0 1100 0 101 [and so on]
 
-## Ab hier wirds wichtig...
+# Ab hier wirds wichtig...
 
-# Baumsetheorie
-    Preorder: wlr
-    postorder: lrw
-    inorder: lwr
+## Baumsetheorie
+    ### Preorder: wlr
+    ### postorder: lrw
+    ### inorder: lwr
     
     test:
         ![Ordering](https://github.com/Escape9002/Informatik/blob/main/KlausurVol5/ordering.png)
@@ -52,18 +52,18 @@
     postorder: 5 6 4 2 3 1
     inorder:   5 4 6 2 1 3
 
-    binäre bäume können:
+    ### binäre bäume können:
         unausgewogen: eine seite hat 2 mehr ebenen als die andere (ebenen gelten nur wenn voll besetzt) 
         ausgewogen: die abstände sind max 1 ebene 
         vollständig: alle knoten haben (2 || 0) nachfolger
 
     Bsp: ![BaumeBeschweren](https://github.com/Escape9002/Informatik/blob/main/KlausurVol5/BaumeBeschweren.png)
 
-# boolsche logik
+## boolsche logik
     vereinfachungsregeln
     ![boolregeln](https://github.com/Escape9002/Informatik/blob/main/KlausurVol5/boolregeln.png)
 
-    KV-Diagramm:
+    ### KV-Diagramm:
         maxterm: 
             möglichst große Boxen (nur 0)
             invers belegt variablen
@@ -93,12 +93,88 @@
     
 
 # Graphensuche:
-mini max spanning 
-map coloring 
-kruskal
-dijskatra
-tiefen/breite
+min spanning tree: kruskal algo
+max spanning tree: kruskal aber absteingend sortieren
+### map coloring 
+    jeder graph kann mit n Farben gezeichnet werden, ohne das die selbe Farbe sich selbst benachbart, wenn: jeder knoten nur n kanten hat
+    knoten == kanten
+### kruskal
+    1. kanten gewichte aufsteigend sortieren
+    2. markierung der kante + aufschreiben der Knoten
+    REGEL: keine (Korn) Kreise bauen!
+
+    bsp:
+        2,3,6,5,4,1
+    
+### dijskatra
+    kürzesten weg suchen (greedy algo: min für momentanen move)
+    geht nur für vollständige graphen
+    
+    1. kleinste value auswählen für kante
+    2. für neuen knoten prüfen wie hoch kanten, vergleichen mit anderen kanten (die undiscovered sind, wenn knoten auf adnerer seite discovered cancel as well); da wo val kleiner == gehen
+
+    bsp (ohne pnkt 6):
+        start:1
+        knoten: 1,2,3,5,4
+        weg: 0,4,5,7,10
+
+    bleeptrack:
+        SCDFZ
+
+### Backtracking
+    verwendung für: 
+        sodoku: teillösung für zahlfeld suchen, nächstes zahlfeld
+            wenn nichts möglich, rekursion und nächste TL prüfen
+        labyrinth:
+            tl suchen (l,r,g), bei sackgasse kein TL möglich --> rekursion, tl suchen
+
+    Solange Teillösung(TL):
+        wähle TL
+        wenn ziel erreicht:
+            return true;
+        sonst:
+            rekursion auf diesen pnkt;
+        sonst:
+            return false;
+
+    bsp:
+        start: 1
+            1,2,3,4,5 [5]return true , [4]return true, 6, [6] return true, [3]return true, ...
+        
+
+### Tiefensuche
+    - verhält sich wie stack
+    - verwendet werden 2 zeitstempel (discoverd and finalize)
+
+    1.  alle punkte in reihe discovern
+    2. wenn es nicht weiter geht, finalize diesen pnkt
+    3. einen schritt zurück, links rechts weiter? --> weiter machen wie in 1.; nein? führe ab 2. aus
+
+            1   2   3   4   5   6
+    d       1   2   3   4   5   8
+    f       12  11  9   7   6   9
+    parent  -   1   2   3   4   3
+
+
+### Breitensuche
+    - verhält sich wie queue
+    1. start knoten explored
+    2. kanten gehen, endpunkte : (if discovered: nothing; else: discovered)
+    2. abstandsmarkierung setzen an discovered Knoten == abstand von s(original s) über discoverd weg
+    3. discovered knoten auswhählen und ab 1 weiter
+
+    für jedes explored: aus queue loeschen
+    für jedes discovered: in queue eintragen
+
+    Bsp:
+        1: s
+        1[0] 2[1] 4[2] 3[2] 6[3] 5[4] bzw 1[0] 2[1] 3[3] 6[4] 4[3] 5[4] // this is very likely not correct
+
+    - stoeßt auf knoten mit abstand k vor Knoten mit abstand k+1
+    - kürzester weg von s zu übrigen Knoten
+
+
 
 # Rekursion
-laufzeit
+### laufzeit
 sortier
