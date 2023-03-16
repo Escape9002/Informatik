@@ -177,4 +177,31 @@ max spanning tree: kruskal aber absteingend sortieren
 
 # Rekursion
 ### laufzeit
-sortier
+    O(n) --> n durchläufe für diese Funktion
+    bsp: 
+        for i in range(len(array)):         | O(n)
+            print("hello")                  | O(1)
+
+    O(1) * O(n) == O(n)
+
+    for i in range n:                       | O(n)
+        for x in range n:                   | O(n)
+            if x>i: swap(i,x)               | O(1)
+
+    O(n) * O(n) * O(1) == O(n^2)
+
+    for i in range n:                       | O(n)
+        for x in range n:                   | O(n-x) 
+            n = n - x
+
+    O(n) * O(n-x) == O(n log n)
+
+    bsp:
+        Quicksort	O(n log n)	O(n²)       | divide and conquer per pivot element
+        Mergesort	O(n log n)	O(n log n)  | divide and conquer mit teilung der listen in teillisten ("schlaues" zsm führen)
+        Bubble Sort O(n)        O(n²)       | vergleiche aller werte und tauschen
+
+
+### sortier algos
+    Quicksort: see class
+    Mergesort: see class
