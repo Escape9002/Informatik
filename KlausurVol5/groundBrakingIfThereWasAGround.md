@@ -15,6 +15,26 @@
         n       a           3       
         a       t           at      9
 
+    Code: 12345672839
+
 # Huffman:
     1 buchstaben zählen (mit leerzeichen)
-    2 
+    2 Binärbaum aufbauen:
+        2.1 geringste Häufigkeits-Buchstaben als unterste Knoten
+        2.2 diese Knoten: Häufigkeiten addiernen und als Wurzel verwenden
+    3 links: 1; rechts: 0
+
+    bananen san nat:
+    b   1
+    t   1
+    s   1
+    e   1
+    _   2
+    a   4
+    n   5
+
+    tree:
+        ![HuffmanTree](https://github.com/Escape9002/Informatik/blob/main/KlausurVol5/Huffman.png)
+    Code: 111 100 0 100 0 1100 0 101 [and so on]
+
+# Baumsetheorie
