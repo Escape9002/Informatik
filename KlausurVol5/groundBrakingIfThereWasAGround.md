@@ -1,3 +1,4 @@
+## lol, ignore if you want:
 # LZW:
     verlustfreies Komprimieren: "bananen san nat"
         last    current     lib    code
@@ -37,6 +38,8 @@
         ![HuffmanTree](https://github.com/Escape9002/Informatik/blob/main/KlausurVol5/Huffman.png)
     Code: 111 100 0 100 0 1100 0 101 [and so on]
 
+## Ab hier wirds wichtig...
+
 # Baumsetheorie
     Preorder: wlr
     postorder: lrw
@@ -56,4 +59,46 @@
 
     Bsp: ![BaumeBeschweren](https://github.com/Escape9002/Informatik/blob/main/KlausurVol5/BaumeBeschweren.png)
 
+# boolsche logik
+    vereinfachungsregeln
+    ![boolregeln](https://github.com/Escape9002/Informatik/blob/main/KlausurVol5/boolregeln.png)
+
+    KV-Diagramm:
+        maxterm: 
+            möglichst große Boxen (nur 0)
+            invers belegt variablen
+            
+                        AB
+                    00  01  11  10  
+            CD  00  1   1   0   0
+                01  0   1   1   1
+                11  0   1   1   1
+                10  0   1   0   0
+
+            --> (A v B v -C) n (-A v D) n (A v B v -D)
+        
+        minterm:
+            möglichst große boxen (nur 1)
+            norm belegte Vars
+
+                        AB
+                    00  01  11  10
+            cd  00  1   1   0   0
+                01  0   1   1   1
+                11  0   1   1   1
+                10  0   1   0   0
+
+            --> (-C n -D n -A) v (-A n B) v (A n D)
+
     
+
+# Graphensuche:
+mini max spanning 
+map coloring 
+kruskal
+dijskatra
+tiefen/breite
+
+# Rekursion
+laufzeit
+sortier
