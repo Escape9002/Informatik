@@ -38,3 +38,22 @@
     Code: 111 100 0 100 0 1100 0 101 [and so on]
 
 # Baumsetheorie
+    Preorder: wlr
+    postorder: lrw
+    inorder: lwr
+    
+    test:
+        ![Ordering](https://github.com/Escape9002/Informatik/blob/main/KlausurVol5/ordering.png)
+    
+    preorder:  1 2 4 5 6 3
+    postorder: 5 6 4 2 3 1
+    inorder:   5 4 6 2 1 3
+
+    binäre bäume können:
+        unausgewogen: eine seite hat 2 mehr ebenen als die andere (ebenen gelten nur wenn voll besetzt) 
+        ausgewogen: die abstände sind max 1 ebene 
+        vollständig: alle knoten haben (2 || 0) nachfolger
+
+    Bsp: ![BaumeBeschweren](https://github.com/Escape9002/Informatik/blob/main/KlausurVol5/BaumeBeschweren.png)
+
+    
