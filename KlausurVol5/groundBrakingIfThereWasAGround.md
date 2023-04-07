@@ -238,7 +238,7 @@ max spanning tree: kruskal aber absteingend sortieren
 	155(10) --> 1001 1011(2)[binear] --> 0110 0100(2)[Einer-Komplement] 
 
 	 01100100
-	\+      1 
+	+       1 
 	---------
 	 01100101
 
@@ -248,7 +248,7 @@ max spanning tree: kruskal aber absteingend sortieren
 	155(10) --> 0000 1001 1011(2)[binear]{12Bit] --> 1111 0110 0100(2)[1er-Komplement]{12Bit}
 
 	 1111 0110 0100
-	\+             1
+	+             1
 	---------------
 	 1111 0110 0101
 
