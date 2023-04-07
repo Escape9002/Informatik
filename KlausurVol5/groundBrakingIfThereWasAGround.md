@@ -208,7 +208,7 @@ max spanning tree: kruskal aber absteingend sortieren
 
 # Binaerer Scheiß
 ## normal:
-Zahl durch 2 Teilen, rest wahr falsch notieren, bei (1/2) --> 1 notieren notierte von unten nach oben aufschreiben; tadaa
+'''Zahl durch 2 Teilen, rest wahr falsch notieren, bei (1/2) --> 1 notieren notierte von unten nach oben aufschreiben; tadaa'''
 
 ### bsp:
 155(10) zu binaer: <br>
