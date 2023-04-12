@@ -1,4 +1,4 @@
-# UML für OOP lesen
+## UML für OOP lesen
     Duenner Pfeil --> Assoziation (aka mit einbinden an dieser Stelle)
     Dicker Pfeil --> Vererbung (extends [denn implements geht nur für interfaces/abstract class])
 

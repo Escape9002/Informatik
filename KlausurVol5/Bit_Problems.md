@@ -73,7 +73,7 @@
     ![boolregeln](https://github.com/Escape9002/Informatik/blob/main/KlausurVol5/boolregeln.png)
 
 ## KV-Diagramm
-Formen:
+Wie Formen?
     bei 2 Values:
         A   -A    
     B
@@ -101,13 +101,13 @@ Lohnt sich, wenn mehr 0 als 1
     "Addiere" die Teillösungen mit einem n
     Fertig ^^
 
-Bsp:
+Bsp
         A   A   -A  -A
     B   1   0   1   1
     -B  1   0   1   1
         C   -C  -C  C
 
-Felder: [4er Block, beinhaltet Collumn -A -A | 2er Block, beinhaltet A]
+Felder [4er Block, beinhaltet Collumn -A -A | 2er Block, beinhaltet A]
         A   A   -A  -A
     B   !1   0   !1  !1
     -B  !1   0   !1  !1
@@ -117,7 +117,7 @@ Felder: [4er Block, beinhaltet Collumn -A -A | 2er Block, beinhaltet A]
     GesamtLösung: (A n C) v -A
     (vereinfachung: (A v -A) n (C v -A) --> -A v C  )
 
-Bsp:
+Bsp
               AB
            00  01  11  10
     cd  00  1   1   0   0
@@ -135,13 +135,13 @@ Lohnt sich, wenn mehr 1 als 0
     Teillösungen mit n verbinden
     Profit!
 
-Bsp:
+Bsp
         A   A   -A  -A
     B   1   0   1   1
     -B  1   0   1   1
         C   -C  -C  C
 
-    Felder: [2er Block, beinhaltet A]
+    Felder [2er Block, beinhaltet A]
         A   A   -A  -A
     B   1   !0   1   1
     -B  1   !0   1   1
@@ -150,7 +150,7 @@ Bsp:
     Teillösung: -A v C
     Gesamtlösung: -A v C        // huch, das ist ja das selbe wie oben...also alles richtig gemacht ^^
 
-Bsp:
+Bsp
             
               AB
         00  01  11  10  
