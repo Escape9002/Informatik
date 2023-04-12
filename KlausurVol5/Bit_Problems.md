@@ -92,6 +92,7 @@ Wie Formen?
     B
     -B
         C  -C   -C   C
+```
 
 ### Disjunktive Normalform
 Lohnt sich, wenn mehr 0 als 1
@@ -108,7 +109,7 @@ Bsp
     B   1   0   1   1
     -B  1   0   1   1
         C   -C  -C  C
-
+```
 
 Felder [4er Block, beinhaltet Collumn -A -A | 2er Block, beinhaltet A]
 ```
@@ -116,7 +117,7 @@ Felder [4er Block, beinhaltet Collumn -A -A | 2er Block, beinhaltet A]
     B   !1   0   !1  !1
     -B  !1   0   !1  !1
         C   -C  -C  C
-
+```
     Teillösungen: A n C und -A
     GesamtLösung: (A n C) v -A
     (vereinfachung: (A v -A) n (C v -A) --> -A v C  )
@@ -131,7 +132,7 @@ Bsp
         10  0   1   0   0
 
     --> (-C n -D n -A) v (-A n B) v (A n D)
-
+```
 
 ### Konjunktive Normalform
 Lohnt sich, wenn mehr 1 als 0
@@ -146,18 +147,18 @@ Bsp
     B   1   0   1   1
     -B  1   0   1   1
         C   -C  -C  C
-
+```
     Felder [2er Block, beinhaltet A]
         A   A   -A  -A
     B   1   !0   1   1
     -B  1   !0   1   1
         C   -C  -C  C
-
+```
     Teillösung: -A v C
     Gesamtlösung: -A v C        // huch, das ist ja das selbe wie oben...also alles richtig gemacht ^^
 
 Bsp
-```  
+```      
               AB
         00  01  11  10  
     CD  00  1   1   0   0
@@ -166,3 +167,4 @@ Bsp
         10  0   1   0   0
 
     --> (A v B v -C) n (-A v D) n (A v B v -D)
+```    
