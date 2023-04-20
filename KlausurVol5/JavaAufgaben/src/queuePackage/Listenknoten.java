@@ -1,7 +1,7 @@
 package queuePackage;
 
 // Aufgaben Teil a)
-public class Listenknoten<Integer> {
+public class Listenknoten<T> {
 	Listenknoten<Integer> nachfolger;
 	int daten;
 	

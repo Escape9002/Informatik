@@ -21,9 +21,6 @@
 
     Bsp: ![BaumeBeschweren](https://github.com/Escape9002/Informatik/blob/main/KlausurVol5/BaumeBeschweren.png)
 
-
-    
-
 # Netzneutralität
     „Netzneutralität bezeichnet die Gleichbehandlung von Daten bei der Übertragung im 
     Internet und den diskriminierungsfreien Zugang bei der Nutzung von Datennetzen. 

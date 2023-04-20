@@ -62,6 +62,41 @@
 	+/- 64 32 16 8 4 2 1
 
 	damit sind nur Zahlen von -127 bis +127 für das 2er-Komplement bei 8 Bit möglich!
+## Float vs Fest Komma
+### Festkomma | Fixed Point 
+    In binärer Zahl Kommastelle dazudenken.
+    1   1   0   1   (,) 1   1       bin
+    8   4   2   1   ,   1/2 1/4     dec
+    -------------------------------
+    13,75(10)
+
+    Problem:
+    Genauigkeit der Darstellung beim prog. festgelegt 
+    (siehe oben: 2 Komma --> mögl Zahlen: 0.5, 0.25, 0.75, 0.0 --> Stark begrenzt)
+
+    Vorteil:
+    Wenig rechenlast bei addition etc. --> gut für Microcontroller etc.
+
+### Gleitkomma | Floating Point
+    Notation wie in Wissenschaft:
+    500000 --> 5*10^5
+    0.00005 --> 5*10^-5
+
+    Das "10^x" nennt sich Matisse ^^
+
+    Binär:
+    Hier muss die Matisse mit abgespeichert werden! Da 2^x immer gleich ist, eigentlich nur den Exponent.
+    1101(,)11  --> 110111 * 2^2
+    1101(,)0001111 --> 1101,00011111 * 2^8
+
+    Problem:
+    Mehr Speicherplatz wird benötigt (effektiv fast doppelt so viel...).
+    Die Zahl liegt nicht direkt als "Zahl" vor, sondern als Kombi aus Zahl und Matisse 
+        --> mehr Rechenleistung nötig
+    
+    Vorteil:
+    Es gibt theoretisch unendlich viele Nachkommastellen
+    Immer so viele, wie man eine Matisse abspeichern kann ^^
 
 ## Logische Gatter
 ### Tabellen Aufbauen
@@ -168,3 +203,15 @@ Bsp
 
     --> (A v B v -C) n (-A v D) n (A v B v -D)
 ```    
+
+## Addition mit Elektronen
+Achtung! Die Eingänge entsprechen keinen Bit-Zahlen sondern elektr. Strömen <\br>
+--> 101 !=5 sondern 2 (weil 2* true)
+
+### Halbaddierer
+benötigt: und-Gatter, =1 gatter
+![Halbaddierer](https://github.com/Escape9002/Informatik/blob/main/KlausurVol5/Halbaddierer.png)
+
+### Volladdierer
+benötigt: 2 Halbadd, >=1 Gatter
+![Volladdierer](https://github.com/Escape9002/Informatik/blob/main/KlausurVol5/Volladdierer.png)

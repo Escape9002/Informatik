@@ -1,4 +1,3 @@
-
 # Graphensuche:
 min spanning tree: kruskal algo
 max spanning tree: kruskal aber absteingend sortieren
