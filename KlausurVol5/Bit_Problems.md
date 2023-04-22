@@ -202,7 +202,7 @@ Bsp
         10  0   1   0   0
 
     --> (A v B v -C) n (-A v D) n (A v B v -D)
-```    
+```
 
 ## Addition mit Elektronen
 Achtung! Die Eingänge entsprechen keinen Bit-Zahlen sondern elektr. Strömen <\br>

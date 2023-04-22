@@ -15,6 +15,6 @@ public class PaketQueue<T> {
 	}
 	
 	boolean isEmpty() {
-		return false;
+		return false;e
 	}
 }
