@@ -1,9 +1,13 @@
+Diese Kapitel hängt dicht mit graphen.md zsm!
+
 # Graphensuche:
 min spanning tree: kruskal algo
 max spanning tree: kruskal aber absteingend sortieren
+
 ### map coloring 
     jeder graph kann mit n Farben gezeichnet werden, ohne das die selbe Farbe sich selbst benachbart, wenn: jeder knoten nur n kanten hat
     knoten == kanten
+
 ### kruskal
     1. kanten gewichte aufsteigend sortieren
     2. markierung der kante + aufschreiben der Knoten

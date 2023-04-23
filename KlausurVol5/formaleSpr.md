@@ -1,6 +1,34 @@
 # Formale Sprachen
     Hier gezielt reguläre Sprachen 
     ( erzeugt von einer regulären Grammatik, mehr dazu unten)
+
+    Semantik vs Syntax: Semantik ist die bedeutung/Kontext, der Syntax die Eingabemöglichkeiten
+        bsp: syntax korrekt, dann kommen logik / semantische Fehler
+
+### TLD;DR
+Reguläre Sprache ist, was durch eine endliche Menge an Zuständen beschrieben werden kann. Er ist deterministisch (vorhersehbar endlich) <\br>
+Bezeichnet durch: G(Grammatik) = {Z(ustandsmenge), E(ingabealphabet), Z(Startzustand), P(rogramm) }
+
+Bsp:
+```
+    Mögl. Wörter: aabb; aaabbbbbbb; abbbb
+    G = {E, V, S, P}
+    E = {a,b}
+    V = {S}
+    Startpunkt S
+    P = {S --> aA, A --> aA | bB,B --> bB | [Endzustand]}
+```
+Was nicht möglich ist, ist Sachen zu speichern, hierfür benötigt man einen Kellerautomaten. <\br>
+Kellerautomaten gehen wenn nötig einen Schritt tiefer in den Keller und speicher so ihren Zustand. Beim "verlassen" des Kellers wird eine Aktion ausgeben. Diese Rekursion kann undendlich tief gehen (der Automat ist NICHT deterministisch) <\br>
+Bsp:
+```
+    Mögl. Wörter: aaxbb, aaaaxbbbb
+    G = {E, V, S, P}
+    E = {a,b,x}
+    V = {S}
+    Startpunkt S
+    P = {S --> aSb | x}
+```
     
 ## Alphabet Wort Sprachen
     Alphabet E (epsylon oder so) : E = {m,o,t,0}
@@ -39,6 +67,8 @@
     --------------------------    
     Normalerweise werden die Automaten als Graph angegeben. Knoten sind Zustände (Q), Kanten werden mit E1 und zugehöriger E2 beschriftet. Eingaben die nicht akzeptiert werden lösen den Fehlerzustand qF aus, dieser muss nicht im Graphen zu sehen sein, jedoch in der Zustadstabelle!
 
+    MealyAutomaten haben keinen Endzustand!
+
 ### Bsp(reguläre Sprache): 
     E1 = {l,o,g}
     Q = {q0, q1, q2}
@@ -62,4 +92,3 @@
     Endzustand markieren mit doppeltem Kreis
     ---------------------------
     Durch endliche Zuständeund Eingabealphabet kann man mit DEA's besonders gut auf Gültigkeit prüfen! 
-    

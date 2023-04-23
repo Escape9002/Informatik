@@ -12,7 +12,7 @@
         Ziel: Basicly Verbindungstabelle bei n ..m Beziehungen
 
 ## Normalformen
-TL,DR:
+    TL,DR:
     1NF: Alle Attributwerte atomar
     2NF: Alle NSA hängen vom Prim.schl. ab
     3NF: Alle NSA sind voneinander unabhängig
@@ -45,6 +45,10 @@ TL,DR:
     Ein Strich zwischen 2 Klassen ist eine Verbindung mit Kardinalitäten ( 1..n, n..m)
     Es gibt keine Verbindungstabellen
 
+### Programming spez.
+    dünner Pfeil: assoziation ( Object lel = new Object();)
+    dicker Pfeil: vererbung ( extends Object)    
+
 ## ER-Modell (entity relationship modell)
     Rundes ding halt
 
@@ -53,3 +57,9 @@ TL,DR:
 
     Verbindungsvariablen als Rauten zwischen 2 Tabellen, 
     diese haben beide Primärschlüssel als Fremdschlüssel drin
+
+## (optimiertes) Relationals Datenbankschema
+    Fremdschlüssel: Pfeil nach oben
+    Primärschlüssel: unterstreichen
+    
+    Stil: Tabellenname = {primär, attr1, attr2, Fremdschlüssel}
