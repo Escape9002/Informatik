@@ -1,14 +1,38 @@
 # Formale Sprachen
+    Hier gezielt reguläre Sprachen 
+    ( erzeugt von einer regulären Grammatik, mehr dazu unten)
+    
 ## Alphabet Wort Sprachen
     Alphabet E (epsylon oder so) : E = {m,o,t,0}
     Damit mögl. Wörter: tom, mot, omt,...
-    Es gibt auch das leere Wort (hier als 0 gekennzeichnet)
+    Es gibt auch das leere Wort (hier als 0 gekennzeichnet, normalerweise als e [inhaltszeichen von mathe oder so...])
     Diese Wörter sind teil einer Sprache L = {mot, tom,...}
     L = {} \\ Leere Sprache
     --------------------------
     Reguläre Sprachen: Endliche Zustände! Bsp: Emailadressen
     Kontextfreie: Kellerautomaten (basicly stack --> rekursion) Bsp: unendlich lange emailadressen bauen
 
+### Definition Grammatik
+    N : Nichtterminalsymbole    
+    T : Terminalsymbole
+    S e N : Startsymbol
+    P : Produktionsregeln
+    Grammatik G = (N, T, S, P)
+
+    Optionsklammern : {}
+    Wiederholungsklammern : []
+    Gruppierungsklammern : ()
+    Alternative: |
+    
+### Def. Reguläre Grammatik
+    N = {A, B, C, ...}
+    T = {a, b, c, ...}
+    P = {A --> aB | B, B --> bC | C, ...}
+
+    Diese Grammatik ist rechtsregulär, denn 1x N folgt auch 1x T
+    Linksregulär wäre 1xT auf 1x N 
+    zB: P = { A --> Ba}
+    
 ## MealyAutomaten
     Mealy-Automaten können bei jedem erreichtem Zustand eine Ausgabe tätigen.
     Hier gibt es E1(Eingabealphabet), Q(Zustände), s=Q (Startzustand), E2 (Ausgabealphbet)
@@ -20,16 +44,18 @@
     Q = {q0, q1, q2}
     s = q0
     E2 = {Nö,mach,ich,nich,0}
+
 ### Übergangstabelle
     eingabe/alt	l	o	g
-    q0	q1	qF	qF
-    q1	qF	q2	qF
-    q2	qF	qF	end 
+    q0	        q1	qF	qF
+    q1	        qF	q2	qF
+    q2	        qF	qF	end 
     -----------------------    
     Ausgabe/alt	l	o	g
-    q0	'l'	qF	qF
-    q1	qF	'o'	qF
-    q2	qF	qF	'g'
+    q0	        'l'	qF	qF
+    q1	         qF	'o'	qF
+    q2	        qF	qF	'g'
+
 ## DEA (Deterministische endliche Automaten)
     zB: MealyAutomaten
     Startzustand markieren mit Pfeil drauf
